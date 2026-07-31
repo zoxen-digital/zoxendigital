@@ -13,6 +13,8 @@ export type OnboardingSubmission = {
   phone: string;
   currentWebsite: string;
   socialMedia: string;
+  industry: string;
+  businessSize: string;
 
   mainGoal: string;
   targetAudience: string;
