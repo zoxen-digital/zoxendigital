@@ -110,8 +110,8 @@ export default function Automation() {
           </div>
           </Reveal>
 
-          {/* Right - Network diagram */}
-          <Reveal delay={0.15} className="automation-diagram" style={{ position: "relative", height: "420px" }}>
+          {/* Right - Network diagram (desktop) */}
+          <Reveal delay={0.15} className="automation-diagram automation-diagram-desktop" style={{ position: "relative", height: "420px" }}>
             <svg viewBox="0 0 600 420" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
               <path id="line-l1" d="M0,95 C150,95 260,210 300,210" fill="none" stroke="#6366f1" strokeWidth="1.5" opacity="0.5" />
               <path id="line-l2" d="M0,215 C150,215 260,210 300,210" fill="none" stroke="#6366f1" strokeWidth="1.5" opacity="0.5" />
@@ -173,6 +173,27 @@ export default function Automation() {
             <div className="automation-node" style={{ top: "310px", right: "0" }}>
               <div className="automation-node-icon">{rightNodes[2].icon}</div>
               <span>{rightNodes[2].label}</span>
+            </div>
+          </Reveal>
+
+          {/* Right - Network diagram (mobile) */}
+          <Reveal delay={0.15} className="automation-diagram-mobile">
+            <div className="automation-center-mobile">
+              <div className="automation-center-ring" />
+              <div className="automation-center-core">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3c-2 0-3.5 1.3-3.5 3 0 .6.2 1.1.5 1.5-1 .3-1.7 1.2-1.7 2.3 0 .7.3 1.3.8 1.8-.9.4-1.6 1.4-1.6 2.5 0 1.5 1.2 2.7 2.7 2.9.2 1.3 1.3 2.3 2.6 2.3s2.5-1 2.6-2.3c1.5-.2 2.7-1.4 2.7-2.9 0-1.1-.7-2.1-1.6-2.5.5-.5.8-1.1.8-1.8 0-1.1-.7-2-1.7-2.3.3-.4.5-.9.5-1.5C15.5 4.3 14 3 12 3z" stroke="#6366f1" strokeWidth="1.6" strokeLinejoin="round" />
+                  <path d="M12 3v16" stroke="#6366f1" strokeWidth="1.6" />
+                </svg>
+              </div>
+            </div>
+            <div className="automation-node-grid">
+              {[...leftNodes, ...rightNodes].map((node) => (
+                <div key={node.label} className="automation-node automation-node-mobile">
+                  <div className="automation-node-icon">{node.icon}</div>
+                  <span>{node.label}</span>
+                </div>
+              ))}
             </div>
           </Reveal>
         </div>
@@ -238,12 +259,43 @@ export default function Automation() {
           font-size: 14px;
           font-weight: 600;
         }
+        .automation-diagram-mobile {
+          display: none;
+          position: relative;
+          flex-direction: column;
+          align-items: center;
+          gap: 28px;
+        }
+        .automation-center-mobile {
+          position: relative;
+          width: 90px;
+          height: 90px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .automation-node-grid {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+        .automation-node-mobile {
+          position: static;
+          justify-content: flex-start;
+          width: 100%;
+        }
         @media (max-width: 900px) {
           #automation { padding: 70px 24px !important; }
           .automation-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
           .automation-diagram { height: 360px !important; }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+          .automation-diagram-desktop { display: none !important; }
+          .automation-diagram-mobile { display: flex !important; }
+        }
+        @media (max-width: 420px) {
+          .automation-node-grid { grid-template-columns: 1fr; }
           .automation-node span { font-size: 12px; }
           .automation-node { padding: 8px 10px; }
         }
