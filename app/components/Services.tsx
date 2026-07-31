@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef } from "react";
 import Reveal from "./Reveal";
 
 export default function Services() {
@@ -100,6 +101,68 @@ export default function Services() {
 
   const loop = [...services, ...services];
 
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const draggingRef = useRef(false);
+  const pausedRef = useRef(false);
+  const startXRef = useRef(0);
+  const startScrollRef = useRef(0);
+  const resumeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+    let raf: number;
+
+    function tick() {
+      if (el && !draggingRef.current && !pausedRef.current) {
+        el.scrollLeft += 0.6;
+        const halfWidth = el.scrollWidth / 2;
+        if (el.scrollLeft >= halfWidth) {
+          el.scrollLeft -= halfWidth;
+        }
+      }
+      raf = requestAnimationFrame(tick);
+    }
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  function scheduleResume() {
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    resumeTimeoutRef.current = setTimeout(() => {
+      pausedRef.current = false;
+    }, 2500);
+  }
+
+  function onPointerDown(e: React.PointerEvent<HTMLDivElement>) {
+    const el = viewportRef.current;
+    if (!el) return;
+    draggingRef.current = true;
+    pausedRef.current = true;
+    startXRef.current = e.clientX;
+    startScrollRef.current = el.scrollLeft;
+    el.setPointerCapture(e.pointerId);
+    el.style.cursor = "grabbing";
+  }
+
+  function onPointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (!draggingRef.current) return;
+    const el = viewportRef.current;
+    if (!el) return;
+    const delta = e.clientX - startXRef.current;
+    el.scrollLeft = startScrollRef.current - delta;
+  }
+
+  function onPointerUp(e: React.PointerEvent<HTMLDivElement>) {
+    const el = viewportRef.current;
+    draggingRef.current = false;
+    if (el) {
+      el.style.cursor = "grab";
+      try { el.releasePointerCapture(e.pointerId); } catch {}
+    }
+    scheduleResume();
+  }
+
   return (
     <section
       id="services"
@@ -138,7 +201,14 @@ export default function Services() {
       </div>
 
       {/* Marquee */}
-      <div className="services-marquee-viewport">
+      <div
+        ref={viewportRef}
+        className="services-marquee-viewport"
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerLeave={(e) => draggingRef.current && onPointerUp(e)}
+      >
         <div className="services-marquee-track">
           {loop.map((s, i) => (
             <div key={i} className="service-card">
@@ -179,22 +249,21 @@ export default function Services() {
       <style>{`
         .services-marquee-viewport {
           width: 100%;
-          overflow: hidden;
+          overflow-x: auto;
+          overflow-y: hidden;
+          cursor: grab;
+          touch-action: pan-y;
+          scrollbar-width: none;
           -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
           mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+        }
+        .services-marquee-viewport::-webkit-scrollbar {
+          display: none;
         }
         .services-marquee-track {
           display: flex;
           gap: 24px;
           width: max-content;
-          animation: services-scroll 40s linear infinite;
-        }
-        .services-marquee-viewport:hover .services-marquee-track {
-          animation-play-state: paused;
-        }
-        @keyframes services-scroll {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
         }
         .service-card {
           position: relative;
