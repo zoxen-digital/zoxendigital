@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
+import MetaPixel from "./components/MetaPixel";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${sora.variable} ${hankenGrotesk.variable}`}>
         {children}
+        <MetaPixel />
       </body>
     </html>
   );
