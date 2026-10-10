@@ -20,11 +20,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="20" r="18" stroke="#6366f1" strokeWidth="1.5" />
-                <ellipse cx="20" cy="20" rx="18" ry="7" stroke="#6366f1" strokeWidth="1.5" transform="rotate(-30 20 20)" />
-                <text x="20" y="25" textAnchor="middle" fill="#0f172a" fontSize="12" fontWeight="800" fontFamily="sans-serif">OX</text>
-              </svg>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/main-logo-dark.png" alt="Zoxen Digital" style={{ display: "block", height: "36px", width: "auto", objectFit: "contain" }} />
               <div>
                 <div style={{ fontSize: "15px", fontWeight: "800", color: "#0f172a", letterSpacing: "2px" }}>ZOXEN</div>
                 <div style={{ fontSize: "8px", color: "#6366f1", letterSpacing: "4px" }}>DIGITAL</div>

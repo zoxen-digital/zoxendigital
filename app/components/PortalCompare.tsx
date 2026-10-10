@@ -1,5 +1,6 @@
 "use client";
 import Reveal from "./Reveal";
+import ChaosVsCalm from "./ChaosVsCalm";
 
 const oldWay = [
   "Updates lost in long WhatsApp chats",
@@ -41,6 +42,8 @@ export default function PortalCompare() {
             </p>
           </div>
         </Reveal>
+
+        <ChaosVsCalm />
 
         <div className="compare-grid">
           {/* Old way */}
@@ -102,7 +105,7 @@ export default function PortalCompare() {
 
       <style>{`
         .compare-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
-        .compare-grid > div { height: 100%; }
+        .compare-grid > div:not(.compare-vs) { height: 100%; }
         .compare-card { height: 100%; border-radius: 20px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .compare-card.old { background: #f8fafc; border: 1px dashed rgba(15,23,42,0.18); }
         .compare-card.new {
@@ -128,7 +131,7 @@ export default function PortalCompare() {
         .compare-icon.new { background: linear-gradient(135deg, #6366f1, #4f46e5); box-shadow: 0 4px 10px rgba(79,70,229,0.3); }
         .compare-vs {
           position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2;
-          width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+          width: 52px; height: 52px; flex-shrink: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center;
           font-size: 14px; font-weight: 800; color: #4338ca; background: #ffffff;
           border: 1px solid rgba(99,102,241,0.3); box-shadow: 0 10px 26px rgba(79,70,229,0.2);
         }

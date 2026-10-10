@@ -179,7 +179,7 @@ export default function Contact() {
             </Reveal>
 
             {/* Right - Form */}
-            <Reveal delay={0.15} style={{
+            <Reveal delay={0.15} className="contact-form-box" style={{
               background: "rgba(15,23,42,0.03)",
               border: "1px solid rgba(15,23,42,0.1)",
               borderRadius: "20px",
@@ -298,6 +298,15 @@ export default function Contact() {
           .contact-card { padding: 32px !important; }
           .contact-form-row { grid-template-columns: 1fr !important; }
           #contact { padding: 70px 24px !important; }
+        }
+        .contact-grid > *, .contact-form-row > * { min-width: 0; }
+        @media (max-width: 600px) {
+          #contact { padding: 56px 12px !important; }
+          .contact-card { padding: 24px 16px !important; border-radius: 20px !important; }
+          .contact-form-box { padding: 20px 16px !important; border-radius: 16px !important; }
+          .contact-form-row { gap: 18px !important; }
+          /* 16px stops iPhones zooming in when a field is tapped */
+          #contact input, #contact select, #contact textarea { font-size: 16px !important; }
         }
       `}</style>
     </section>

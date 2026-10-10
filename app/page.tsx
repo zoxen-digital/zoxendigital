@@ -5,6 +5,7 @@ import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import HomeProcess from "./components/HomeProcess";
 import ClientPortal from "./components/ClientPortal";
+import PortalJourney from "./components/PortalJourney";
 import PortalCompare from "./components/PortalCompare";
 import Automation from "./components/Automation";
 import Contact from "./components/Contact";
@@ -20,6 +21,7 @@ export default function Home() {
       <Portfolio />
       <HomeProcess />
       <ClientPortal />
+      <PortalJourney />
       <PortalCompare />
       <Automation />
       <Contact />

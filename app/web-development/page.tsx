@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 import SiteCarousel from "../components/SiteCarousel";
 import ClientPortal from "../components/ClientPortal";
+import PortalJourney from "../components/PortalJourney";
 import PortalCompare from "../components/PortalCompare";
 
 export default function WebDevelopmentPage() {
@@ -17,6 +18,7 @@ export default function WebDevelopmentPage() {
       <Testimonials />
       <Process />
       <ClientPortal />
+      <PortalJourney />
       <PortalCompare />
       <Packages />
       <Contact />
