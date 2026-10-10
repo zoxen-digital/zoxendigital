@@ -26,8 +26,6 @@ export async function POST(req: NextRequest) {
       phone: body.phone || "",
       currentWebsite: body.currentWebsite || "",
       socialMedia: body.socialMedia || "",
-      industry: body.industry || "",
-      businessSize: body.businessSize || "",
 
       mainGoal: body.mainGoal || "",
       targetAudience: body.targetAudience || "",
