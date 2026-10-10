@@ -7,9 +7,9 @@ export default function Automation() {
       label: "CRM",
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <ellipse cx="12" cy="5" rx="8" ry="3" stroke="#8b8ff5" strokeWidth="2" />
-          <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5" stroke="#8b8ff5" strokeWidth="2" />
-          <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" stroke="#8b8ff5" strokeWidth="2" />
+          <ellipse cx="12" cy="5" rx="8" ry="3" stroke="#4f46e5" strokeWidth="2" />
+          <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5" stroke="#4f46e5" strokeWidth="2" />
+          <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" stroke="#4f46e5" strokeWidth="2" />
         </svg>
       ),
     },
@@ -17,9 +17,9 @@ export default function Automation() {
       label: "Leads",
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <circle cx="9" cy="7" r="4" stroke="#8b8ff5" strokeWidth="2" />
-          <path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" />
-          <path d="M17 8a3 3 0 010 6M21 21v-2a4 4 0 00-3-3.87" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="9" cy="7" r="4" stroke="#4f46e5" strokeWidth="2" />
+          <path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" />
+          <path d="M17 8a3 3 0 010 6M21 21v-2a4 4 0 00-3-3.87" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -27,10 +27,10 @@ export default function Automation() {
       label: "Web Forms",
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#8b8ff5" strokeWidth="2" strokeLinejoin="round" />
-          <polyline points="14 2 14 8 20 8" stroke="#8b8ff5" strokeWidth="2" strokeLinejoin="round" />
-          <line x1="9" y1="13" x2="15" y2="13" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" />
-          <line x1="9" y1="17" x2="13" y2="17" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" />
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
+          <polyline points="14 2 14 8 20 8" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
+          <line x1="9" y1="13" x2="15" y2="13" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" />
+          <line x1="9" y1="17" x2="13" y2="17" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -40,7 +40,7 @@ export default function Automation() {
     {
       label: "WhatsApp",
       icon: (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="#8b8ff5">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#4f46e5">
           <path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.35A10 10 0 1012 2zm0 18.15a8.13 8.13 0 01-4.15-1.14l-.3-.18-3 .81.8-2.93-.2-.31A8.15 8.15 0 1112 20.15zm4.48-6.12c-.24-.12-1.44-.71-1.66-.79s-.39-.12-.55.12-.63.79-.77.95-.29.18-.53.06a6.6 6.6 0 01-1.95-1.2 7.3 7.3 0 01-1.35-1.68c-.14-.24 0-.37.12-.5s.28-.32.42-.48a.6.6 0 00.1-.6c-.05-.12-.5-1.2-.68-1.64s-.37-.38-.51-.39h-.44a.85.85 0 00-.6.28 2.6 2.6 0 00-.8 1.93 4.5 4.5 0 00.95 2.38 10.3 10.3 0 003.94 3.47 4.5 4.5 0 002.24.59 1.9 1.9 0 001.57-.75 1.55 1.55 0 00.36-.99c0-.2-.06-.31-.3-.43z" />
         </svg>
       ),
@@ -49,8 +49,8 @@ export default function Automation() {
       label: "Email",
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#8b8ff5" strokeWidth="2" />
-          <polyline points="22 6 12 13 2 6" stroke="#8b8ff5" strokeWidth="2" />
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#4f46e5" strokeWidth="2" />
+          <polyline points="22 6 12 13 2 6" stroke="#4f46e5" strokeWidth="2" />
         </svg>
       ),
     },
@@ -58,8 +58,8 @@ export default function Automation() {
       label: "Sales",
       icon: (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="10" stroke="#8b8ff5" strokeWidth="2" />
-          <path d="M12 6v12M15 9.5c0-1.38-1.34-2.5-3-2.5s-3 1.12-3 2.5S10.34 12 12 12s3 1.12 3 2.5-1.34 2.5-3 2.5-3-1.12-3-2.5" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="12" cy="12" r="10" stroke="#4f46e5" strokeWidth="2" />
+          <path d="M12 6v12M15 9.5c0-1.38-1.34-2.5-3-2.5s-3 1.12-3 2.5S10.34 12 12 12s3 1.12 3 2.5-1.34 2.5-3 2.5-3-1.12-3-2.5" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -94,12 +94,12 @@ export default function Automation() {
               <span className="section-eyebrow">AI &amp; AUTOMATION</span>
             </div>
 
-            <h2 style={{ fontSize: "clamp(32px, 4.5vw, 52px)", fontWeight: "800", color: "white", lineHeight: "1.1", marginBottom: "24px" }}>
+            <h2 style={{ fontSize: "clamp(32px, 4.5vw, 52px)", fontWeight: "800", color: "#0f172a", lineHeight: "1.1", marginBottom: "24px" }}>
               Work <span className="gradient-text">Smarter.</span><br />
               Scale <span className="gradient-text">Faster.</span>
             </h2>
 
-            <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "16px", lineHeight: "1.8", marginBottom: "36px", maxWidth: "440px" }}>
+            <p style={{ color: "rgba(15,23,42,0.68)", fontSize: "16px", lineHeight: "1.8", marginBottom: "36px", maxWidth: "440px" }}>
               Our AI-powered automation systems handle repetitive tasks, nurture leads, and keep your business running on autopilot.
             </p>
 
@@ -116,9 +116,9 @@ export default function Automation() {
               <path id="line-l1" d="M0,95 C150,95 260,210 300,210" fill="none" stroke="#6366f1" strokeWidth="1.5" opacity="0.5" />
               <path id="line-l2" d="M0,215 C150,215 260,210 300,210" fill="none" stroke="#6366f1" strokeWidth="1.5" opacity="0.5" />
               <path id="line-l3" d="M0,335 C150,335 260,210 300,210" fill="none" stroke="#6366f1" strokeWidth="1.5" opacity="0.5" />
-              <path id="line-r1" d="M600,95 C450,95 340,210 300,210" fill="none" stroke="#8b5cf6" strokeWidth="1.5" opacity="0.5" />
-              <path id="line-r2" d="M600,215 C450,215 340,210 300,210" fill="none" stroke="#8b5cf6" strokeWidth="1.5" opacity="0.5" />
-              <path id="line-r3" d="M600,335 C450,335 340,210 300,210" fill="none" stroke="#8b5cf6" strokeWidth="1.5" opacity="0.5" />
+              <path id="line-r1" d="M600,95 C450,95 340,210 300,210" fill="none" stroke="#7c3aed" strokeWidth="1.5" opacity="0.5" />
+              <path id="line-r2" d="M600,215 C450,215 340,210 300,210" fill="none" stroke="#7c3aed" strokeWidth="1.5" opacity="0.5" />
+              <path id="line-r3" d="M600,335 C450,335 340,210 300,210" fill="none" stroke="#7c3aed" strokeWidth="1.5" opacity="0.5" />
 
               {["line-l1", "line-l2", "line-l3"].map((id, i) => (
                 <circle key={id} r="4" fill="#6366f1">
@@ -128,7 +128,7 @@ export default function Automation() {
                 </circle>
               ))}
               {["line-r1", "line-r2", "line-r3"].map((id, i) => (
-                <circle key={id} r="4" fill="#8b5cf6">
+                <circle key={id} r="4" fill="#7c3aed">
                   <animateMotion dur="3.2s" begin={`${i * 0.5 + 0.25}s`} repeatCount="indefinite" rotate="auto">
                     <mpath href={`#${id}`} />
                   </animateMotion>
@@ -223,7 +223,7 @@ export default function Automation() {
           width: 70px;
           height: 70px;
           border-radius: 50%;
-          background: #0a0a12;
+          background: #ffffff;
           border: 1.5px solid rgba(99,102,241,0.5);
           box-shadow: 0 0 40px rgba(99,102,241,0.5);
           display: flex;
@@ -236,12 +236,12 @@ export default function Automation() {
           display: flex;
           align-items: center;
           gap: 10px;
-          background: #0e0e1a;
-          border: 1px solid rgba(255,255,255,0.1);
+          background: #ffffff;
+          border: 1px solid rgba(15,23,42,0.13);
           border-radius: 12px;
           padding: 10px 16px;
           white-space: nowrap;
-          box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+          box-shadow: 0 8px 20px rgba(15,23,42,0.1);
         }
         .automation-node-icon {
           width: 30px;
@@ -255,7 +255,7 @@ export default function Automation() {
           flex-shrink: 0;
         }
         .automation-node span {
-          color: white;
+          color: #0f172a;
           font-size: 14px;
           font-weight: 600;
         }

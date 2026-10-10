@@ -1,14 +1,73 @@
 "use client";
-import { useState, type CSSProperties } from "react";
+import { useState, type CSSProperties, type ReactNode } from "react";
 import Reveal from "./Reveal";
 
-export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", service: "General inquiry", message: "" });
-  const [sent, setSent] = useState(false);
+const SERVICES = [
+  "Website (Standard)", "Website with Admin Panel", "E-commerce Website", "SEO", "AI Chatbot", "AI Calling Agent",
+  "Meta Ads", "Google Ads", "Social Media Management", "Logo / Branding", "Other",
+];
+const BUDGETS = ["Under $100", "$100 - $250", "$250 - $500", "$500 - $1,000", "$1,000+", "Not sure yet"];
+const EMPTY_FORM = { name: "", email: "", phone: "", company: "", service: "", budget: "", message: "" };
+type Field = keyof typeof EMPTY_FORM;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const handleSubmit = () => {
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+function validate(form: typeof EMPTY_FORM) {
+  const errors: Partial<Record<Field, string>> = {};
+  if (!form.name.trim()) errors.name = "Please enter your full name.";
+  if (!form.message.trim()) errors.message = "Please tell us about your project.";
+  if (!form.email.trim() && !form.phone.trim()) {
+    errors.email = "Please enter your email or phone number.";
+    errors.phone = " ";
+  } else if (form.email.trim() && !EMAIL_RE.test(form.email.trim())) {
+    errors.email = "Please enter a valid email address.";
+  }
+  return errors;
+}
+
+export default function Contact() {
+  const [form, setForm] = useState(EMPTY_FORM);
+  const [errors, setErrors] = useState<Partial<Record<Field, string>>>({});
+  const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [hp, setHp] = useState("");
+
+  const update = (field: Field, value: string) => {
+    setForm((f) => ({ ...f, [field]: value }));
+    if (!errors[field]) return;
+    const linked = field === "email" || field === "phone";
+    setErrors((e) => ({ ...e, [field]: undefined, ...(linked ? { email: undefined, phone: undefined } : {}) }));
+  };
+
+  const handleSubmit = async () => {
+    if (sending) return;
+    setError("");
+    const found = validate(form);
+    setErrors(found);
+    if (Object.keys(found).length) return;
+
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, page: window.location.href, hp }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        if (data.fields) setErrors(data.fields);
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      window.fbq?.("track", "Lead", { content_name: form.service || "Contact form" });
+      setSent(true);
+      setForm(EMPTY_FORM);
+      setHp("");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const perks = [
@@ -52,7 +111,7 @@ export default function Contact() {
     >
       <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative" }}>
         <div className="contact-card" style={{
-          background: "rgba(255,255,255,0.02)",
+          background: "rgba(15,23,42,0.03)",
           border: "1px solid rgba(99,102,241,0.25)",
           borderRadius: "28px",
           padding: "64px",
@@ -88,11 +147,11 @@ export default function Contact() {
                 <span className="section-eyebrow">GET IN TOUCH</span>
               </div>
 
-              <h2 style={{ fontSize: "clamp(30px, 4vw, 46px)", fontWeight: "800", color: "white", marginBottom: "20px", lineHeight: "1.15" }}>
+              <h2 style={{ fontSize: "clamp(30px, 4vw, 46px)", fontWeight: "800", color: "#0f172a", marginBottom: "20px", lineHeight: "1.15" }}>
                 Ready To Scale Your Business <span className="gradient-text">With Us?</span>
               </h2>
 
-              <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "16px", lineHeight: "1.8", marginBottom: "36px", maxWidth: "440px" }}>
+              <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "16px", lineHeight: "1.8", marginBottom: "36px", maxWidth: "440px" }}>
                 Tell us what you need and our team will reach out. Pick a service below and send us a message, it lands straight in our inbox.
               </p>
 
@@ -112,7 +171,7 @@ export default function Contact() {
                     }}>
                       {perk.icon}
                     </div>
-                    <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "15px", fontWeight: "500" }}>{perk.label}</span>
+                    <span style={{ color: "rgba(15,23,42,0.8)", fontSize: "15px", fontWeight: "500" }}>{perk.label}</span>
                   </div>
                 ))}
               </div>
@@ -121,13 +180,13 @@ export default function Contact() {
 
             {/* Right - Form */}
             <Reveal delay={0.15} style={{
-              background: "rgba(255,255,255,0.02)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(15,23,42,0.03)",
+              border: "1px solid rgba(15,23,42,0.1)",
               borderRadius: "20px",
               padding: "40px",
             }}>
               {sent ? (
-                <div style={{ textAlign: "center", padding: "40px 0" }}>
+                <div role="status" style={{ textAlign: "center", padding: "40px 0" }}>
                   <div style={{
                     width: "64px",
                     height: "64px",
@@ -142,102 +201,91 @@ export default function Contact() {
                       <polyline points="20 6 9 17 4 12" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h3 style={{ color: "white", fontSize: "22px", fontWeight: "700", marginBottom: "10px" }}>Message Sent!</h3>
-                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "14px" }}>We&apos;ll get back to you within 24-48 hours.</p>
+                  <h3 style={{ color: "#0f172a", fontSize: "22px", fontWeight: "700", marginBottom: "10px" }}>Message sent!</h3>
+                  <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "15px", marginBottom: "24px" }}>Thanks! We will reply within 24 hours.</p>
+                  <button type="button" onClick={() => setSent(false)} className="btn-secondary" style={{ fontSize: "14px", padding: "10px 22px" }}>
+                    Send another message
+                  </button>
                 </div>
               ) : (
-                <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+                <form
+                  noValidate
+                  onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}
+                  style={{ display: "flex", flexDirection: "column", gap: "18px", position: "relative" }}
+                >
                   <div className="contact-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px" }}>
-                    <div>
-                      <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "13px", fontWeight: "600", marginBottom: "6px" }}>
-                        Full name <span style={{ color: "#8b8ff5" }}>*</span>
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Your name"
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        style={inputStyle}
-                        onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(99,102,241,0.5)")}
-                        onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")}
-                      />
-                    </div>
-                    <div>
-                      <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "13px", fontWeight: "600", marginBottom: "6px" }}>
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        placeholder="+1 (___) ___-____"
-                        value={form.phone}
-                        onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        style={inputStyle}
-                        onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(99,102,241,0.5)")}
-                        onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")}
-                      />
-                    </div>
+                    <FormField label="Full name" required error={errors.name}>
+                      <input type="text" name="name" autoComplete="name" placeholder="Your name" value={form.name}
+                        onChange={(e) => update("name", e.target.value)} style={fieldStyle(errors.name)} aria-invalid={!!errors.name} />
+                    </FormField>
+                    <FormField label="Business name">
+                      <input type="text" name="company" autoComplete="organization" placeholder="Your business" value={form.company}
+                        onChange={(e) => update("company", e.target.value)} style={fieldStyle()} />
+                    </FormField>
                   </div>
 
-                  <div>
-                    <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "13px", fontWeight: "600", marginBottom: "6px" }}>
-                      Email <span style={{ color: "#8b8ff5" }}>*</span>
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="you@business.com"
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      style={inputStyle}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(99,102,241,0.5)")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")}
-                    />
+                  <div className="contact-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px" }}>
+                    <FormField label="Email" hint="or phone" error={errors.email}>
+                      <input type="email" name="email" autoComplete="email" placeholder="you@business.com" value={form.email}
+                        onChange={(e) => update("email", e.target.value)} style={fieldStyle(errors.email)} aria-invalid={!!errors.email} />
+                    </FormField>
+                    <FormField label="Phone / WhatsApp" hint="or email" error={errors.phone?.trim() ? errors.phone : undefined}>
+                      <input type="tel" name="phone" autoComplete="tel" placeholder="+1 555 123 4567" value={form.phone}
+                        onChange={(e) => update("phone", e.target.value)} style={fieldStyle(errors.phone)} aria-invalid={!!errors.phone} />
+                    </FormField>
                   </div>
 
-                  <div>
-                    <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "13px", fontWeight: "600", marginBottom: "6px" }}>
-                      Service you&apos;re interested in
-                    </label>
-                    <select
-                      value={form.service}
-                      onChange={(e) => setForm({ ...form, service: e.target.value })}
-                      style={{ ...inputStyle, cursor: "pointer" }}
-                    >
-                      <option value="General inquiry" style={{ background: "#111" }}>General inquiry</option>
-                      <option value="Web Design" style={{ background: "#111" }}>Web Design</option>
-                      <option value="Web Development" style={{ background: "#111" }}>Web Development</option>
-                      <option value="SEO Optimization" style={{ background: "#111" }}>SEO Optimization</option>
-                      <option value="Website Maintenance" style={{ background: "#111" }}>Website Maintenance</option>
-                      <option value="AI & Automation" style={{ background: "#111" }}>AI &amp; Automation</option>
-                    </select>
+                  <div className="contact-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px" }}>
+                    <FormField label="What do you need?">
+                      <select name="service" value={form.service} onChange={(e) => update("service", e.target.value)} style={{ ...fieldStyle(), cursor: "pointer" }}>
+                        <option value="">Select a service</option>
+                        {SERVICES.map((s) => <option key={s} value={s}>{s}</option>)}
+                      </select>
+                    </FormField>
+                    <FormField label="Budget">
+                      <select name="budget" value={form.budget} onChange={(e) => update("budget", e.target.value)} style={{ ...fieldStyle(), cursor: "pointer" }}>
+                        <option value="">Select a budget</option>
+                        {BUDGETS.map((b) => <option key={b} value={b}>{b}</option>)}
+                      </select>
+                    </FormField>
                   </div>
 
-                  <div>
-                    <label style={{ display: "block", color: "rgba(255,255,255,0.7)", fontSize: "13px", fontWeight: "600", marginBottom: "6px" }}>
-                      Message <span style={{ color: "#8b8ff5" }}>*</span>
-                    </label>
-                    <textarea
-                      rows={4}
-                      placeholder="Tell us a little about your project or goals..."
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      style={{ ...inputStyle, resize: "vertical", fontFamily: "inherit" }}
-                      onFocus={(e) => (e.currentTarget.style.borderColor = "rgba(99,102,241,0.5)")}
-                      onBlur={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")}
-                    />
-                  </div>
+                  <FormField label="Tell us about your project" required error={errors.message}>
+                    <textarea name="message" rows={4} placeholder="What are you looking to build or improve?" value={form.message}
+                      onChange={(e) => update("message", e.target.value)} style={{ ...fieldStyle(errors.message), resize: "vertical" }} aria-invalid={!!errors.message} />
+                  </FormField>
+
+                  {/* Honeypot: hidden from people, bots fill it */}
+                  <input
+                    type="text"
+                    name="hp"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={hp}
+                    onChange={(e) => setHp(e.target.value)}
+                    style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden", opacity: 0 }}
+                  />
+
+                  {error && (
+                    <p role="alert" style={{ color: "#dc2626", fontSize: "14px", background: "rgba(220,38,38,0.06)", border: "1px solid rgba(220,38,38,0.2)", borderRadius: "10px", padding: "10px 14px" }}>
+                      {error}
+                    </p>
+                  )}
 
                   <button
-                    onClick={handleSubmit}
+                    type="submit"
+                    disabled={sending}
                     className="btn-primary"
-                    style={{ width: "100%", justifyContent: "center", padding: "16px", borderRadius: "50px", fontSize: "16px" }}
+                    style={{ width: "100%", justifyContent: "center", padding: "16px", borderRadius: "50px", fontSize: "16px", opacity: sending ? 0.7 : 1, cursor: sending ? "wait" : "pointer" }}
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                       <line x1="22" y1="2" x2="11" y2="13" stroke="white" strokeWidth="2" strokeLinecap="round" />
                       <polygon points="22 2 15 22 11 13 2 9 22 2" stroke="white" strokeWidth="2" strokeLinejoin="round" />
                     </svg>
-                    Send Message
+                    {sending ? "Sending..." : "Send Message"}
                   </button>
-                </div>
+                </form>
               )}
             </Reveal>
           </div>
@@ -258,12 +306,31 @@ export default function Contact() {
 
 const inputStyle: CSSProperties = {
   width: "100%",
-  background: "rgba(255,255,255,0.04)",
-  border: "1px solid rgba(255,255,255,0.08)",
+  background: "#ffffff",
+  border: "1px solid rgba(15,23,42,0.1)",
   borderRadius: "10px",
   padding: "12px 16px",
-  color: "white",
+  color: "#0f172a",
   fontSize: "14px",
   outline: "none",
   transition: "border 0.2s",
 };
+
+function FormField({ label, required, hint, error, children }: { label: string; required?: boolean; hint?: string; error?: string; children: ReactNode }) {
+  return (
+    <div>
+      <label style={{ display: "block", color: "rgba(15,23,42,0.77)", fontSize: "13px", fontWeight: "600" }}>
+        {label} {required && <span style={{ color: "#4f46e5" }}>*</span>}
+        {hint && <span style={{ color: "rgba(15,23,42,0.45)", fontWeight: 500 }}> ({hint})</span>}
+        {children}
+      </label>
+      {error && <p style={{ color: "#dc2626", fontSize: "12.5px", marginTop: "6px" }}>{error}</p>}
+    </div>
+  );
+}
+
+const fieldStyle = (error?: string): CSSProperties => ({
+  ...inputStyle,
+  marginTop: "6px",
+  border: `1px solid ${error ? "rgba(220,38,38,0.6)" : "rgba(15,23,42,0.1)"}`,
+});

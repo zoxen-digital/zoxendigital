@@ -5,10 +5,10 @@ import type { OnboardingSubmission, SubmissionStatus } from "@/lib/onboarding-ty
 const ALL_STATUSES: SubmissionStatus[] = ["New", "In Progress", "Done", "On Hold"];
 
 const STATUS_COLORS: Record<SubmissionStatus, { bg: string; text: string; hex: string }> = {
-  "New": { bg: "rgba(139,143,245,0.15)", text: "#8b8ff5", hex: "#8b8ff5" },
+  "New": { bg: "rgba(139,143,245,0.15)", text: "#4f46e5", hex: "#4f46e5" },
   "In Progress": { bg: "rgba(99,102,241,0.15)", text: "#6366f1", hex: "#6366f1" },
-  "Done": { bg: "rgba(34,197,94,0.15)", text: "#4ade80", hex: "#4ade80" },
-  "On Hold": { bg: "rgba(245,158,11,0.15)", text: "#f59e0b", hex: "#f59e0b" },
+  "Done": { bg: "rgba(34,197,94,0.15)", text: "#16a34a", hex: "#16a34a" },
+  "On Hold": { bg: "rgba(245,158,11,0.15)", text: "#d97706", hex: "#d97706" },
 };
 
 function monthKey(iso: string) {
@@ -232,20 +232,20 @@ export default function DashboardPage() {
 
   if (authed === null || loading) {
     return (
-      <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#08080b" }}>
-        <p style={{ color: "rgba(255,255,255,0.5)" }}>Loading...</p>
+      <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#f8fafc" }}>
+        <p style={{ color: "rgba(15,23,42,0.65)" }}>Loading...</p>
       </main>
     );
   }
 
   if (!authed) {
     return (
-      <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px", background: "#08080b" }}>
+      <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "20px", background: "#f8fafc" }}>
         <div style={{
-          width: "100%", maxWidth: "360px", background: "#0f0f14",
-          border: "1px solid rgba(255,255,255,0.08)", borderRadius: "18px", padding: "32px",
+          width: "100%", maxWidth: "360px", background: "#ffffff",
+          border: "1px solid rgba(15,23,42,0.1)", borderRadius: "18px", padding: "32px",
         }}>
-          <h1 style={{ color: "white", fontSize: "20px", fontWeight: "700", marginBottom: "20px", textAlign: "center" }}>
+          <h1 style={{ color: "#0f172a", fontSize: "20px", fontWeight: "700", marginBottom: "20px", textAlign: "center" }}>
             Dashboard Login
           </h1>
           <input
@@ -255,11 +255,11 @@ export default function DashboardPage() {
             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
             placeholder="Enter password"
             style={{
-              width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
-              borderRadius: "10px", padding: "12px 16px", color: "white", fontSize: "14px", outline: "none", marginBottom: "12px",
+              width: "100%", background: "rgba(15,23,42,0.05)", border: "1px solid rgba(15,23,42,0.1)",
+              borderRadius: "10px", padding: "12px 16px", color: "#0f172a", fontSize: "14px", outline: "none", marginBottom: "12px",
             }}
           />
-          {loginError && <p style={{ color: "#f87171", fontSize: "13px", marginBottom: "12px" }}>{loginError}</p>}
+          {loginError && <p style={{ color: "#dc2626", fontSize: "13px", marginBottom: "12px" }}>{loginError}</p>}
           <button onClick={handleLogin} className="btn-primary" style={{ width: "100%", justifyContent: "center" }}>
             Log In
           </button>
@@ -295,19 +295,19 @@ export default function DashboardPage() {
     conicStops.push(`${STATUS_COLORS[seg.status].hex} ${acc}% ${acc + pct}%`);
     acc += pct;
   });
-  const donutBg = analytics.total ? `conic-gradient(${conicStops.join(", ")})` : "rgba(255,255,255,0.06)";
+  const donutBg = analytics.total ? `conic-gradient(${conicStops.join(", ")})` : "rgba(15,23,42,0.08)";
 
   return (
-    <div style={{ minHeight: "100vh", background: "#08080b", display: "flex" }}>
+    <div style={{ minHeight: "100vh", background: "#f8fafc", display: "flex" }}>
       {/* Sidebar */}
       <aside style={{
-        width: "240px", flexShrink: 0, borderRight: "1px solid rgba(255,255,255,0.08)",
+        width: "240px", flexShrink: 0, borderRight: "1px solid rgba(15,23,42,0.1)",
         padding: "22px 16px", display: "flex", flexDirection: "column",
       }} className="dash-sidebar">
         <div style={{ display: "flex", alignItems: "center", gap: "10px", padding: "0 8px", marginBottom: "26px" }}>
-          <img src="/main-logo.png" alt="Zoxen Digital" style={{ height: "30px", width: "auto", objectFit: "contain" }} />
+          <img src="/main-logo-dark.png" alt="Zoxen Digital" style={{ height: "30px", width: "auto", objectFit: "contain" }} />
           <span style={{ fontSize: "14px", fontWeight: "800" }}>
-            <span style={{ color: "white" }}>Zoxen</span> <span style={{ color: "#8b8ff5" }}>Digital</span>
+            <span style={{ color: "#0f172a" }}>Zoxen</span> <span style={{ color: "#4f46e5" }}>Digital</span>
           </span>
         </div>
 
@@ -318,7 +318,7 @@ export default function DashboardPage() {
           onClick={() => setPage("overview")}
         />
 
-        <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "10.5px", fontWeight: "700", letterSpacing: "1px", margin: "18px 0 8px", paddingLeft: "8px" }}>ONBOARDING</div>
+        <div style={{ color: "rgba(15,23,42,0.56)", fontSize: "10.5px", fontWeight: "700", letterSpacing: "1px", margin: "18px 0 8px", paddingLeft: "8px" }}>ONBOARDING</div>
         <SidebarItem
           label="Submissions"
           count={statusCounts.All}
@@ -342,10 +342,10 @@ export default function DashboardPage() {
           border: "1px solid rgba(99,102,241,0.25)", borderRadius: "14px", padding: "16px",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "6px" }}>
-            <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#4ade80", display: "inline-block" }} className="badge-dot" />
-            <span style={{ color: "white", fontSize: "12.5px", fontWeight: "700" }}>All systems running</span>
+            <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#16a34a", display: "inline-block" }} className="badge-dot" />
+            <span style={{ color: "#0f172a", fontSize: "12.5px", fontWeight: "700" }}>All systems running</span>
           </div>
-          <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "11px", marginBottom: "10px" }}>Database connected</div>
+          <div style={{ color: "rgba(15,23,42,0.62)", fontSize: "11px", marginBottom: "10px" }}>Database connected</div>
           <button onClick={loadData} className="btn-secondary" style={{ width: "100%", justifyContent: "center", fontSize: "12px", padding: "8px" }}>
             Refresh Data
           </button>
@@ -356,12 +356,12 @@ export default function DashboardPage() {
         {/* Top header */}
         <header style={{
           display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px",
-          padding: "14px 24px", borderBottom: "1px solid rgba(255,255,255,0.08)", flexShrink: 0,
+          padding: "14px 24px", borderBottom: "1px solid rgba(15,23,42,0.1)", flexShrink: 0,
         }}>
           <div style={{ position: "relative", flex: 1, maxWidth: "360px" }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ position: "absolute", left: "13px", top: "50%", transform: "translateY(-50%)" }}>
-              <circle cx="11" cy="11" r="7" stroke="rgba(255,255,255,0.4)" strokeWidth="2" />
-              <path d="M21 21l-4.35-4.35" stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="11" cy="11" r="7" stroke="rgba(15,23,42,0.59)" strokeWidth="2" />
+              <path d="M21 21l-4.35-4.35" stroke="rgba(15,23,42,0.59)" strokeWidth="2" strokeLinecap="round" />
             </svg>
             <input
               type="text"
@@ -369,8 +369,8 @@ export default function DashboardPage() {
               onChange={(e) => { setSearch(e.target.value); if (e.target.value) setPage("submissions"); }}
               placeholder="Search business, name, email..."
               style={{
-                width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "10px", padding: "9px 14px 9px 36px", color: "white", fontSize: "13px", outline: "none",
+                width: "100%", background: "rgba(15,23,42,0.05)", border: "1px solid rgba(15,23,42,0.1)",
+                borderRadius: "10px", padding: "9px 14px 9px 36px", color: "#0f172a", fontSize: "13px", outline: "none",
               }}
             />
           </div>
@@ -378,7 +378,7 @@ export default function DashboardPage() {
           <div style={{ display: "flex", alignItems: "center", gap: "14px", flexShrink: 0 }}>
             <button
               onClick={() => { setStatusFilter("New"); setPage("submissions"); }}
-              style={{ position: "relative", background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.6)" }}
+              style={{ position: "relative", background: "none", border: "none", cursor: "pointer", color: "rgba(15,23,42,0.71)" }}
               title="New submissions"
             >
               <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /><path d="M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
@@ -397,23 +397,23 @@ export default function DashboardPage() {
               >
                 <span style={{
                   width: "34px", height: "34px", borderRadius: "50%",
-                  background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+                  background: "linear-gradient(135deg, #6366f1, #7c3aed)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   color: "white", fontSize: "13px", fontWeight: "700",
                 }}>A</span>
                 <span style={{ textAlign: "left" }}>
-                  <div style={{ color: "white", fontSize: "13px", fontWeight: "700" }}>Admin</div>
-                  <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "10.5px" }}>Owner</div>
+                  <div style={{ color: "#0f172a", fontSize: "13px", fontWeight: "700" }}>Admin</div>
+                  <div style={{ color: "rgba(15,23,42,0.59)", fontSize: "10.5px" }}>Owner</div>
                 </span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="rgba(15,23,42,0.65)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </button>
               {profileOpen && (
                 <div style={{
-                  position: "absolute", top: "calc(100% + 8px)", right: 0, background: "#14141c",
-                  border: "1px solid rgba(255,255,255,0.1)", borderRadius: "10px", padding: "6px", minWidth: "140px", zIndex: 20,
+                  position: "absolute", top: "calc(100% + 8px)", right: 0, background: "#ffffff",
+                  border: "1px solid rgba(15,23,42,0.13)", borderRadius: "10px", padding: "6px", minWidth: "140px", zIndex: 20,
                 }}>
                   <button onClick={handleLogout} style={{
-                    width: "100%", textAlign: "left", background: "none", border: "none", color: "#f87171",
+                    width: "100%", textAlign: "left", background: "none", border: "none", color: "#dc2626",
                     fontSize: "13px", padding: "8px 10px", cursor: "pointer", borderRadius: "6px",
                   }}>Sign out</button>
                 </div>
@@ -433,9 +433,9 @@ export default function DashboardPage() {
         <div style={{ flex: 1, overflowY: "auto", padding: "24px 28px" }}>
           {page === "overview" ? (
             <>
-              <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "14px", marginBottom: "4px" }}>{greeting()}, Admin 👋</p>
-              <h1 style={{ color: "white", fontSize: "26px", fontWeight: "800", marginBottom: "6px" }}>Here&apos;s what&apos;s happening today.</h1>
-              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "13px", marginBottom: "26px" }}>
+              <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "14px", marginBottom: "4px" }}>{greeting()}, Admin 👋</p>
+              <h1 style={{ color: "#0f172a", fontSize: "26px", fontWeight: "800", marginBottom: "6px" }}>Here&apos;s what&apos;s happening today.</h1>
+              <p style={{ color: "rgba(15,23,42,0.59)", fontSize: "13px", marginBottom: "26px" }}>
                 Track your onboarding submissions and convert leads into successful projects.
               </p>
 
@@ -444,21 +444,21 @@ export default function DashboardPage() {
                 <StatCard icon="doc" label="Total Submissions" value={analytics.total} pctChange={analytics.pctChange} trend={analytics.trend7} color="#6366f1" />
                 <StatCard icon="user" label="New Submissions" value={analytics.newCount} trend={analytics.trend7} color="#60a5fa" />
                 <StatCard icon="filter" label="Conversion Rate" value={`${analytics.conversionRate}%`} trend={analytics.trend7} color="#a78bfa" />
-                <StatCard icon="folder" label="In Progress" value={analytics.inProgressCount} trend={analytics.trend7} color="#4ade80" />
+                <StatCard icon="folder" label="In Progress" value={analytics.inProgressCount} trend={analytics.trend7} color="#16a34a" />
               </div>
 
               <div className="dash-overview-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "20px", marginBottom: "20px" }}>
                 {/* Recent submissions */}
-                <div style={{ background: "#0f0f14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px", padding: "22px" }}>
+                <div style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "16px", padding: "22px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
-                    <h3 style={{ color: "white", fontSize: "15px", fontWeight: "700" }}>Recent Onboarding Submissions</h3>
-                    <button onClick={() => setPage("submissions")} style={{ background: "none", border: "none", color: "#8b8ff5", fontSize: "12.5px", fontWeight: "600", cursor: "pointer" }}>
+                    <h3 style={{ color: "#0f172a", fontSize: "15px", fontWeight: "700" }}>Recent Onboarding Submissions</h3>
+                    <button onClick={() => setPage("submissions")} style={{ background: "none", border: "none", color: "#4f46e5", fontSize: "12.5px", fontWeight: "600", cursor: "pointer" }}>
                       View All →
                     </button>
                   </div>
 
                   {items.length === 0 ? (
-                    <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "13px", textAlign: "center", padding: "30px 0" }}>No submissions yet.</p>
+                    <p style={{ color: "rgba(15,23,42,0.59)", fontSize: "13px", textAlign: "center", padding: "30px 0" }}>No submissions yet.</p>
                   ) : (
                     <div style={{ display: "flex", flexDirection: "column" }}>
                       {[...items].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()).slice(0, 5).map((sub) => (
@@ -470,26 +470,26 @@ export default function DashboardPage() {
 
                 {/* Overview donut + quick actions */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-                  <div style={{ background: "#0f0f14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px", padding: "22px" }}>
-                    <h3 style={{ color: "white", fontSize: "15px", fontWeight: "700", marginBottom: "18px" }}>Submissions Overview</h3>
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "16px", padding: "22px" }}>
+                    <h3 style={{ color: "#0f172a", fontSize: "15px", fontWeight: "700", marginBottom: "18px" }}>Submissions Overview</h3>
                     <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
                       <div style={{
                         width: "100px", height: "100px", borderRadius: "50%", background: donutBg,
                         display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
                       }}>
-                        <div style={{ width: "62px", height: "62px", borderRadius: "50%", background: "#0f0f14", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                          <span style={{ color: "white", fontSize: "18px", fontWeight: "800" }}>{analytics.total}</span>
-                          <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "9px" }}>Total</span>
+                        <div style={{ width: "62px", height: "62px", borderRadius: "50%", background: "#ffffff", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+                          <span style={{ color: "#0f172a", fontSize: "18px", fontWeight: "800" }}>{analytics.total}</span>
+                          <span style={{ color: "rgba(15,23,42,0.59)", fontSize: "9px" }}>Total</span>
                         </div>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1 }}>
                         {donutSegments.map((seg) => (
                           <div key={seg.status} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "12px" }}>
-                            <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,0.65)" }}>
+                            <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(15,23,42,0.74)" }}>
                               <span style={{ width: "7px", height: "7px", borderRadius: "50%", background: STATUS_COLORS[seg.status].hex, display: "inline-block" }} />
                               {seg.status}
                             </span>
-                            <span style={{ color: "white", fontWeight: "600" }}>
+                            <span style={{ color: "#0f172a", fontWeight: "600" }}>
                               {seg.count} ({analytics.total ? Math.round((seg.count / analytics.total) * 100) : 0}%)
                             </span>
                           </div>
@@ -498,8 +498,8 @@ export default function DashboardPage() {
                     </div>
                   </div>
 
-                  <div style={{ background: "#0f0f14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px", padding: "22px" }}>
-                    <h3 style={{ color: "white", fontSize: "15px", fontWeight: "700", marginBottom: "14px" }}>Quick Actions</h3>
+                  <div style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "16px", padding: "22px" }}>
+                    <h3 style={{ color: "#0f172a", fontSize: "15px", fontWeight: "700", marginBottom: "14px" }}>Quick Actions</h3>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                       <QuickAction label="View All Submissions" onClick={() => setPage("submissions")} />
                       <QuickAction label="Add New Submission" href="/onboarding" />
@@ -512,9 +512,9 @@ export default function DashboardPage() {
 
               <div className="dash-overview-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "20px" }}>
                 {/* Trend chart */}
-                <div style={{ background: "#0f0f14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px", padding: "22px" }}>
+                <div style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "16px", padding: "22px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
-                    <h3 style={{ color: "white", fontSize: "15px", fontWeight: "700" }}>Submissions Trend</h3>
+                    <h3 style={{ color: "#0f172a", fontSize: "15px", fontWeight: "700" }}>Submissions Trend</h3>
                     <div style={{ display: "flex", gap: "6px" }}>
                       {([7, 30] as const).map((r) => (
                         <button
@@ -522,8 +522,8 @@ export default function DashboardPage() {
                           onClick={() => setTrendRange(r)}
                           style={{
                             background: trendRange === r ? "rgba(99,102,241,0.15)" : "transparent",
-                            border: trendRange === r ? "1px solid rgba(99,102,241,0.4)" : "1px solid rgba(255,255,255,0.1)",
-                            color: trendRange === r ? "white" : "rgba(255,255,255,0.5)",
+                            border: trendRange === r ? "1px solid rgba(99,102,241,0.4)" : "1px solid rgba(15,23,42,0.13)",
+                            color: trendRange === r ? "#4338ca" : "rgba(15,23,42,0.65)",
                             borderRadius: "8px", padding: "5px 10px", fontSize: "11.5px", fontWeight: "600", cursor: "pointer",
                           }}
                         >
@@ -536,20 +536,20 @@ export default function DashboardPage() {
                 </div>
 
                 {/* Top industries */}
-                <div style={{ background: "#0f0f14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px", padding: "22px" }}>
-                  <h3 style={{ color: "white", fontSize: "15px", fontWeight: "700", marginBottom: "16px" }}>Top Industries</h3>
+                <div style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "16px", padding: "22px" }}>
+                  <h3 style={{ color: "#0f172a", fontSize: "15px", fontWeight: "700", marginBottom: "16px" }}>Top Industries</h3>
                   {analytics.topIndustries.length === 0 ? (
-                    <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "13px" }}>No data yet.</p>
+                    <p style={{ color: "rgba(15,23,42,0.59)", fontSize: "13px" }}>No data yet.</p>
                   ) : (
                     <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
                       {analytics.topIndustries.map((ind) => (
                         <div key={ind.name}>
                           <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12.5px", marginBottom: "5px" }}>
-                            <span style={{ color: "rgba(255,255,255,0.7)" }}>{ind.name}</span>
-                            <span style={{ color: "white", fontWeight: "600" }}>{ind.pct}% ({ind.count})</span>
+                            <span style={{ color: "rgba(15,23,42,0.77)" }}>{ind.name}</span>
+                            <span style={{ color: "#0f172a", fontWeight: "600" }}>{ind.pct}% ({ind.count})</span>
                           </div>
-                          <div style={{ height: "6px", borderRadius: "50px", background: "rgba(255,255,255,0.06)", overflow: "hidden" }}>
-                            <div style={{ height: "100%", width: `${ind.pct}%`, background: "linear-gradient(90deg, #6366f1, #8b5cf6)" }} />
+                          <div style={{ height: "6px", borderRadius: "50px", background: "rgba(15,23,42,0.08)", overflow: "hidden" }}>
+                            <div style={{ height: "100%", width: `${ind.pct}%`, background: "linear-gradient(90deg, #6366f1, #7c3aed)" }} />
                           </div>
                         </div>
                       ))}
@@ -562,8 +562,8 @@ export default function DashboardPage() {
             <>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "12px", marginBottom: "20px" }}>
                 <div>
-                  <h1 style={{ color: "white", fontSize: "22px", fontWeight: "800" }}>All Submissions</h1>
-                  <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "12.5px", marginTop: "2px" }}>{filtered.length} results</p>
+                  <h1 style={{ color: "#0f172a", fontSize: "22px", fontWeight: "800" }}>All Submissions</h1>
+                  <p style={{ color: "rgba(15,23,42,0.59)", fontSize: "12.5px", marginTop: "2px" }}>{filtered.length} results</p>
                 </div>
                 <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
                   {["All", ...ALL_STATUSES].map((s) => (
@@ -572,9 +572,9 @@ export default function DashboardPage() {
                       onClick={() => { setStatusFilter(s); setTablePage(1); }}
                       style={{
                         padding: "7px 14px", borderRadius: "50px", fontSize: "12px", fontWeight: "600", cursor: "pointer",
-                        border: statusFilter === s ? "1px solid rgba(99,102,241,0.5)" : "1px solid rgba(255,255,255,0.1)",
+                        border: statusFilter === s ? "1px solid rgba(99,102,241,0.5)" : "1px solid rgba(15,23,42,0.13)",
                         background: statusFilter === s ? "rgba(99,102,241,0.15)" : "transparent",
-                        color: statusFilter === s ? "white" : "rgba(255,255,255,0.5)",
+                        color: statusFilter === s ? "#4338ca" : "rgba(15,23,42,0.65)",
                       }}
                     >
                       {s}
@@ -584,9 +584,9 @@ export default function DashboardPage() {
               </div>
 
               {Object.keys(grouped).length === 0 ? (
-                <p style={{ color: "rgba(255,255,255,0.4)", textAlign: "center", marginTop: "60px" }}>No submissions found.</p>
+                <p style={{ color: "rgba(15,23,42,0.59)", textAlign: "center", marginTop: "60px" }}>No submissions found.</p>
               ) : (
-                <div style={{ background: "#0f0f14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "14px", overflow: "hidden" }}>
+                <div style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "14px", overflow: "hidden" }}>
                   <div className="dash-table-row dash-table-head">
                     <span>BUSINESS</span>
                     <span>CONTACT</span>
@@ -602,20 +602,20 @@ export default function DashboardPage() {
                         <span style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0 }}>
                           <span style={{
                             width: "30px", height: "30px", borderRadius: "50%", flexShrink: 0,
-                            background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+                            background: "linear-gradient(135deg, #6366f1, #7c3aed)",
                             display: "flex", alignItems: "center", justifyContent: "center",
                             color: "white", fontSize: "11px", fontWeight: "700",
                           }}>{initials(sub.businessName)}</span>
-                          <span style={{ color: "white", fontSize: "13px", fontWeight: "700", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          <span style={{ color: "#0f172a", fontSize: "13px", fontWeight: "700", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {sub.businessName || "Untitled"}
                           </span>
                         </span>
                         <span style={{ minWidth: 0 }}>
-                          <div style={{ color: "rgba(255,255,255,0.75)", fontSize: "13px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub.contactPerson}</div>
-                          <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "11px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub.email}</div>
+                          <div style={{ color: "rgba(15,23,42,0.8)", fontSize: "13px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub.contactPerson}</div>
+                          <div style={{ color: "rgba(15,23,42,0.56)", fontSize: "11px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub.email}</div>
                         </span>
-                        <span style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px" }}>{sub.package}</span>
-                        <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "12px" }}>{new Date(sub.createdAt).toLocaleDateString()}</span>
+                        <span style={{ color: "rgba(15,23,42,0.74)", fontSize: "13px" }}>{sub.package}</span>
+                        <span style={{ color: "rgba(15,23,42,0.65)", fontSize: "12px" }}>{new Date(sub.createdAt).toLocaleDateString()}</span>
                         <span onClick={(e) => e.stopPropagation()}>
                           <select
                             value={sub.status}
@@ -626,14 +626,14 @@ export default function DashboardPage() {
                             }}
                           >
                             {ALL_STATUSES.map((s) => (
-                              <option key={s} value={s} style={{ background: "#111", color: "white" }}>{s}</option>
+                              <option key={s} value={s} style={{ background: "#ffffff", color: "#0f172a" }}>{s}</option>
                             ))}
                           </select>
                         </span>
                         <span onClick={(e) => { e.stopPropagation(); sub._id && handleDelete(sub._id, sub.businessName); }} style={{ cursor: "pointer", textAlign: "right" }}>
                           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style={{ opacity: 0.4 }}>
-                            <polyline points="3 6 5 6 21 6" stroke="#f87171" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" stroke="#f87171" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <polyline points="3 6 5 6 21 6" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </span>
                       </div>
@@ -659,26 +659,26 @@ export default function DashboardPage() {
       {/* Slide-over drawer */}
       {selected && (
         <>
-          <div onClick={() => setSelected(null)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)", zIndex: 50 }} />
+          <div onClick={() => setSelected(null)} style={{ position: "fixed", inset: 0, background: "rgba(15,23,42,0.13)", zIndex: 50 }} />
           <div style={{
             position: "fixed", top: 0, right: 0, height: "100vh", width: "420px", maxWidth: "92vw",
-            background: "#0c0c11", borderLeft: "1px solid rgba(255,255,255,0.08)", zIndex: 51,
+            background: "#ffffff", borderLeft: "1px solid rgba(15,23,42,0.1)", zIndex: 51,
             overflowY: "auto", padding: "24px",
           }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                 <span style={{
                   width: "40px", height: "40px", borderRadius: "50%",
-                  background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+                  background: "linear-gradient(135deg, #6366f1, #7c3aed)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   color: "white", fontSize: "13px", fontWeight: "700", flexShrink: 0,
                 }}>{initials(selected.businessName)}</span>
                 <div>
-                  <div style={{ color: "white", fontSize: "16px", fontWeight: "700" }}>{selected.businessName}</div>
-                  <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "12px" }}>{selected.contactPerson}</div>
+                  <div style={{ color: "#0f172a", fontSize: "16px", fontWeight: "700" }}>{selected.businessName}</div>
+                  <div style={{ color: "rgba(15,23,42,0.59)", fontSize: "12px" }}>{selected.contactPerson}</div>
                 </div>
               </div>
-              <button onClick={() => setSelected(null)} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.5)", cursor: "pointer", fontSize: "18px" }}>✕</button>
+              <button onClick={() => setSelected(null)} style={{ background: "none", border: "none", color: "rgba(15,23,42,0.65)", cursor: "pointer", fontSize: "18px" }}>✕</button>
             </div>
 
             <DrawerSection title="Project Status">
@@ -689,7 +689,7 @@ export default function DashboardPage() {
                 style={drawerInput}
               >
                 {ALL_STATUSES.map((s) => (
-                  <option key={s} value={s} style={{ background: "#111" }}>{s}</option>
+                  <option key={s} value={s} style={{ background: "#ffffff" }}>{s}</option>
                 ))}
               </select>
 
@@ -723,9 +723,9 @@ export default function DashboardPage() {
                 onClick={() => setSelected({ ...selected, domainConnected: !selected.domainConnected })}
                 style={{
                   width: "100%", marginTop: "14px", padding: "10px", borderRadius: "10px", cursor: "pointer",
-                  background: selected.domainConnected ? "rgba(74,222,128,0.1)" : "rgba(255,255,255,0.04)",
-                  border: selected.domainConnected ? "1px solid rgba(74,222,128,0.3)" : "1px solid rgba(255,255,255,0.1)",
-                  color: selected.domainConnected ? "#4ade80" : "rgba(255,255,255,0.5)",
+                  background: selected.domainConnected ? "rgba(74,222,128,0.1)" : "rgba(15,23,42,0.05)",
+                  border: selected.domainConnected ? "1px solid rgba(74,222,128,0.3)" : "1px solid rgba(15,23,42,0.13)",
+                  color: selected.domainConnected ? "#16a34a" : "rgba(15,23,42,0.65)",
                   fontSize: "13px", fontWeight: "600", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px",
                 }}
               >
@@ -742,13 +742,13 @@ export default function DashboardPage() {
                 style={{
                   width: "100%", marginTop: "10px", padding: "12px", borderRadius: "50px", cursor: "pointer",
                   background: "rgba(248,113,113,0.1)", border: "1px solid rgba(248,113,113,0.3)",
-                  color: "#f87171", fontSize: "14px", fontWeight: "700",
+                  color: "#dc2626", fontSize: "14px", fontWeight: "700",
                   display: "flex", alignItems: "center", justifyContent: "center", gap: "6px",
                 }}
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <polyline points="3 6 5 6 21 6" stroke="#f87171" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" stroke="#f87171" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <polyline points="3 6 5 6 21 6" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 Delete Form
               </button>
@@ -779,18 +779,18 @@ export default function DashboardPage() {
             <DrawerSection title="Files">
               {selected.logoUrl && (
                 <div style={{ marginBottom: "10px" }}>
-                  <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "12px", marginBottom: "6px" }}>Logo</div>
-                  <img src={selected.logoUrl} alt="Logo" style={{ height: "50px", borderRadius: "8px", background: "white", padding: "4px" }} />
+                  <div style={{ color: "rgba(15,23,42,0.59)", fontSize: "12px", marginBottom: "6px" }}>Logo</div>
+                  <img src={selected.logoUrl} alt="Logo" style={{ height: "50px", borderRadius: "8px", background: "#6366f1", padding: "4px" }} />
                 </div>
               )}
               {selected.attachmentUrls?.length ? (
                 <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
                   {selected.attachmentUrls.map((url, i) => (
-                    <a key={i} href={url} target="_blank" rel="noopener noreferrer" style={{ color: "#8b8ff5", fontSize: "13px" }}>Attachment {i + 1}</a>
+                    <a key={i} href={url} target="_blank" rel="noopener noreferrer" style={{ color: "#4f46e5", fontSize: "13px" }}>Attachment {i + 1}</a>
                   ))}
                 </div>
               ) : (
-                !selected.logoUrl && <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "13px" }}>No files uploaded.</p>
+                !selected.logoUrl && <p style={{ color: "rgba(15,23,42,0.59)", fontSize: "13px" }}>No files uploaded.</p>
               )}
             </DrawerSection>
           </div>
@@ -806,19 +806,19 @@ export default function DashboardPage() {
           padding: 14px 20px;
         }
         .dash-table-head {
-          color: rgba(255,255,255,0.35);
+          color: rgba(15,23,42,0.56);
           font-size: 11px;
           font-weight: 700;
           letter-spacing: 0.5px;
-          border-bottom: 1px solid rgba(255,255,255,0.08);
+          border-bottom: 1px solid rgba(15,23,42,0.1);
         }
         .dash-table-body {
-          border-bottom: 1px solid rgba(255,255,255,0.05);
+          border-bottom: 1px solid rgba(15,23,42,0.07);
           cursor: pointer;
           transition: background 0.15s ease;
         }
         .dash-table-body:last-child { border-bottom: none; }
-        .dash-table-body:hover { background: rgba(255,255,255,0.02); }
+        .dash-table-body:hover { background: rgba(15,23,42,0.03); }
         @media (max-width: 900px) {
           .dash-sidebar { display: none; }
           .dash-overview-grid { grid-template-columns: 1fr !important; }
@@ -832,8 +832,8 @@ export default function DashboardPage() {
 
 function pageBtnStyle(active: boolean): React.CSSProperties {
   return {
-    width: "30px", height: "30px", borderRadius: "8px", border: active ? "none" : "1px solid rgba(255,255,255,0.1)",
-    background: active ? "#6366f1" : "transparent", color: active ? "white" : "rgba(255,255,255,0.5)",
+    width: "30px", height: "30px", borderRadius: "8px", border: active ? "none" : "1px solid rgba(15,23,42,0.13)",
+    background: active ? "#6366f1" : "transparent", color: active ? "white" : "rgba(15,23,42,0.65)",
     fontSize: "12px", fontWeight: "600", cursor: "pointer",
   };
 }
@@ -846,15 +846,15 @@ function SidebarItem({ label, count, icon, active, onClick }: { label: string; c
         width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
         background: active ? "rgba(99,102,241,0.15)" : "transparent",
         border: "none", borderRadius: "10px", padding: "10px 12px", cursor: "pointer", marginBottom: "2px",
-        color: active ? "white" : "rgba(255,255,255,0.55)",
+        color: active ? "#4338ca" : "rgba(15,23,42,0.68)",
         fontSize: "13.5px", fontWeight: active ? "700" : "500",
       }}
     >
       <span style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-        <span style={{ display: "flex", color: active ? "#8b8ff5" : "rgba(255,255,255,0.4)" }}>{icon}</span>
+        <span style={{ display: "flex", color: active ? "#4f46e5" : "rgba(15,23,42,0.59)" }}>{icon}</span>
         {label}
       </span>
-      {count !== undefined && <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px" }}>{count}</span>}
+      {count !== undefined && <span style={{ color: "rgba(15,23,42,0.53)", fontSize: "12px" }}>{count}</span>}
     </button>
   );
 }
@@ -865,16 +865,16 @@ function SidebarSubItem({ label, count, active, onClick, color }: { label: strin
       onClick={onClick}
       style={{
         width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
-        background: active ? "rgba(255,255,255,0.05)" : "transparent",
+        background: active ? "rgba(15,23,42,0.07)" : "transparent",
         border: "none", borderRadius: "8px", padding: "7px 10px", cursor: "pointer",
-        color: active ? "white" : "rgba(255,255,255,0.45)", fontSize: "12.5px", fontWeight: active ? "600" : "500",
+        color: active ? "#0f172a" : "rgba(15,23,42,0.62)", fontSize: "12.5px", fontWeight: active ? "600" : "500",
       }}
     >
       <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: color, display: "inline-block" }} />
         {label}
       </span>
-      {count !== undefined && <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.3)" }}>{count}</span>}
+      {count !== undefined && <span style={{ fontSize: "11px", color: "rgba(15,23,42,0.53)" }}>{count}</span>}
     </button>
   );
 }
@@ -883,7 +883,7 @@ function StatCard({ icon, label, value, pctChange, trend, color }: {
   icon: string; label: string; value: number | string; pctChange?: number; trend: { label: string; value: number }[]; color: string;
 }) {
   return (
-    <div style={{ background: "#0f0f14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px", padding: "18px" }}>
+    <div style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)", borderRadius: "16px", padding: "18px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "14px" }}>
         <div style={{
           width: "36px", height: "36px", borderRadius: "10px", background: `${color}22`,
@@ -892,14 +892,14 @@ function StatCard({ icon, label, value, pctChange, trend, color }: {
           <StatIcon icon={icon} color={color} />
         </div>
         <div>
-          <div style={{ color: "white", fontSize: "22px", fontWeight: "800", lineHeight: 1 }}>{value}</div>
-          <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "11.5px", marginTop: "2px" }}>{label}</div>
+          <div style={{ color: "#0f172a", fontSize: "22px", fontWeight: "800", lineHeight: 1 }}>{value}</div>
+          <div style={{ color: "rgba(15,23,42,0.62)", fontSize: "11.5px", marginTop: "2px" }}>{label}</div>
         </div>
       </div>
       <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between" }}>
         {pctChange !== undefined && (
-          <span style={{ fontSize: "11px", fontWeight: "700", color: pctChange >= 0 ? "#4ade80" : "#f87171" }}>
-            {pctChange >= 0 ? "↑" : "↓"} {Math.abs(pctChange)}% <span style={{ color: "rgba(255,255,255,0.3)", fontWeight: "400" }}>vs last 7 days</span>
+          <span style={{ fontSize: "11px", fontWeight: "700", color: pctChange >= 0 ? "#16a34a" : "#dc2626" }}>
+            {pctChange >= 0 ? "↑" : "↓"} {Math.abs(pctChange)}% <span style={{ color: "rgba(15,23,42,0.53)", fontWeight: "400" }}>vs last 7 days</span>
           </span>
         )}
         <Sparkline data={trend.map((d) => d.value)} color={color} />
@@ -944,7 +944,7 @@ function TrendChart({ data }: { data: { label: string; value: number }[] }) {
     <div style={{ overflowX: "auto" }}>
       <svg width="100%" height={h} viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none" style={{ minWidth: "500px" }}>
         {[0.25, 0.5, 0.75, 1].map((f) => (
-          <line key={f} x1={pad} x2={w - pad} y1={h - pad - f * (h - pad * 2)} y2={h - pad - f * (h - pad * 2)} stroke="rgba(255,255,255,0.05)" />
+          <line key={f} x1={pad} x2={w - pad} y1={h - pad - f * (h - pad * 2)} y2={h - pad - f * (h - pad * 2)} stroke="rgba(15,23,42,0.07)" />
         ))}
         <defs>
           <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
@@ -959,7 +959,7 @@ function TrendChart({ data }: { data: { label: string; value: number }[] }) {
         ))}
         {points.map((p, i) => (
           i % showEvery === 0 ? (
-            <text key={i} x={p.x} y={h - 4} textAnchor="middle" fontSize="10" fill="rgba(255,255,255,0.35)">{p.label}</text>
+            <text key={i} x={p.x} y={h - 4} textAnchor="middle" fontSize="10" fill="rgba(15,23,42,0.56)">{p.label}</text>
           ) : null
         ))}
       </svg>
@@ -972,25 +972,25 @@ function RecentRow({ sub, onClick }: { sub: OnboardingSubmission; onClick: () =>
   return (
     <div onClick={onClick} style={{
       display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px",
-      padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.05)", cursor: "pointer",
+      padding: "12px 0", borderBottom: "1px solid rgba(15,23,42,0.07)", cursor: "pointer",
     }}>
       <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0, flex: 1 }}>
         <span style={{
           width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0,
-          background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+          background: "linear-gradient(135deg, #6366f1, #7c3aed)",
           display: "flex", alignItems: "center", justifyContent: "center",
           color: "white", fontSize: "11px", fontWeight: "700",
         }}>{initials(sub.businessName)}</span>
         <div style={{ minWidth: 0 }}>
-          <div style={{ color: "white", fontSize: "13px", fontWeight: "700", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub.businessName || "Untitled"}</div>
-          <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "11px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub.industry || sub.email}</div>
+          <div style={{ color: "#0f172a", fontSize: "13px", fontWeight: "700", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub.businessName || "Untitled"}</div>
+          <div style={{ color: "rgba(15,23,42,0.59)", fontSize: "11px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{sub.industry || sub.email}</div>
         </div>
       </div>
       <span style={{
         background: colors.bg, color: colors.text, borderRadius: "8px",
         padding: "4px 10px", fontSize: "11px", fontWeight: "700", flexShrink: 0,
       }}>{sub.status}</span>
-      <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "11.5px", flexShrink: 0, minWidth: "70px", textAlign: "right" }}>
+      <span style={{ color: "rgba(15,23,42,0.56)", fontSize: "11.5px", flexShrink: 0, minWidth: "70px", textAlign: "right" }}>
         {new Date(sub.createdAt).toLocaleDateString()}
       </span>
     </div>
@@ -1000,11 +1000,11 @@ function RecentRow({ sub, onClick }: { sub: OnboardingSubmission; onClick: () =>
 function QuickAction({ label, onClick, href }: { label: string; onClick?: () => void; href?: string }) {
   const style: React.CSSProperties = {
     display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%",
-    background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)",
-    borderRadius: "10px", padding: "11px 14px", color: "white", fontSize: "13px", fontWeight: "600",
+    background: "rgba(15,23,42,0.04)", border: "1px solid rgba(15,23,42,0.1)",
+    borderRadius: "10px", padding: "11px 14px", color: "#0f172a", fontSize: "13px", fontWeight: "600",
     cursor: "pointer", textDecoration: "none",
   };
-  const arrow = <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+  const arrow = <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>;
   if (href) {
     return <a href={href} target="_blank" rel="noopener noreferrer" style={style}>{label}{arrow}</a>;
   }
@@ -1014,7 +1014,7 @@ function QuickAction({ label, onClick, href }: { label: string; onClick?: () => 
 function DrawerSection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ marginBottom: "22px" }}>
-      <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "11px", fontWeight: "700", letterSpacing: "1px", marginBottom: "12px" }}>
+      <div style={{ color: "rgba(15,23,42,0.56)", fontSize: "11px", fontWeight: "700", letterSpacing: "1px", marginBottom: "12px" }}>
         {title.toUpperCase()}
       </div>
       {children}
@@ -1026,24 +1026,24 @@ function DrawerRow({ label, value }: { label: string; value?: string }) {
   if (!value) return null;
   return (
     <div style={{ marginBottom: "10px" }}>
-      <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "11px", marginBottom: "2px" }}>{label}</div>
-      <div style={{ color: "white", fontSize: "13px", lineHeight: "1.5", whiteSpace: "pre-wrap" }}>{value}</div>
+      <div style={{ color: "rgba(15,23,42,0.59)", fontSize: "11px", marginBottom: "2px" }}>{label}</div>
+      <div style={{ color: "#0f172a", fontSize: "13px", lineHeight: "1.5", whiteSpace: "pre-wrap" }}>{value}</div>
     </div>
   );
 }
 
 const headerBtnStyle: React.CSSProperties = {
   display: "flex", alignItems: "center", gap: "6px",
-  background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-  borderRadius: "8px", padding: "9px 14px", color: "rgba(255,255,255,0.75)",
+  background: "rgba(15,23,42,0.05)", border: "1px solid rgba(15,23,42,0.13)",
+  borderRadius: "8px", padding: "9px 14px", color: "rgba(15,23,42,0.8)",
   fontSize: "12px", fontWeight: "600", cursor: "pointer",
 };
 
 const drawerLabel: React.CSSProperties = {
-  display: "block", color: "rgba(255,255,255,0.5)", fontSize: "12px", fontWeight: "600", marginBottom: "6px",
+  display: "block", color: "rgba(15,23,42,0.65)", fontSize: "12px", fontWeight: "600", marginBottom: "6px",
 };
 
 const drawerInput: React.CSSProperties = {
-  width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)",
-  borderRadius: "8px", padding: "9px 12px", color: "white", fontSize: "13px", outline: "none",
+  width: "100%", background: "rgba(15,23,42,0.05)", border: "1px solid rgba(15,23,42,0.13)",
+  borderRadius: "8px", padding: "9px 12px", color: "#0f172a", fontSize: "13px", outline: "none",
 };

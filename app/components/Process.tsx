@@ -10,9 +10,9 @@ export default function Process() {
       desc: "Secure your place with a simple payment to kick things off.",
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-          <path d="M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z" stroke="#8b8ff5" strokeWidth="2" strokeLinejoin="round" />
-          <path d="M6 5h12a1 1 0 011 1v13a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="#8b8ff5" strokeWidth="2" strokeLinejoin="round" />
-          <path d="M9 11h6M9 15h4" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" />
+          <path d="M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
+          <path d="M6 5h12a1 1 0 011 1v13a1 1 0 01-1 1H6a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
+          <path d="M9 11h6M9 15h4" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -22,8 +22,8 @@ export default function Process() {
       desc: "Tell us about your project and goals. Takes about 5 minutes.",
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-          <circle cx="11" cy="11" r="7" stroke="#8b8ff5" strokeWidth="2" />
-          <path d="M21 21l-4.35-4.35" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="11" cy="11" r="7" stroke="#4f46e5" strokeWidth="2" />
+          <path d="M21 21l-4.35-4.35" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
     },
@@ -33,8 +33,8 @@ export default function Process() {
       desc: "Our team gets started on your website within 24-48 hrs.",
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-          <polyline points="16 18 22 12 16 6" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <polyline points="8 6 2 12 8 18" stroke="#8b8ff5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <polyline points="16 18 22 12 16 6" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <polyline points="8 6 2 12 8 18" stroke="#4f46e5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
     },
@@ -44,9 +44,9 @@ export default function Process() {
       desc: "See the design before it goes live. Same day feedback.",
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-          <path d="M12 19l7-7 3 3-7 7-3-3z" stroke="#8b8ff5" strokeWidth="2" strokeLinejoin="round" />
-          <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="#8b8ff5" strokeWidth="2" strokeLinejoin="round" />
-          <circle cx="9" cy="9" r="1.5" stroke="#8b8ff5" strokeWidth="2" />
+          <path d="M12 19l7-7 3 3-7 7-3-3z" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
+          <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
+          <circle cx="9" cy="9" r="1.5" stroke="#4f46e5" strokeWidth="2" />
         </svg>
       ),
     },
@@ -56,8 +56,8 @@ export default function Process() {
       desc: "We connect your domain and launch your site within hours.",
       icon: (
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z" stroke="#8b8ff5" strokeWidth="2" strokeLinejoin="round" />
-          <path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z" stroke="#8b8ff5" strokeWidth="2" strokeLinejoin="round" />
+          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
+          <path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
         </svg>
       ),
     },
@@ -129,10 +129,10 @@ export default function Process() {
             <span className="badge-dot" style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#6366f1", display: "inline-block" }} />
             <span className="section-eyebrow">OUR PROCESS</span>
           </div>
-          <h2 style={{ fontSize: "clamp(30px, 4vw, 48px)", fontWeight: "800", color: "white", marginBottom: "20px", lineHeight: "1.15" }}>
+          <h2 style={{ fontSize: "clamp(30px, 4vw, 48px)", fontWeight: "800", color: "#0f172a", marginBottom: "20px", lineHeight: "1.15" }}>
             A Process Built For <span className="gradient-text">Clarity</span>
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "16px", maxWidth: "560px", margin: "0 auto", lineHeight: "1.7" }}>
+          <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "16px", maxWidth: "560px", margin: "0 auto", lineHeight: "1.7" }}>
             Five proven steps that keep every project on time, on budget and aligned with your goals.
           </p>
         </div>
@@ -241,7 +241,7 @@ export default function Process() {
           width: 88px;
           height: 88px;
           border-radius: 50%;
-          background: #0a0a12;
+          background: #ffffff;
           border: 1.5px solid rgba(99,102,241,0.5);
           box-shadow: 0 0 30px rgba(99,102,241,0.35), 0 0 20px rgba(139,92,246,0.15);
           display: flex;
@@ -251,19 +251,19 @@ export default function Process() {
         .process-num {
           font-size: 26px;
           font-weight: 800;
-          color: white;
+          color: #0f172a;
           margin-bottom: 6px;
         }
         .process-title {
           font-size: 18px;
           font-weight: 700;
-          color: white;
+          color: #0f172a;
           margin-bottom: 10px;
           max-width: 220px;
         }
         .process-desc {
           font-size: 14px;
-          color: rgba(255,255,255,0.5);
+          color: rgba(15,23,42,0.65);
           line-height: 1.6;
           max-width: 220px;
         }

@@ -8,7 +8,7 @@ export default function Hero() {
       className="hero-section"
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(5,5,15,0.7) 40%, rgba(10,10,26,0.75) 70%, rgba(0,0,0,0.85) 100%), url('/hero.png')",
+        background: "url('/hero.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",
@@ -18,27 +18,6 @@ export default function Hero() {
         padding: "120px 80px 80px",
       }}
     >
-      {/* Background Stars */}
-      <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 0 }}>
-        {[...Array(80)].map((_, i) => (
-          <div
-            key={i}
-            style={{
-              position: "absolute",
-              width: Math.random() * 2 + 1 + "px",
-              height: Math.random() * 2 + 1 + "px",
-              background: "white",
-              borderRadius: "50%",
-              top: Math.random() * 100 + "%",
-              left: Math.random() * 100 + "%",
-              opacity: Math.random() * 0.6 + 0.1,
-              animation: `glow ${Math.random() * 3 + 2}s ease-in-out infinite`,
-              animationDelay: Math.random() * 3 + "s",
-            }}
-          />
-        ))}
-      </div>
-
       {/* Purple Glow Blobs */}
       <div style={{
         position: "absolute",
@@ -80,7 +59,7 @@ export default function Hero() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="#6366f1" strokeWidth="2" fill="rgba(99,102,241,0.3)" />
             </svg>
-            <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "12px", fontWeight: "600", letterSpacing: "1px" }}>WEB DESIGN & DEVELOPMENT AGENCY</span>
+            <span style={{ color: "rgba(255,255,255,0.82)", fontSize: "12px", fontWeight: "600", letterSpacing: "1px" }}>WEB DESIGN & DEVELOPMENT AGENCY</span>
           </div>
           </Reveal>
 
@@ -93,7 +72,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={0.2}>
-          <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.55)", lineHeight: "1.7", marginBottom: "32px", maxWidth: "440px" }}>
+          <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.75)", lineHeight: "1.7", marginBottom: "32px", maxWidth: "440px" }}>
             At Zoxen Digital, we build fast, modern and conversion-focused websites that help businesses stand out and grow online.
           </p>
           </Reveal>
@@ -109,7 +88,7 @@ export default function Hero() {
             ].map((item) => (
               <div key={item.label} style={{ display: "flex", alignItems: "center", gap: "7px" }}>
                 {item.icon}
-                <span style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px", fontWeight: "500" }}>{item.label}</span>
+                <span style={{ color: "rgba(255,255,255,0.79)", fontSize: "13px", fontWeight: "500" }}>{item.label}</span>
               </div>
             ))}
           </div>
@@ -124,7 +103,7 @@ export default function Hero() {
             </a>
             <a href="#portfolio" className="btn-secondary">
               View Our Work
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </a>
           </div>
           </Reveal>
@@ -140,7 +119,7 @@ export default function Hero() {
         @media (max-width: 768px) {
           section#home { padding: 100px 24px 160px !important; }
           .stats-bar > div { padding: 16px 12px !important; gap: 8px !important; }
-          .hero-section { background-image: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(5,5,15,0.7) 40%, rgba(10,10,26,0.75) 70%, rgba(0,0,0,0.85) 100%), url('/mobile-hero.png') !important; }
+          .hero-section { background-image: url('/mobile-hero.png') !important; }
         }
       `}</style>
     </section>

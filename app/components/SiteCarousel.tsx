@@ -106,7 +106,7 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
         <Reveal>
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
           <p className="section-eyebrow" style={{ marginBottom: "14px" }}>{eyebrow}</p>
-          <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: "800", color: "white" }}>
+          <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: "800", color: "#0f172a" }}>
             {heading}
           </h2>
         </div>
@@ -114,7 +114,7 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
 
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <button className="site-nav-btn" onClick={() => { goTo(active - 1); pausedRef.current = true; scheduleResume(); }} aria-label="Previous site">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
 
           <div
@@ -165,7 +165,7 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
                       className="site-visit-link"
                     >
                       Visit Website
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="#8b8ff5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="#4f46e5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </a>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
           </div>
 
           <button className="site-nav-btn" onClick={() => { goTo(active + 1); pausedRef.current = true; scheduleResume(); }} aria-label="Next site">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </button>
         </div>
 
@@ -190,7 +190,7 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
                 borderRadius: "50px",
                 border: "none",
                 cursor: "pointer",
-                background: i === active ? "#6366f1" : "rgba(255,255,255,0.2)",
+                background: i === active ? "#6366f1" : "rgba(15,23,42,0.26)",
                 transition: "all 0.3s ease",
               }}
             />
@@ -215,8 +215,8 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
           width: 42px;
           height: 42px;
           border-radius: 50%;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.12);
+          background: rgba(15,23,42,0.05);
+          border: 1px solid rgba(15,23,42,0.16);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -233,9 +233,9 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
           max-width: 80vw;
           border-radius: 16px;
           overflow: hidden;
-          border: 1px solid rgba(255,255,255,0.1);
-          background: #0a0a12;
-          box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+          border: 1px solid rgba(15,23,42,0.13);
+          background: #ffffff;
+          box-shadow: 0 30px 60px rgba(15,23,42,0.13);
           cursor: pointer;
         }
         .site-browser-bar {
@@ -243,15 +243,15 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
           align-items: center;
           gap: 6px;
           padding: 10px 14px;
-          background: #111118;
-          border-bottom: 1px solid rgba(255,255,255,0.06);
+          background: #f1f5f9;
+          border-bottom: 1px solid rgba(15,23,42,0.08);
         }
         .site-browser-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
         .site-browser-url {
           margin-left: 10px;
           font-size: 11px;
-          color: rgba(255,255,255,0.4);
-          background: rgba(255,255,255,0.04);
+          color: rgba(15,23,42,0.59);
+          background: rgba(15,23,42,0.05);
           border-radius: 6px;
           padding: 3px 10px;
           flex: 1;
@@ -272,14 +272,14 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
         }
         .site-caption {
           padding: 12px 16px;
-          background: #0a0a12;
+          background: #ffffff;
           display: flex;
           align-items: center;
           justify-content: space-between;
           gap: 12px;
         }
         .site-caption span {
-          color: white;
+          color: #0f172a;
           font-size: 14px;
           font-weight: 700;
           overflow: hidden;
@@ -290,7 +290,7 @@ export default function SiteCarousel({ id, eyebrow = "OUR WORK", heading = "Site
           display: flex;
           align-items: center;
           gap: 5px;
-          color: #8b8ff5;
+          color: #4f46e5;
           font-size: 12px;
           font-weight: 600;
           text-decoration: none;

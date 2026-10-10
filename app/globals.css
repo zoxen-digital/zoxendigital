@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  color-scheme: light;
 }
 
 * {
@@ -16,8 +17,8 @@ html {
 }
 
 body {
-  background: #000000;
-  color: #ffffff;
+  background: #f8fafc;
+  color: #0f172a;
   font-family: var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   position: relative;
@@ -33,29 +34,10 @@ body::before {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 15% 8%, rgba(99,102,241,0.14), transparent 40%),
-    radial-gradient(circle at 85% 25%, rgba(59,130,246,0.12), transparent 45%),
-    radial-gradient(circle at 30% 70%, rgba(139,92,246,0.10), transparent 45%),
-    radial-gradient(circle at 75% 90%, rgba(99,102,241,0.10), transparent 45%),
-    linear-gradient(135deg, #000000 0%, #05050f 40%, #0a0a1a 70%, #000000 100%);
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image:
-    radial-gradient(1.4px 1.4px at 10% 15%, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 35% 45%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1.4px 1.4px at 58% 12%, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 75% 65%, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1.4px 1.4px at 92% 35%, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1.4px 1.4px at 48% 88%, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 68% 92%, rgba(255,255,255,0.5), transparent);
-  background-size: 320px 320px;
-  animation: twinkle 5s ease-in-out infinite alternate;
+    radial-gradient(circle at 12% 6%, rgba(99,102,241,0.10), transparent 40%),
+    radial-gradient(circle at 88% 22%, rgba(59,130,246,0.08), transparent 45%),
+    radial-gradient(circle at 30% 75%, rgba(139,92,246,0.06), transparent 45%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
 }
 
 @keyframes twinkle {
@@ -142,12 +124,12 @@ body::after {
 
 .gradient-border {
   border: 1px solid transparent;
-  background: linear-gradient(#0d0d1a, #0d0d1a) padding-box,
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
               linear-gradient(135deg, #6366f1, #3b82f6) border-box;
 }
 
 .card-glow:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.15);
   transform: translateY(-4px);
   transition: all 0.3s ease;
 }
@@ -166,18 +148,18 @@ body::after {
   border: none;
   transition: all 0.3s ease;
   text-decoration: none;
-  box-shadow: 0 0 18px rgba(99, 102, 241, 0.45), 0 4px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.28);
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, #4338ca, #312e81);
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.65), 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 26px rgba(79, 70, 229, 0.35);
 }
 
 .btn-secondary {
-  background: rgba(255,255,255,0.03);
-  color: white;
+  background: #ffffff;
+  color: #0f172a;
   padding: 12px 28px;
   border-radius: 8px;
   font-weight: 600;
@@ -186,7 +168,7 @@ body::after {
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(15,23,42,0.18);
   transition: all 0.3s ease;
   text-decoration: none;
 }
@@ -199,7 +181,7 @@ body::after {
 }
 
 .section-eyebrow {
-  color: #6366f1;
+  color: #4f46e5;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 3px;

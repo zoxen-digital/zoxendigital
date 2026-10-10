@@ -190,10 +190,10 @@ export default function Services() {
         <Reveal>
         <div style={{ textAlign: "center", marginBottom: "64px" }}>
           <p className="section-eyebrow" style={{ marginBottom: "14px" }}>SERVICES</p>
-          <h2 style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: "800", color: "white", marginBottom: "16px" }}>
+          <h2 style={{ fontSize: "clamp(32px, 4vw, 48px)", fontWeight: "800", color: "#0f172a", marginBottom: "16px" }}>
             What We Can Do For You
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "16px", maxWidth: "480px", margin: "0 auto", lineHeight: "1.7" }}>
+          <p style={{ color: "rgba(15,23,42,0.62)", fontSize: "16px", maxWidth: "480px", margin: "0 auto", lineHeight: "1.7" }}>
             We offer end-to-end digital solutions to build your brand and grow your business.
           </p>
         </div>
@@ -225,10 +225,10 @@ export default function Services() {
                 <div className="service-platform" />
               </div>
 
-              <h3 style={{ fontSize: "19px", fontWeight: "700", color: "white", marginBottom: "12px" }}>
+              <h3 style={{ fontSize: "19px", fontWeight: "700", color: "#0f172a", marginBottom: "12px" }}>
                 {s.title}
               </h3>
-              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "14px", lineHeight: "1.7", marginBottom: "26px" }}>
+              <p style={{ color: "rgba(15,23,42,0.62)", fontSize: "14px", lineHeight: "1.7", marginBottom: "26px" }}>
                 {s.desc}
               </p>
 
@@ -268,17 +268,17 @@ export default function Services() {
         .service-card {
           position: relative;
           flex: 0 0 260px;
-          background: linear-gradient(180deg, rgba(30,27,60,0.55) 0%, rgba(10,10,20,0.75) 100%);
+          background: linear-gradient(180deg, rgba(238,242,255,0.9) 0%, rgba(255,255,255,0.85) 100%);
           backdrop-filter: blur(10px);
           -webkit-backdrop-filter: blur(10px);
-          border: 1px solid rgba(255,255,255,0.1);
+          border: 1px solid rgba(15,23,42,0.13);
           border-radius: 20px;
           padding: 44px 24px 32px;
           text-align: center;
           display: flex;
           flex-direction: column;
           align-items: center;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+          box-shadow: 0 10px 30px rgba(15,23,42,0.09);
           transition: all 0.3s ease;
           overflow: hidden;
         }
@@ -313,12 +313,12 @@ export default function Services() {
           font-size: 9px;
           font-weight: 700;
           letter-spacing: 1px;
-          color: rgba(255,255,255,0.4);
+          color: rgba(15,23,42,0.59);
         }
         .service-stat-value {
           font-size: 14px;
           font-weight: 800;
-          color: #8b8ff5;
+          color: #4f46e5;
         }
         .service-icon-stage {
           position: relative;

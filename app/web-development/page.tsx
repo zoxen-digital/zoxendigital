@@ -5,6 +5,8 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
 import SiteCarousel from "../components/SiteCarousel";
+import ClientPortal from "../components/ClientPortal";
+import PortalCompare from "../components/PortalCompare";
 
 export default function WebDevelopmentPage() {
   return (
@@ -14,6 +16,8 @@ export default function WebDevelopmentPage() {
       <SiteCarousel eyebrow="OUR WORK" heading="Sites We've Built & Launched" />
       <Testimonials />
       <Process />
+      <ClientPortal />
+      <PortalCompare />
       <Packages />
       <Contact />
       <Footer />
@@ -75,15 +79,15 @@ function WebDevHero() {
               <span className="section-eyebrow">WEB DEVELOPMENT</span>
             </div>
 
-            <h1 style={{ fontSize: "clamp(32px, 4.5vw, 52px)", fontWeight: "800", color: "white", lineHeight: "1.2", marginBottom: "24px" }}>
+            <h1 style={{ fontSize: "clamp(32px, 4.5vw, 52px)", fontWeight: "800", color: "#0f172a", lineHeight: "1.2", marginBottom: "24px" }}>
               Your Website. Live in 24-48 Hours. <span className="gradient-text">No Surprises.</span>
             </h1>
 
-            <p style={{ color: "#8b8ff5", fontSize: "16px", fontWeight: "600", lineHeight: "1.7", marginBottom: "16px" }}>
+            <p style={{ color: "#4f46e5", fontSize: "16px", fontWeight: "600", lineHeight: "1.7", marginBottom: "16px" }}>
               Free hosting included with every website package.
             </p>
 
-            <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "16px", lineHeight: "1.8", marginBottom: "36px", maxWidth: "560px" }}>
+            <p style={{ color: "rgba(15,23,42,0.68)", fontSize: "16px", lineHeight: "1.8", marginBottom: "36px", maxWidth: "560px" }}>
               Pay once, and our team starts today. You&apos;ll get a confirmation within minutes, a kickoff
               message within hours, and a live website within 48 hours. Over 50 businesses have launched with us.
             </p>
@@ -104,14 +108,14 @@ function WebDevHero() {
                   display: "flex",
                   alignItems: "center",
                   gap: "6px",
-                  border: "1px solid rgba(255,255,255,0.1)",
+                  border: "1px solid rgba(15,23,42,0.13)",
                   borderRadius: "50px",
                   padding: "6px 14px",
                 }}>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
                     <polyline points="20 6 9 17 4 12" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "12px", fontWeight: "500" }}>{t}</span>
+                  <span style={{ color: "rgba(15,23,42,0.71)", fontSize: "12px", fontWeight: "500" }}>{t}</span>
                 </div>
               ))}
             </div>
@@ -133,8 +137,8 @@ function WebDevHero() {
                     {s.icon}
                   </div>
                   <div>
-                    <div style={{ color: "white", fontSize: "18px", fontWeight: "800" }}>{s.num}</div>
-                    <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "12px" }}>{s.label}</div>
+                    <div style={{ color: "#0f172a", fontSize: "18px", fontWeight: "800" }}>{s.num}</div>
+                    <div style={{ color: "rgba(15,23,42,0.59)", fontSize: "12px" }}>{s.label}</div>
                   </div>
                 </div>
               ))}
@@ -145,7 +149,7 @@ function WebDevHero() {
           {/* Right - Standard Package highlight card */}
           <Reveal delay={0.15} style={{
             position: "relative",
-            background: "linear-gradient(180deg, rgba(99,102,241,0.1), rgba(15,15,25,0.7))",
+            background: "linear-gradient(180deg, rgba(99,102,241,0.1), rgba(255,255,255,0.7999999999999999))",
             border: "1px solid rgba(99,102,241,0.35)",
             borderRadius: "22px",
             padding: "32px",
@@ -167,26 +171,26 @@ function WebDevHero() {
             </span>
 
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px", flexWrap: "wrap", gap: "10px" }}>
-              <span style={{ color: "#8b8ff5", fontSize: "13px", fontWeight: "700", letterSpacing: "1px" }}>STANDARD PACKAGE</span>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "50px", padding: "5px 12px" }}>
+              <span style={{ color: "#4f46e5", fontSize: "13px", fontWeight: "700", letterSpacing: "1px" }}>STANDARD PACKAGE</span>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "rgba(15,23,42,0.07)", border: "1px solid rgba(15,23,42,0.13)", borderRadius: "50px", padding: "5px 12px" }}>
                 <div style={{ display: "flex", gap: "1px" }}>
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>
+                    <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="#d97706"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>
                   ))}
                 </div>
-                <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "11px" }}><strong style={{ color: "white" }}>5.0</strong> rating on Google</span>
+                <span style={{ color: "rgba(15,23,42,0.71)", fontSize: "11px" }}><strong style={{ color: "#0f172a" }}>5.0</strong> rating on Google</span>
               </div>
             </div>
 
             <div style={{ marginBottom: "8px" }}>
-              <span style={{ fontSize: "38px", fontWeight: "800", color: "white" }}>$99</span>
-              <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "14px" }}> one-time</span>
+              <span style={{ fontSize: "38px", fontWeight: "800", color: "#0f172a" }}>$99</span>
+              <span style={{ color: "rgba(15,23,42,0.59)", fontSize: "14px" }}> one-time</span>
             </div>
-            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "14px", marginBottom: "24px" }}>
+            <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "14px", marginBottom: "24px" }}>
               Clean, professional website to get online fast.
             </p>
 
-            <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)", marginBottom: "20px" }} />
+            <div style={{ borderTop: "1px solid rgba(15,23,42,0.1)", marginBottom: "20px" }} />
 
             <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "24px" }}>
               {features.map((f, i) => (
@@ -194,14 +198,14 @@ function WebDevHero() {
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
                     <polyline points="20 6 9 17 4 12" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span style={{ color: "rgba(255,255,255,0.75)", fontSize: "14px" }}>{f}</span>
+                  <span style={{ color: "rgba(15,23,42,0.8)", fontSize: "14px" }}>{f}</span>
                 </div>
               ))}
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="#8b8ff5" strokeWidth="2" strokeLinejoin="round" />
+                  <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
                 </svg>
-                <span style={{ color: "#8b8ff5", fontSize: "14px", fontWeight: "600" }}>30-Day Money-Back Guarantee</span>
+                <span style={{ color: "#4f46e5", fontSize: "14px", fontWeight: "600" }}>30-Day Money-Back Guarantee</span>
               </div>
             </div>
 
@@ -211,12 +215,12 @@ function WebDevHero() {
             </a>
             <a href="#packages" className="btn-secondary" style={{ width: "100%", justifyContent: "center", marginBottom: "20px" }}>
               View all packages
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </a>
 
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,0.4)", fontSize: "12px" }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeLinejoin="round" /></svg>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(15,23,42,0.59)", fontSize: "12px" }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="rgba(15,23,42,0.59)" strokeWidth="2" strokeLinejoin="round" /></svg>
                 Secure Payment by Stripe
               </div>
             </div>
@@ -260,16 +264,16 @@ function Testimonials() {
         <Reveal>
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
           <p className="section-eyebrow" style={{ marginBottom: "14px" }}>TESTIMONIALS</p>
-          <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: "800", color: "white", marginBottom: "16px" }}>
+          <h2 style={{ fontSize: "clamp(30px, 4vw, 44px)", fontWeight: "800", color: "#0f172a", marginBottom: "16px" }}>
             What Our Clients Say
           </h2>
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px" }}>
             <div style={{ display: "flex", gap: "2px" }}>
               {[...Array(5)].map((_, i) => (
-                <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#8b8ff5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>
+                <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#4f46e5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>
               ))}
             </div>
-            <span style={{ color: "rgba(255,255,255,0.5)", fontSize: "14px" }}>5.0 from happy clients</span>
+            <span style={{ color: "rgba(15,23,42,0.65)", fontSize: "14px" }}>5.0 from happy clients</span>
           </div>
         </div>
         </Reveal>
@@ -277,8 +281,8 @@ function Testimonials() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
           {reviews.map((r, i) => (
             <Reveal key={i} delay={i * 0.12} style={{
-              background: "rgba(255,255,255,0.02)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(15,23,42,0.03)",
+              border: "1px solid rgba(15,23,42,0.1)",
               borderRadius: "18px",
               padding: "28px",
             }}>
@@ -287,7 +291,7 @@ function Testimonials() {
                   width: "40px",
                   height: "40px",
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+                  background: "linear-gradient(135deg, #6366f1, #7c3aed)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -298,11 +302,11 @@ function Testimonials() {
                   {r.initials}
                 </div>
                 <div>
-                  <div style={{ color: "white", fontSize: "14px", fontWeight: "700" }}>{r.name}</div>
-                  <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "12px" }}>{r.business}</div>
+                  <div style={{ color: "#0f172a", fontSize: "14px", fontWeight: "700" }}>{r.name}</div>
+                  <div style={{ color: "rgba(15,23,42,0.59)", fontSize: "12px" }}>{r.business}</div>
                 </div>
               </div>
-              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "14px", lineHeight: "1.7" }}>&ldquo;{r.quote}&rdquo;</p>
+              <p style={{ color: "rgba(15,23,42,0.71)", fontSize: "14px", lineHeight: "1.7" }}>&ldquo;{r.quote}&rdquo;</p>
             </Reveal>
           ))}
         </div>
@@ -353,10 +357,10 @@ function Packages() {
         <Reveal>
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
           <p className="section-eyebrow" style={{ marginBottom: "14px" }}>PRICING</p>
-          <h2 style={{ fontSize: "clamp(30px, 4vw, 46px)", fontWeight: "800", color: "white", marginBottom: "16px" }}>
+          <h2 style={{ fontSize: "clamp(30px, 4vw, 46px)", fontWeight: "800", color: "#0f172a", marginBottom: "16px" }}>
             Choose The Perfect Plan
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "16px", maxWidth: "500px", margin: "0 auto" }}>
+          <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "16px", maxWidth: "500px", margin: "0 auto" }}>
             Transparent pricing. Pick a package and complete onboarding, we handle the rest.
           </p>
         </div>
@@ -369,8 +373,8 @@ function Packages() {
               delay={i * 0.1}
               style={{
                 position: "relative",
-                background: plan.popular ? "linear-gradient(180deg, rgba(99,102,241,0.1), rgba(20,20,35,0.6))" : "rgba(255,255,255,0.02)",
-                border: plan.popular ? "1px solid rgba(99,102,241,0.5)" : "1px solid rgba(255,255,255,0.08)",
+                background: plan.popular ? "linear-gradient(180deg, rgba(99,102,241,0.1), rgba(255,255,255,0.7))" : "rgba(15,23,42,0.03)",
+                border: plan.popular ? "1px solid rgba(99,102,241,0.5)" : "1px solid rgba(15,23,42,0.1)",
                 borderRadius: "20px",
                 padding: "32px 28px",
                 display: "flex",
@@ -396,12 +400,12 @@ function Packages() {
                 </span>
               )}
 
-              <h3 style={{ fontSize: "18px", fontWeight: "700", color: "white", marginBottom: "8px" }}>{plan.name}</h3>
+              <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#0f172a", marginBottom: "8px" }}>{plan.name}</h3>
               <div style={{ marginBottom: "12px" }}>
-                <span style={{ fontSize: "32px", fontWeight: "800", color: "white" }}>{plan.price}</span>
-                {plan.note && <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "13px" }}> {plan.note}</span>}
+                <span style={{ fontSize: "32px", fontWeight: "800", color: "#0f172a" }}>{plan.price}</span>
+                {plan.note && <span style={{ color: "rgba(15,23,42,0.59)", fontSize: "13px" }}> {plan.note}</span>}
               </div>
-              <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "13px", lineHeight: "1.6", marginBottom: "24px" }}>{plan.desc}</p>
+              <p style={{ color: "rgba(15,23,42,0.62)", fontSize: "13px", lineHeight: "1.6", marginBottom: "24px" }}>{plan.desc}</p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "28px", flex: 1 }}>
                 {plan.features.map((f, j) => (
@@ -409,7 +413,7 @@ function Packages() {
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style={{ marginTop: "2px", flexShrink: 0 }}>
                       <polyline points="20 6 9 17 4 12" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <span style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px" }}>{f}</span>
+                    <span style={{ color: "rgba(15,23,42,0.77)", fontSize: "13px" }}>{f}</span>
                   </div>
                 ))}
               </div>

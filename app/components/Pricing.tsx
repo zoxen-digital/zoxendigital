@@ -68,20 +68,20 @@ export default function Pricing() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
           <p className="section-eyebrow" style={{ marginBottom: "12px" }}>PRICING</p>
-          <h2 style={{ fontSize: "clamp(28px, 3.5vw, 44px)", fontWeight: "800", color: "white", marginBottom: "16px" }}>
+          <h2 style={{ fontSize: "clamp(28px, 3.5vw, 44px)", fontWeight: "800", color: "#0f172a", marginBottom: "16px" }}>
             Simple, Transparent Pricing
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "15px", marginBottom: "32px" }}>
+          <p style={{ color: "rgba(15,23,42,0.59)", fontSize: "15px", marginBottom: "32px" }}>
             No hidden fees. No surprises. Just results.
           </p>
 
           {/* Toggle */}
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "12px", background: "rgba(255,255,255,0.05)", padding: "6px", borderRadius: "50px" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: "12px", background: "rgba(15,23,42,0.07)", padding: "6px", borderRadius: "50px" }}>
             <button
               onClick={() => setAnnual(false)}
               style={{
                 background: !annual ? "linear-gradient(135deg, #6366f1, #4f46e5)" : "transparent",
-                color: "white",
+                color: !annual ? "white" : "#0f172a",
                 border: "none",
                 padding: "8px 20px",
                 borderRadius: "50px",
@@ -95,7 +95,7 @@ export default function Pricing() {
               onClick={() => setAnnual(true)}
               style={{
                 background: annual ? "linear-gradient(135deg, #6366f1, #4f46e5)" : "transparent",
-                color: "white",
+                color: annual ? "white" : "#0f172a",
                 border: "none",
                 padding: "8px 20px",
                 borderRadius: "50px",
@@ -125,8 +125,8 @@ export default function Pricing() {
             <div
               key={i}
               style={{
-                background: plan.popular ? "linear-gradient(135deg, rgba(99,102,241,0.15), rgba(79,70,229,0.1))" : "rgba(255,255,255,0.02)",
-                border: plan.popular ? "1px solid rgba(99,102,241,0.5)" : "1px solid rgba(255,255,255,0.06)",
+                background: plan.popular ? "linear-gradient(135deg, rgba(99,102,241,0.15), rgba(79,70,229,0.1))" : "rgba(15,23,42,0.03)",
+                border: plan.popular ? "1px solid rgba(99,102,241,0.5)" : "1px solid rgba(15,23,42,0.08)",
                 borderRadius: "20px",
                 padding: "36px",
                 position: "relative",
@@ -153,12 +153,12 @@ export default function Pricing() {
                 </div>
               )}
 
-              <h3 style={{ fontSize: "20px", fontWeight: "700", color: "white", marginBottom: "8px" }}>{plan.name}</h3>
-              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "13px", marginBottom: "24px", lineHeight: "1.5" }}>{plan.desc}</p>
+              <h3 style={{ fontSize: "20px", fontWeight: "700", color: "#0f172a", marginBottom: "8px" }}>{plan.name}</h3>
+              <p style={{ color: "rgba(15,23,42,0.59)", fontSize: "13px", marginBottom: "24px", lineHeight: "1.5" }}>{plan.desc}</p>
 
               <div style={{ marginBottom: "28px" }}>
-                <span style={{ fontSize: "44px", fontWeight: "800", color: "white" }}>${plan.price.toLocaleString()}</span>
-                <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "14px" }}> / project</span>
+                <span style={{ fontSize: "44px", fontWeight: "800", color: "#0f172a" }}>${plan.price.toLocaleString()}</span>
+                <span style={{ color: "rgba(15,23,42,0.59)", fontSize: "14px" }}> / project</span>
               </div>
 
               <a
@@ -172,8 +172,8 @@ export default function Pricing() {
                   fontSize: "15px",
                   textDecoration: "none",
                   background: plan.popular ? "linear-gradient(135deg, #6366f1, #4f46e5)" : "transparent",
-                  color: "white",
-                  border: plan.popular ? "none" : "1px solid rgba(255,255,255,0.2)",
+                  color: plan.popular ? "white" : "#0f172a",
+                  border: plan.popular ? "none" : "1px solid rgba(15,23,42,0.26)",
                   marginBottom: "28px",
                   transition: "all 0.3s",
                   boxShadow: plan.popular ? "0 6px 20px rgba(99,102,241,0.4)" : "none",
@@ -188,7 +188,7 @@ export default function Pricing() {
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                       <polyline points="20 6 9 17 4 12" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <span style={{ color: "rgba(255,255,255,0.65)", fontSize: "13px" }}>{f}</span>
+                    <span style={{ color: "rgba(15,23,42,0.74)", fontSize: "13px" }}>{f}</span>
                   </div>
                 ))}
               </div>

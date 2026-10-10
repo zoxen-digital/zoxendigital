@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer style={{
       background: "transparent",
-      borderTop: "1px solid rgba(255,255,255,0.06)",
+      borderTop: "1px solid rgba(15,23,42,0.08)",
       padding: "64px 80px 32px",
     }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -23,14 +23,14 @@ export default function Footer() {
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                 <circle cx="20" cy="20" r="18" stroke="#6366f1" strokeWidth="1.5" />
                 <ellipse cx="20" cy="20" rx="18" ry="7" stroke="#6366f1" strokeWidth="1.5" transform="rotate(-30 20 20)" />
-                <text x="20" y="25" textAnchor="middle" fill="white" fontSize="12" fontWeight="800" fontFamily="sans-serif">OX</text>
+                <text x="20" y="25" textAnchor="middle" fill="#0f172a" fontSize="12" fontWeight="800" fontFamily="sans-serif">OX</text>
               </svg>
               <div>
-                <div style={{ fontSize: "15px", fontWeight: "800", color: "white", letterSpacing: "2px" }}>ZOXEN</div>
+                <div style={{ fontSize: "15px", fontWeight: "800", color: "#0f172a", letterSpacing: "2px" }}>ZOXEN</div>
                 <div style={{ fontSize: "8px", color: "#6366f1", letterSpacing: "4px" }}>DIGITAL</div>
               </div>
             </div>
-            <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "13px", lineHeight: "1.8", marginBottom: "24px", maxWidth: "260px" }}>
+            <p style={{ color: "rgba(15,23,42,0.56)", fontSize: "13px", lineHeight: "1.8", marginBottom: "24px", maxWidth: "260px" }}>
               Building fast, modern, and conversion-focused websites that help businesses stand out and grow online.
             </p>
             {/* Social Icons */}
@@ -46,8 +46,8 @@ export default function Footer() {
                     width: "36px",
                     height: "36px",
                     borderRadius: "8px",
-                    background: "rgba(255,255,255,0.05)",
-                    border: "1px solid rgba(255,255,255,0.08)",
+                    background: "rgba(15,23,42,0.07)",
+                    border: "1px solid rgba(15,23,42,0.1)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -55,9 +55,9 @@ export default function Footer() {
                     transition: "all 0.2s",
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(99,102,241,0.15)"; e.currentTarget.style.borderColor = "rgba(99,102,241,0.3)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(15,23,42,0.07)"; e.currentTarget.style.borderColor = "rgba(15,23,42,0.1)"; }}
                 >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(15,23,42,0.65)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d={social.path} />
                   </svg>
                 </div>
@@ -68,15 +68,15 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(links).map(([section, items]) => (
             <div key={section}>
-              <h4 style={{ color: "white", fontSize: "13px", fontWeight: "700", marginBottom: "20px", letterSpacing: "1px" }}>{section.toUpperCase()}</h4>
+              <h4 style={{ color: "#0f172a", fontSize: "13px", fontWeight: "700", marginBottom: "20px", letterSpacing: "1px" }}>{section.toUpperCase()}</h4>
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                 {items.map((item) => (
                   <a
                     key={item}
                     href="#"
-                    style={{ color: "rgba(255,255,255,0.35)", fontSize: "13px", textDecoration: "none", transition: "color 0.2s" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.7)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.35)")}
+                    style={{ color: "rgba(15,23,42,0.56)", fontSize: "13px", textDecoration: "none", transition: "color 0.2s" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(15,23,42,0.77)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(15,23,42,0.56)")}
                   >
                     {item}
                   </a>
@@ -88,7 +88,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div style={{
-          borderTop: "1px solid rgba(255,255,255,0.06)",
+          borderTop: "1px solid rgba(15,23,42,0.08)",
           paddingTop: "28px",
           display: "flex",
           justifyContent: "space-between",
@@ -96,10 +96,10 @@ export default function Footer() {
           flexWrap: "wrap",
           gap: "16px",
         }}>
-          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "12px" }}>
+          <p style={{ color: "rgba(15,23,42,0.3)", fontSize: "12px" }}>
             © {new Date().getFullYear()} Zoxen Digital. All rights reserved.
           </p>
-          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "12px" }}>
+          <p style={{ color: "rgba(15,23,42,0.3)", fontSize: "12px" }}>
             Crafted with precision for growth-focused businesses.
           </p>
         </div>

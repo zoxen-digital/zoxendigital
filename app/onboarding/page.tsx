@@ -168,7 +168,7 @@ export default function OnboardingPage() {
 
   if (submitted) {
     return (
-      <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px", background: "#05050a" }}>
+      <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "40px", background: "#f8fafc" }}>
         <div style={{ maxWidth: "480px", textAlign: "center" }}>
           <div style={{
             width: "72px", height: "72px", borderRadius: "50%", background: "rgba(99,102,241,0.15)",
@@ -178,8 +178,8 @@ export default function OnboardingPage() {
               <polyline points="20 6 9 17 4 12" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <h1 style={{ fontSize: "28px", fontWeight: "800", color: "white", marginBottom: "12px" }}>You&apos;re All Set!</h1>
-          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "15px", lineHeight: "1.7" }}>
+          <h1 style={{ fontSize: "28px", fontWeight: "800", color: "#0f172a", marginBottom: "12px" }}>You&apos;re All Set!</h1>
+          <p style={{ color: "rgba(15,23,42,0.68)", fontSize: "15px", lineHeight: "1.7" }}>
             Thanks for sharing your project details. Our team will review everything and reach out within 24-48 hours to kick things off.
           </p>
         </div>
@@ -190,29 +190,29 @@ export default function OnboardingPage() {
   const progressPct = Math.round((step / 6) * 100);
 
   return (
-    <main style={{ minHeight: "100vh", background: "#05050a", padding: "32px 20px", display: "flex", justifyContent: "center" }}>
+    <main style={{ minHeight: "100vh", background: "#f8fafc", padding: "32px 20px", display: "flex", justifyContent: "center" }}>
       <div className="onboarding-shell" style={{
         width: "100%", maxWidth: "1180px", display: "flex",
-        background: "#0a0a12", border: "1px solid rgba(255,255,255,0.08)",
+        background: "#ffffff", border: "1px solid rgba(15,23,42,0.1)",
         borderRadius: "24px", overflow: "hidden",
       }}>
         {/* Sidebar */}
         <aside className="onboarding-sidebar" style={{
           width: "320px", flexShrink: 0, padding: "36px 32px",
-          borderRight: "1px solid rgba(255,255,255,0.08)",
+          borderRight: "1px solid rgba(15,23,42,0.1)",
           display: "flex", flexDirection: "column",
         }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "32px" }}>
-            <img src="/main-logo.png" alt="Zoxen Digital" style={{ height: "34px", width: "auto", objectFit: "contain" }} />
+            <img src="/main-logo-dark.png" alt="Zoxen Digital" style={{ height: "34px", width: "auto", objectFit: "contain" }} />
             <span style={{ fontSize: "16px", fontWeight: "800" }}>
-              <span style={{ color: "white" }}>Zoxen</span> <span style={{ color: "#8b8ff5" }}>Digital</span>
+              <span style={{ color: "#0f172a" }}>Zoxen</span> <span style={{ color: "#4f46e5" }}>Digital</span>
             </span>
           </div>
 
-          <h1 style={{ fontSize: "24px", fontWeight: "800", color: "white", lineHeight: "1.25", marginBottom: "14px" }}>
+          <h1 style={{ fontSize: "24px", fontWeight: "800", color: "#0f172a", lineHeight: "1.25", marginBottom: "14px" }}>
             Let&apos;s Build Something <span className="gradient-text">Amazing Together</span>
           </h1>
-          <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13.5px", lineHeight: "1.7", marginBottom: "28px" }}>
+          <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "13.5px", lineHeight: "1.7", marginBottom: "28px" }}>
             Please fill out the details below so we can understand your business and deliver the perfect solution.
           </p>
 
@@ -221,20 +221,20 @@ export default function OnboardingPage() {
             <svg width="160" height="90" viewBox="0 0 160 90" style={{ position: "absolute" }}>
               <ellipse cx="80" cy="45" rx="75" ry="22" fill="none" stroke="#6366f1" strokeWidth="1.5" opacity="0.5" transform="rotate(-12 80 45)" />
               <circle cx="80" cy="45" r="16" fill="rgba(99,102,241,0.15)" stroke="#6366f1" strokeWidth="1.5" />
-              <circle cx="142" cy="30" r="4" fill="#8b8ff5" />
+              <circle cx="142" cy="30" r="4" fill="#4f46e5" />
             </svg>
           </div>
 
           {/* Progress */}
           <div style={{ marginBottom: "28px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-              <span style={{ color: "#8b8ff5", fontSize: "11px", fontWeight: "700", letterSpacing: "0.5px" }}>ONBOARDING PROGRESS</span>
-              <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "11px" }}>Step {step} of 6</span>
+              <span style={{ color: "#4f46e5", fontSize: "11px", fontWeight: "700", letterSpacing: "0.5px" }}>ONBOARDING PROGRESS</span>
+              <span style={{ color: "rgba(15,23,42,0.59)", fontSize: "11px" }}>Step {step} of 6</span>
             </div>
-            <div style={{ height: "6px", borderRadius: "50px", background: "rgba(255,255,255,0.08)", overflow: "hidden" }}>
-              <div style={{ height: "100%", width: `${progressPct}%`, background: "linear-gradient(90deg, #6366f1, #8b5cf6)", transition: "width 0.3s ease" }} />
+            <div style={{ height: "6px", borderRadius: "50px", background: "rgba(15,23,42,0.1)", overflow: "hidden" }}>
+              <div style={{ height: "100%", width: `${progressPct}%`, background: "linear-gradient(90deg, #6366f1, #7c3aed)", transition: "width 0.3s ease" }} />
             </div>
-            <div style={{ textAlign: "right", color: "rgba(255,255,255,0.35)", fontSize: "11px", marginTop: "4px" }}>{progressPct}%</div>
+            <div style={{ textAlign: "right", color: "rgba(15,23,42,0.56)", fontSize: "11px", marginTop: "4px" }}>{progressPct}%</div>
           </div>
 
           {/* Feature list */}
@@ -247,12 +247,12 @@ export default function OnboardingPage() {
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <polyline points="20 6 9 17 4 12" stroke="#8b8ff5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <polyline points="20 6 9 17 4 12" stroke="#4f46e5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div>
-                  <div style={{ color: "white", fontSize: "13.5px", fontWeight: "700" }}>{f.title}</div>
-                  <div style={{ color: "rgba(255,255,255,0.4)", fontSize: "12px", marginTop: "1px" }}>{f.desc}</div>
+                  <div style={{ color: "#0f172a", fontSize: "13.5px", fontWeight: "700" }}>{f.title}</div>
+                  <div style={{ color: "rgba(15,23,42,0.59)", fontSize: "12px", marginTop: "1px" }}>{f.desc}</div>
                 </div>
               </div>
             ))}
@@ -260,17 +260,17 @@ export default function OnboardingPage() {
 
           {/* Need help */}
           <div style={{
-            marginTop: "28px", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)",
+            marginTop: "28px", background: "rgba(15,23,42,0.03)", border: "1px solid rgba(15,23,42,0.1)",
             borderRadius: "14px", padding: "18px",
           }}>
-            <div style={{ color: "white", fontSize: "13.5px", fontWeight: "700", marginBottom: "4px" }}>Need Help?</div>
-            <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "12px", marginBottom: "10px" }}>Our team is here to assist you.</div>
-            <a href="mailto:zoxendigital@gmail.com" style={{ display: "flex", alignItems: "center", gap: "6px", color: "#8b8ff5", fontSize: "12.5px", textDecoration: "none", marginBottom: "12px" }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#8b8ff5" strokeWidth="2" /><polyline points="22 6 12 13 2 6" stroke="#8b8ff5" strokeWidth="2" /></svg>
+            <div style={{ color: "#0f172a", fontSize: "13.5px", fontWeight: "700", marginBottom: "4px" }}>Need Help?</div>
+            <div style={{ color: "rgba(15,23,42,0.62)", fontSize: "12px", marginBottom: "10px" }}>Our team is here to assist you.</div>
+            <a href="mailto:zoxendigital@gmail.com" style={{ display: "flex", alignItems: "center", gap: "6px", color: "#4f46e5", fontSize: "12.5px", textDecoration: "none", marginBottom: "12px" }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="#4f46e5" strokeWidth="2" /><polyline points="22 6 12 13 2 6" stroke="#4f46e5" strokeWidth="2" /></svg>
               zoxendigital@gmail.com
             </a>
             <a href="mailto:zoxendigital@gmail.com?subject=Schedule%20a%20Call" className="btn-secondary" style={{ width: "100%", justifyContent: "center", fontSize: "12.5px", padding: "9px" }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="white" strokeWidth="2" /><path d="M3 9h18M8 2v4M16 2v4" stroke="white" strokeWidth="2" strokeLinecap="round" /></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#0f172a" strokeWidth="2" /><path d="M3 9h18M8 2v4M16 2v4" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" /></svg>
               Schedule a Call
             </a>
           </div>
@@ -287,10 +287,10 @@ export default function OnboardingPage() {
               <StepIcon step={step} />
             </div>
             <div>
-              <h2 style={{ fontSize: "22px", fontWeight: "800", color: "white" }}>Project Onboarding Form</h2>
+              <h2 style={{ fontSize: "22px", fontWeight: "800", color: "#0f172a" }}>Project Onboarding Form</h2>
               <p style={{ fontSize: "13.5px", marginTop: "2px" }}>
-                <span style={{ color: "#8b8ff5", fontWeight: "700" }}>Step {step} of 6</span>
-                <span style={{ color: "rgba(255,255,255,0.4)" }}> — {STEP_TITLES[step - 1]}</span>
+                <span style={{ color: "#4f46e5", fontWeight: "700" }}>Step {step} of 6</span>
+                <span style={{ color: "rgba(15,23,42,0.59)" }}> — {STEP_TITLES[step - 1]}</span>
               </p>
             </div>
           </div>
@@ -333,8 +333,8 @@ export default function OnboardingPage() {
                         onClick={() => setSelectedPackage(pkg.id)}
                         style={{
                           position: "relative", textAlign: "left",
-                          background: isSelected ? "rgba(99,102,241,0.12)" : "rgba(255,255,255,0.02)",
-                          border: isSelected ? "1px solid rgba(99,102,241,0.6)" : "1px solid rgba(255,255,255,0.08)",
+                          background: isSelected ? "rgba(99,102,241,0.12)" : "rgba(15,23,42,0.03)",
+                          border: isSelected ? "1px solid rgba(99,102,241,0.6)" : "1px solid rgba(15,23,42,0.1)",
                           borderRadius: "14px", padding: "16px", cursor: "pointer",
                         }}
                       >
@@ -344,9 +344,9 @@ export default function OnboardingPage() {
                             fontSize: "10px", fontWeight: "700", padding: "3px 10px", borderRadius: "50px",
                           }}>MOST POPULAR</span>
                         )}
-                        <div style={{ color: "white", fontSize: "14px", fontWeight: "700", marginBottom: "4px" }}>{pkg.id}</div>
-                        <div style={{ color: "#8b8ff5", fontSize: "19px", fontWeight: "800", marginBottom: "6px" }}>{pkg.price}</div>
-                        <div style={{ color: "rgba(255,255,255,0.45)", fontSize: "11.5px", lineHeight: "1.5" }}>{pkg.desc}</div>
+                        <div style={{ color: "#0f172a", fontSize: "14px", fontWeight: "700", marginBottom: "4px" }}>{pkg.id}</div>
+                        <div style={{ color: "#4f46e5", fontSize: "19px", fontWeight: "800", marginBottom: "6px" }}>{pkg.price}</div>
+                        <div style={{ color: "rgba(15,23,42,0.62)", fontSize: "11.5px", lineHeight: "1.5" }}>{pkg.desc}</div>
                       </button>
                     );
                   })}
@@ -398,8 +398,8 @@ export default function OnboardingPage() {
                 {uploadingLogo && <p style={hintStyle}>Uploading...</p>}
                 {logoUrl && (
                   <div style={{ marginTop: "10px", display: "flex", alignItems: "center", gap: "10px" }}>
-                    <img src={logoUrl} alt="Uploaded logo" style={{ height: "40px", borderRadius: "8px", background: "white", padding: "4px" }} />
-                    <span style={{ color: "#8b8ff5", fontSize: "12px" }}>Uploaded</span>
+                    <img src={logoUrl} alt="Uploaded logo" style={{ height: "40px", borderRadius: "8px", background: "#6366f1", padding: "4px" }} />
+                    <span style={{ color: "#4f46e5", fontSize: "12px" }}>Uploaded</span>
                   </div>
                 )}
               </div>
@@ -423,7 +423,7 @@ export default function OnboardingPage() {
                 <label style={labelStyle}>Additional Files (images, docs, etc.)</label>
                 <input type="file" multiple onChange={handleAttachmentsUpload} style={fileInputStyle} />
                 {uploadingFiles && <p style={hintStyle}>Uploading...</p>}
-                {attachmentUrls.length > 0 && <p style={{ marginTop: "8px", color: "#8b8ff5", fontSize: "12px" }}>{attachmentUrls.length} file(s) uploaded</p>}
+                {attachmentUrls.length > 0 && <p style={{ marginTop: "8px", color: "#4f46e5", fontSize: "12px" }}>{attachmentUrls.length} file(s) uploaded</p>}
               </div>
             </FieldGroup>
           )}
@@ -448,15 +448,15 @@ export default function OnboardingPage() {
               <div style={{
                 background: "rgba(99,102,241,0.06)", border: "1px solid rgba(99,102,241,0.2)",
                 borderRadius: "14px", padding: "16px 18px", marginTop: "20px", fontSize: "12.5px",
-                color: "rgba(255,255,255,0.6)", lineHeight: "1.7",
+                color: "rgba(15,23,42,0.71)", lineHeight: "1.7",
               }}>
-                <strong style={{ color: "white" }}>Timeline:</strong> Most websites are completed within 10-15 business days
+                <strong style={{ color: "#0f172a" }}>Timeline:</strong> Most websites are completed within 10-15 business days
                 after we receive all your content. 🔒 Your information is secure.
               </div>
             </FieldGroup>
           )}
 
-          {error && <div style={{ color: "#f87171", fontSize: "13.5px", marginTop: "8px" }}>{error}</div>}
+          {error && <div style={{ color: "#dc2626", fontSize: "13.5px", marginTop: "8px" }}>{error}</div>}
 
           {/* Nav buttons */}
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: "28px" }}>
@@ -466,7 +466,7 @@ export default function OnboardingPage() {
               className="btn-secondary"
               style={{ opacity: step === 1 ? 0.4 : 1, cursor: step === 1 ? "default" : "pointer" }}
             >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               Back
             </button>
 
@@ -494,21 +494,21 @@ export default function OnboardingPage() {
                   {i > 0 && (
                     <div style={{
                       position: "absolute", top: "15px", right: "50%", width: "100%", height: "1px",
-                      background: done || active ? "#6366f1" : "rgba(255,255,255,0.1)", zIndex: 0,
+                      background: done || active ? "#6366f1" : "rgba(15,23,42,0.13)", zIndex: 0,
                     }} />
                   )}
                   <div style={{
                     width: "30px", height: "30px", borderRadius: "50%", flexShrink: 0, position: "relative", zIndex: 1,
-                    background: active ? "#6366f1" : done ? "rgba(99,102,241,0.3)" : "#14141c",
-                    border: active || done ? "none" : "1px solid rgba(255,255,255,0.15)",
+                    background: active ? "#6366f1" : done ? "rgba(99,102,241,0.3)" : "#ffffff",
+                    border: active || done ? "none" : "1px solid rgba(15,23,42,0.2)",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "white", fontSize: "12px", fontWeight: "700",
+                    color: active ? "white" : "#0f172a", fontSize: "12px", fontWeight: "700",
                   }}>
                     {done ? (
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="#4338ca" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     ) : num}
                   </div>
-                  <span style={{ color: active ? "white" : "rgba(255,255,255,0.4)", fontSize: "11px", fontWeight: "600", marginTop: "8px" }}>{label}</span>
+                  <span style={{ color: active ? "#4338ca" : "rgba(15,23,42,0.59)", fontSize: "11px", fontWeight: "600", marginTop: "8px" }}>{label}</span>
                 </div>
               );
             })}
@@ -519,7 +519,7 @@ export default function OnboardingPage() {
       <style>{`
         @media (max-width: 900px) {
           .onboarding-shell { flex-direction: column !important; }
-          .onboarding-sidebar { width: 100% !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+          .onboarding-sidebar { width: 100% !important; border-right: none !important; border-bottom: 1px solid rgba(15,23,42,0.1); }
         }
         @media (max-width: 600px) {
           .onboarding-row { grid-template-columns: 1fr !important; }
@@ -533,12 +533,12 @@ export default function OnboardingPage() {
 const rowStyle: CSSProperties = { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" };
 
 function StepIcon({ step }: { step: number }) {
-  const common = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "#8b8ff5", strokeWidth: 2 };
+  const common = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "#4f46e5", strokeWidth: 2 };
   switch (step) {
     case 1: return <svg {...common}><circle cx="12" cy="8" r="4" /><path d="M4 21v-1a8 8 0 0116 0v1" strokeLinecap="round" /></svg>;
-    case 2: return <svg {...common}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4" /><circle cx="12" cy="12" r="0.5" fill="#8b8ff5" /></svg>;
+    case 2: return <svg {...common}><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4" /><circle cx="12" cy="12" r="0.5" fill="#4f46e5" /></svg>;
     case 3: return <svg {...common}><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></svg>;
-    case 4: return <svg {...common}><circle cx="12" cy="12" r="9" /><circle cx="9" cy="9" r="1.2" fill="#8b8ff5" /><circle cx="15" cy="9" r="1.2" fill="#8b8ff5" /><circle cx="9" cy="14.5" r="1.2" fill="#8b8ff5" /></svg>;
+    case 4: return <svg {...common}><circle cx="12" cy="12" r="9" /><circle cx="9" cy="9" r="1.2" fill="#4f46e5" /><circle cx="15" cy="9" r="1.2" fill="#4f46e5" /><circle cx="9" cy="14.5" r="1.2" fill="#4f46e5" /></svg>;
     case 5: return <svg {...common}><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="9" y1="13" x2="15" y2="13" strokeLinecap="round" /><line x1="9" y1="17" x2="13" y2="17" strokeLinecap="round" /></svg>;
     default: return <svg {...common}><path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" /><circle cx="12" cy="12" r="9" /></svg>;
   }
@@ -549,10 +549,10 @@ function FieldGroup({ icon, title, note, children }: { icon: string; title: stri
     <div style={{ marginBottom: "28px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
         <GroupIcon icon={icon} />
-        <h3 style={{ fontSize: "15px", fontWeight: "700", color: "white" }}>{title}</h3>
+        <h3 style={{ fontSize: "15px", fontWeight: "700", color: "#0f172a" }}>{title}</h3>
       </div>
-      <div style={{ borderBottom: "1px solid rgba(255,255,255,0.08)", marginBottom: "18px" }} />
-      {note && <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.45)", lineHeight: "1.6", marginBottom: "16px" }}>{note}</p>}
+      <div style={{ borderBottom: "1px solid rgba(15,23,42,0.1)", marginBottom: "18px" }} />
+      {note && <p style={{ fontSize: "12px", color: "rgba(15,23,42,0.62)", lineHeight: "1.6", marginBottom: "16px" }}>{note}</p>}
       {children}
     </div>
   );
@@ -575,24 +575,24 @@ function CheckPill({ label, checked, onToggle }: { label: string; checked: boole
       onClick={onToggle}
       style={{
         display: "flex", alignItems: "center", gap: "8px", textAlign: "left",
-        background: checked ? "rgba(99,102,241,0.12)" : "rgba(255,255,255,0.02)",
-        border: checked ? "1px solid rgba(99,102,241,0.5)" : "1px solid rgba(255,255,255,0.08)",
+        background: checked ? "rgba(99,102,241,0.12)" : "rgba(15,23,42,0.03)",
+        border: checked ? "1px solid rgba(99,102,241,0.5)" : "1px solid rgba(15,23,42,0.1)",
         borderRadius: "10px", padding: "10px 12px", cursor: "pointer",
       }}
     >
       <span style={{
         width: "16px", height: "16px", borderRadius: "4px", flexShrink: 0,
-        border: checked ? "none" : "1px solid rgba(255,255,255,0.3)",
+        border: checked ? "none" : "1px solid rgba(15,23,42,0.53)",
         background: checked ? "#6366f1" : "transparent",
         display: "flex", alignItems: "center", justifyContent: "center",
       }}>
         {checked && (
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-            <polyline points="20 6 9 17 4 12" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+            <polyline points="20 6 9 17 4 12" stroke="#0f172a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         )}
       </span>
-      <span style={{ color: "rgba(255,255,255,0.8)", fontSize: "13px" }}>{label}</span>
+      <span style={{ color: "rgba(15,23,42,0.83)", fontSize: "13px" }}>{label}</span>
     </button>
   );
 }
@@ -600,9 +600,9 @@ function CheckPill({ label, checked, onToggle }: { label: string; checked: boole
 function ReviewRow({ label, value }: { label: string; value?: string }) {
   if (!value) return null;
   return (
-    <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-      <span style={{ color: "rgba(255,255,255,0.45)", fontSize: "13px" }}>{label}</span>
-      <span style={{ color: "white", fontSize: "13px", fontWeight: "600", textAlign: "right" }}>{value}</span>
+    <div style={{ display: "flex", justifyContent: "space-between", gap: "16px", padding: "10px 0", borderBottom: "1px solid rgba(15,23,42,0.07)" }}>
+      <span style={{ color: "rgba(15,23,42,0.62)", fontSize: "13px" }}>{label}</span>
+      <span style={{ color: "#0f172a", fontSize: "13px", fontWeight: "600", textAlign: "right" }}>{value}</span>
     </div>
   );
 }
@@ -622,7 +622,7 @@ function Field({ label, value, onChange, placeholder, required, type = "text", a
   return (
     <div style={{ marginBottom: "16px" }}>
       <label style={labelStyle}>
-        {label} {required && <span style={{ color: "#8b8ff5" }}>*</span>}
+        {label} {required && <span style={{ color: "#4f46e5" }}>*</span>}
       </label>
       {as === "textarea" ? (
         <textarea
@@ -635,7 +635,7 @@ function Field({ label, value, onChange, placeholder, required, type = "text", a
       ) : as === "select" ? (
         <select value={value} onChange={(e) => onChange(e.target.value)} style={{ ...inputStyle, cursor: "pointer" }}>
           {options?.map((opt) => (
-            <option key={opt} value={opt} style={{ background: "#111" }}>{opt}</option>
+            <option key={opt} value={opt} style={{ background: "#ffffff" }}>{opt}</option>
           ))}
         </select>
       ) : (
@@ -652,17 +652,17 @@ function Field({ label, value, onChange, placeholder, required, type = "text", a
 }
 
 const labelStyle: CSSProperties = {
-  display: "block", color: "rgba(255,255,255,0.7)", fontSize: "13px", fontWeight: "600", marginBottom: "6px",
+  display: "block", color: "rgba(15,23,42,0.77)", fontSize: "13px", fontWeight: "600", marginBottom: "6px",
 };
 
 const inputStyle: CSSProperties = {
-  width: "100%", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)",
-  borderRadius: "10px", padding: "12px 16px", color: "white", fontSize: "14px", outline: "none",
+  width: "100%", background: "rgba(15,23,42,0.05)", border: "1px solid rgba(15,23,42,0.1)",
+  borderRadius: "10px", padding: "12px 16px", color: "#0f172a", fontSize: "14px", outline: "none",
 };
 
 const fileInputStyle: CSSProperties = {
-  width: "100%", background: "rgba(255,255,255,0.04)", border: "1px dashed rgba(255,255,255,0.15)",
-  borderRadius: "10px", padding: "12px 16px", color: "rgba(255,255,255,0.6)", fontSize: "13px",
+  width: "100%", background: "rgba(15,23,42,0.05)", border: "1px dashed rgba(15,23,42,0.2)",
+  borderRadius: "10px", padding: "12px 16px", color: "rgba(15,23,42,0.71)", fontSize: "13px",
 };
 
-const hintStyle: CSSProperties = { color: "#8b8ff5", fontSize: "12px", marginTop: "6px" };
+const hintStyle: CSSProperties = { color: "#4f46e5", fontSize: "12px", marginTop: "6px" };

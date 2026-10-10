@@ -54,15 +54,15 @@ export default function WhoWeAre() {
               <span className="section-eyebrow">WHO WE ARE</span>
             </div>
 
-            <h2 style={{ fontSize: "clamp(30px, 4vw, 46px)", fontWeight: "800", color: "white", marginBottom: "24px", lineHeight: "1.15" }}>
+            <h2 style={{ fontSize: "clamp(30px, 4vw, 46px)", fontWeight: "800", color: "#0f172a", marginBottom: "24px", lineHeight: "1.15" }}>
               A Web Partner <span className="gradient-text">Built for Growth</span>
             </h2>
 
-            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "16px", lineHeight: "1.8", marginBottom: "20px" }}>
+            <p style={{ color: "rgba(15,23,42,0.71)", fontSize: "16px", lineHeight: "1.8", marginBottom: "20px" }}>
               Zoxen Digital blends design and engineering under one roof. We don&apos;t just deliver websites, we build digital experiences that compound your results over time.
             </p>
 
-            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "16px", lineHeight: "1.8", marginBottom: "36px" }}>
+            <p style={{ color: "rgba(15,23,42,0.71)", fontSize: "16px", lineHeight: "1.8", marginBottom: "36px" }}>
               Since day one, we&apos;ve helped <span style={{ color: "#6366f1", fontWeight: "700" }}>50+ businesses</span> launch, grow and modernize. From startups to established brands, our team ships work that feels premium and performs even better.
             </p>
 
@@ -72,14 +72,14 @@ export default function WhoWeAre() {
                 <div key={i} style={{
                   flex: "1",
                   minWidth: "200px",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "rgba(15,23,42,0.04)",
+                  border: "1px solid rgba(15,23,42,0.1)",
                   borderRadius: "14px",
                   padding: "20px",
                 }}>
                   <div style={{ marginBottom: "10px" }}>{f.icon}</div>
-                  <h4 style={{ fontSize: "15px", fontWeight: "700", color: "white", marginBottom: "4px" }}>{f.title}</h4>
-                  <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)" }}>{f.desc}</p>
+                  <h4 style={{ fontSize: "15px", fontWeight: "700", color: "#0f172a", marginBottom: "4px" }}>{f.title}</h4>
+                  <p style={{ fontSize: "13px", color: "rgba(15,23,42,0.62)" }}>{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -89,7 +89,7 @@ export default function WhoWeAre() {
           {/* Right */}
           <Reveal delay={0.15}>
           <div>
-            <p style={{ textAlign: "right", color: "rgba(255,255,255,0.4)", fontSize: "12px", fontWeight: "700", letterSpacing: "2px", marginBottom: "16px" }}>
+            <p style={{ textAlign: "right", color: "rgba(15,23,42,0.59)", fontSize: "12px", fontWeight: "700", letterSpacing: "2px", marginBottom: "16px" }}>
               OUR WORK IN MOTION
             </p>
             {/* Laptop-style frame */}
@@ -100,18 +100,18 @@ export default function WhoWeAre() {
                 border: "1px solid rgba(99,102,241,0.2)",
                 borderBottom: "none",
                 boxShadow: "0 20px 60px rgba(99,102,241,0.15)",
-                background: "#000",
+                background: "#ffffff",
               }}>
-                <div style={{ height: "22px", background: "#0a0a0a", borderBottom: "1px solid rgba(255,255,255,0.05)" }} />
+                <div style={{ height: "22px", background: "#ffffff", borderBottom: "1px solid rgba(15,23,42,0.07)" }} />
                 <div style={{ width: "100%", aspectRatio: "16 / 10", overflow: "hidden" }}>
                   <img src="/image.png" alt="Zoxen Digital work" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
                 </div>
               </div>
               <div style={{
                 height: "10px",
-                background: "linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))",
+                background: "linear-gradient(180deg, rgba(15,23,42,0.1), rgba(15,23,42,0.03))",
                 borderRadius: "0 0 8px 8px",
-                border: "1px solid rgba(255,255,255,0.08)",
+                border: "1px solid rgba(15,23,42,0.1)",
                 borderTop: "none",
               }} />
             </div>
@@ -123,8 +123,8 @@ export default function WhoWeAre() {
         <div className="mission-vision-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", marginTop: "64px" }}>
           <Reveal>
           <div style={{
-            background: "rgba(255,255,255,0.03)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "rgba(15,23,42,0.04)",
+            border: "1px solid rgba(15,23,42,0.1)",
             borderRadius: "16px",
             padding: "28px",
             display: "flex",
@@ -148,8 +148,8 @@ export default function WhoWeAre() {
               </svg>
             </div>
             <div>
-              <h4 style={{ fontSize: "18px", fontWeight: "700", color: "white", marginBottom: "8px" }}>Our Mission</h4>
-              <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", lineHeight: "1.7" }}>
+              <h4 style={{ fontSize: "18px", fontWeight: "700", color: "#0f172a", marginBottom: "8px" }}>Our Mission</h4>
+              <p style={{ fontSize: "14px", color: "rgba(15,23,42,0.65)", lineHeight: "1.7" }}>
                 To empower businesses with websites that are beautiful, fast and built to scale, turning digital presence into real revenue.
               </p>
             </div>
@@ -158,8 +158,8 @@ export default function WhoWeAre() {
 
           <Reveal delay={0.15}>
           <div style={{
-            background: "rgba(255,255,255,0.03)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "rgba(15,23,42,0.04)",
+            border: "1px solid rgba(15,23,42,0.1)",
             borderRadius: "16px",
             padding: "28px",
             display: "flex",
@@ -182,8 +182,8 @@ export default function WhoWeAre() {
               </svg>
             </div>
             <div>
-              <h4 style={{ fontSize: "18px", fontWeight: "700", color: "white", marginBottom: "8px" }}>Our Vision</h4>
-              <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", lineHeight: "1.7" }}>
+              <h4 style={{ fontSize: "18px", fontWeight: "700", color: "#0f172a", marginBottom: "8px" }}>Our Vision</h4>
+              <p style={{ fontSize: "14px", color: "rgba(15,23,42,0.65)", lineHeight: "1.7" }}>
                 To be the go-to web partner for ambitious brands across the USA & Canada, setting the standard for premium, results-driven work.
               </p>
             </div>

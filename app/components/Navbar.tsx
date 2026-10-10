@@ -20,6 +20,7 @@ export default function Navbar() {
     { label: "Services", href: isHome ? "#services" : "/#services", dropdown: true },
     { label: "Web Development", href: "/web-development" },
     { label: "Our Work", href: isHome ? "#portfolio" : "/#portfolio" },
+    { label: "Client Portal", href: isHome || pathname === "/web-development" ? "#portal" : "/#portal" },
     { label: "Contact", href: isHome ? "#contact" : "/#contact" },
   ];
 
@@ -27,17 +28,17 @@ export default function Navbar() {
     <nav
       style={{
         position: "fixed",
-        top: scrolled ? "24px" : "16px",
+        top: scrolled ? "16px" : 0,
         left: scrolled ? "24px" : 0,
         right: scrolled ? "24px" : 0,
         zIndex: 100,
         height: "68px",
-        background: scrolled ? "rgba(10,10,20,0.75)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
-        border: scrolled ? "1px solid rgba(255,255,255,0.08)" : "1px solid transparent",
+        background: scrolled ? "rgba(255,255,255,0.95)" : "#ffffff",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
+        border: scrolled ? "1px solid rgba(15,23,42,0.1)" : "1px solid rgba(15,23,42,0.06)",
         borderRadius: scrolled ? "20px" : 0,
-        boxShadow: scrolled ? "0 8px 32px rgba(0,0,0,0.35)" : "none",
+        boxShadow: scrolled ? "0 8px 32px rgba(15,23,42,0.1)" : "0 1px 0 rgba(15,23,42,0.04)",
         transition: "all 0.3s ease",
       }}
       className="navbar"
@@ -54,11 +55,11 @@ export default function Navbar() {
         {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: "8px", height: "40px" }}>
           <div style={{ height: "40px", width: "40px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-            <img src="/main-logo.png" alt="Zoxen Digital" style={{ display: "block", maxHeight: "34px", maxWidth: "40px", objectFit: "contain" }} />
+            <img src="/main-logo-dark.png" alt="Zoxen Digital" style={{ display: "block", maxHeight: "34px", maxWidth: "40px", objectFit: "contain" }} />
           </div>
           <span style={{ fontSize: "19px", fontWeight: "800", lineHeight: "40px", whiteSpace: "nowrap" }}>
-            <span style={{ color: "white" }}>Zoxen</span>&nbsp;
-            <span style={{ color: "#8b8ff5" }}>Digital</span>
+            <span style={{ color: "#0f172a" }}>Zoxen</span>&nbsp;
+            <span style={{ color: "#4f46e5" }}>Digital</span>
           </span>
         </div>
 
@@ -74,16 +75,16 @@ export default function Navbar() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "5px",
-                  color: isActive ? "white" : "rgba(255,255,255,0.6)",
+                  color: isActive ? "#0f172a" : "#334155",
                   fontSize: "14px",
-                  fontWeight: "500",
+                  fontWeight: "600",
                   textDecoration: "none",
                   transition: "color 0.2s",
                   borderBottom: isActive ? "2px solid #6366f1" : "none",
                   paddingBottom: "2px",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "white")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? "white" : "rgba(255,255,255,0.6)")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#0f172a")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = isActive ? "#0f172a" : "#334155")}
               >
                 {link.label}
                 {link.dropdown && (
@@ -106,8 +107,8 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             style={{
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.1)",
+              background: "rgba(15,23,42,0.05)",
+              border: "1px solid rgba(15,23,42,0.13)",
               borderRadius: "12px",
               cursor: "pointer",
               padding: "10px",
@@ -116,11 +117,11 @@ export default function Navbar() {
             }}
             className="show-mobile"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               {menuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                <path d="M6 18L18 6M6 6l12 12" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
               ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" />
               )}
             </svg>
           </button>
@@ -134,12 +135,12 @@ export default function Navbar() {
           top: "calc(100% + 12px)",
           left: 0,
           right: 0,
-          background: "rgba(10,10,20,0.9)",
+          background: "rgba(255,255,255,0.92)",
           backdropFilter: "blur(20px)",
           WebkitBackdropFilter: "blur(20px)",
-          border: "1px solid rgba(255,255,255,0.08)",
+          border: "1px solid rgba(15,23,42,0.1)",
           borderRadius: "18px",
-          boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
+          boxShadow: "0 8px 32px rgba(15,23,42,0.09)",
           padding: "20px 28px",
           display: "flex",
           flexDirection: "column",
@@ -150,7 +151,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              style={{ display: "inline-flex", alignItems: "center", gap: "5px", color: "rgba(255,255,255,0.8)", fontSize: "15px", textDecoration: "none" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: "5px", color: "rgba(15,23,42,0.83)", fontSize: "15px", textDecoration: "none" }}
             >
               {link.label}
               {link.dropdown && (
@@ -183,10 +184,10 @@ export default function Navbar() {
             left: 16px !important;
             right: 16px !important;
             height: 60px !important;
-            background: rgba(10,10,20,0.75) !important;
+            background: rgba(255,255,255,0.85) !important;
             backdrop-filter: blur(20px) !important;
             -webkit-backdrop-filter: blur(20px) !important;
-            border: 1px solid rgba(255,255,255,0.08) !important;
+            border: 1px solid rgba(15,23,42,0.1) !important;
             border-radius: 18px !important;
           }
           .navbar > div { padding: 0 18px !important; }

@@ -84,7 +84,7 @@ export default function HomeProcess() {
           <span className="badge-dot" style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#6366f1", display: "inline-block" }} />
           <span className="section-eyebrow">OUR PROCESS</span>
         </div>
-        <h2 style={{ fontSize: "clamp(30px, 4vw, 48px)", fontWeight: "800", color: "white", marginBottom: "64px", lineHeight: "1.15" }}>
+        <h2 style={{ fontSize: "clamp(30px, 4vw, 48px)", fontWeight: "800", color: "#0f172a", marginBottom: "64px", lineHeight: "1.15" }}>
           A Proven Roadmap To Your{" "}
           <span className="gradient-text">Growth.</span>
         </h2>
@@ -119,9 +119,9 @@ export default function HomeProcess() {
               }}>
                 {step.icon}
               </div>
-              <div style={{ fontSize: "26px", fontWeight: "800", color: "white", marginBottom: "6px" }}>{step.num}</div>
-              <h3 style={{ fontSize: "18px", fontWeight: "700", color: "white", marginBottom: "10px" }}>{step.title}</h3>
-              <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", lineHeight: "1.6", maxWidth: "180px" }}>{step.desc}</p>
+              <div style={{ fontSize: "26px", fontWeight: "800", color: "#0f172a", marginBottom: "6px" }}>{step.num}</div>
+              <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#0f172a", marginBottom: "10px" }}>{step.title}</h3>
+              <p style={{ fontSize: "14px", color: "rgba(15,23,42,0.62)", lineHeight: "1.6", maxWidth: "180px" }}>{step.desc}</p>
             </div>
             </Reveal>
           ))}
