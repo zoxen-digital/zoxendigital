@@ -483,6 +483,13 @@ export default function OnboardingPage() {
             )}
           </div>
 
+          {step === 6 && (
+            <p style={{ textAlign: "right", fontSize: "12.5px", color: "rgba(15,23,42,0.55)", marginTop: "14px" }}>
+              By submitting you agree to our{" "}
+              <a href="/privacy-policy" style={{ color: "#4f46e5", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "3px" }}>Privacy Policy</a>.
+            </p>
+          )}
+
           {/* Step indicator */}
           <div className="onboarding-steps" style={{ display: "flex", justifyContent: "space-between", marginTop: "36px" }}>
             {STEP_LABELS.map((label, i) => {

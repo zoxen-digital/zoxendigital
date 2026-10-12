@@ -2,10 +2,26 @@
 import Reveal from "./Reveal";
 
 export default function Footer() {
-  const links = {
-    Company: ["About Us", "Portfolio", "Process", "Automation", "Contact"],
-    Services: ["Web Design", "Web Development", "SEO Optimization", "Website Maintenance"],
-    Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+  const links: Record<string, { label: string; href: string }[]> = {
+    Company: [
+      { label: "About Us", href: "/#about" },
+      { label: "Portfolio", href: "/#portfolio" },
+      { label: "Client Portal", href: "/#portal" },
+      { label: "Process", href: "/#process" },
+      { label: "Contact", href: "/#contact" },
+    ],
+    Services: [
+      { label: "Web Design", href: "/#services" },
+      { label: "Web Development", href: "/web-development" },
+      { label: "SEO Optimization", href: "/#services" },
+      { label: "AI & Automation", href: "/#automation" },
+    ],
+    Legal: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Refund Policy", href: "/refund-policy" },
+      { label: "Data Deletion", href: "/data-deletion" },
+    ],
   };
 
   return (
@@ -69,13 +85,13 @@ export default function Footer() {
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                 {items.map((item) => (
                   <a
-                    key={item}
-                    href="#"
+                    key={item.label}
+                    href={item.href}
                     style={{ color: "rgba(15,23,42,0.56)", fontSize: "13px", textDecoration: "none", transition: "color 0.2s" }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(15,23,42,0.77)")}
                     onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(15,23,42,0.56)")}
                   >
-                    {item}
+                    {item.label}
                   </a>
                 ))}
               </div>

@@ -285,6 +285,10 @@ export default function Contact() {
                     </svg>
                     {sending ? "Sending..." : "Send Message"}
                   </button>
+                  <p style={{ textAlign: "center", fontSize: "12.5px", color: "rgba(15,23,42,0.55)", marginTop: "-4px" }}>
+                    By submitting you agree to our{" "}
+                    <a href="/privacy-policy" style={{ color: "#4f46e5", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "3px" }}>Privacy Policy</a>.
+                  </p>
                 </form>
               )}
             </Reveal>
