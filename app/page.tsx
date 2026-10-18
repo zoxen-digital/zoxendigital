@@ -2,7 +2,8 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import WhoWeAre from "./components/WhoWeAre";
 import Services from "./components/Services";
-import Portfolio from "./components/Portfolio";
+// Our Work section hidden for now; uncomment to bring it back.
+// import Portfolio from "./components/Portfolio";
 import HomeProcess from "./components/HomeProcess";
 import ClientPortal from "./components/ClientPortal";
 import PortalJourney from "./components/PortalJourney";
@@ -18,7 +19,7 @@ export default function Home() {
       <Hero />
       <WhoWeAre />
       <Services />
-      <Portfolio />
+      {/* <Portfolio /> */}
       <HomeProcess />
       <ClientPortal />
       <PortalJourney />

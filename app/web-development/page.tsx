@@ -4,7 +4,8 @@ import Process from "../components/Process";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
-import SiteCarousel from "../components/SiteCarousel";
+// Our Work carousel hidden for now; uncomment to bring it back.
+// import SiteCarousel from "../components/SiteCarousel";
 import ClientPortal from "../components/ClientPortal";
 import PortalJourney from "../components/PortalJourney";
 import PortalCompare from "../components/PortalCompare";
@@ -14,7 +15,7 @@ export default function WebDevelopmentPage() {
     <main>
       <Navbar />
       <WebDevHero />
-      <SiteCarousel eyebrow="OUR WORK" heading="Sites We've Built & Launched" />
+      {/* <SiteCarousel eyebrow="OUR WORK" heading="Sites We've Built & Launched" /> */}
       <Testimonials />
       <Process />
       <ClientPortal />
@@ -151,7 +152,7 @@ function WebDevHero() {
           {/* Right - Standard Package highlight card */}
           <Reveal delay={0.15} style={{
             position: "relative",
-            background: "linear-gradient(180deg, rgba(99,102,241,0.1), rgba(255,255,255,0.7999999999999999))",
+            background: "linear-gradient(180deg, rgba(99,102,241,0.1), rgba(255,255,255,0.8))",
             border: "1px solid rgba(99,102,241,0.35)",
             borderRadius: "22px",
             padding: "32px",
@@ -169,7 +170,7 @@ function WebDevHero() {
               padding: "5px 14px",
               borderRadius: "50px",
             }}>
-              BEST VALUE
+              SPECIAL OFFER
             </span>
 
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px", flexWrap: "wrap", gap: "10px" }}>
@@ -188,9 +189,26 @@ function WebDevHero() {
               <span style={{ fontSize: "38px", fontWeight: "800", color: "#0f172a" }}>$99</span>
               <span style={{ color: "rgba(15,23,42,0.59)", fontSize: "14px" }}> one-time</span>
             </div>
-            <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "14px", marginBottom: "24px" }}>
+            <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "14px", marginBottom: "18px" }}>
               Clean, professional website to get online fast.
             </p>
+
+            {/* Free AI chatbot offer */}
+            <div className="chatbot-offer">
+              <div className="chatbot-offer-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="white" strokeWidth="2" strokeLinejoin="round" /></svg>
+                <span className="chatbot-offer-dots"><span /><span /><span /></span>
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: "16px", fontWeight: 800, color: "#0f172a", lineHeight: 1.25 }}>
+                  + <span className="gradient-text">FREE</span> AI Chatbot
+                </div>
+                <div style={{ fontSize: "12.5px", color: "rgba(15,23,42,0.6)", marginTop: "3px" }}>
+                  Answers visitors 24/7 &amp; captures leads. Usually <s style={{ color: "#dc2626", fontWeight: 700 }}>$30</s>
+                </div>
+              </div>
+              <span className="chatbot-offer-tag">FREE</span>
+            </div>
 
             <div style={{ borderTop: "1px solid rgba(15,23,42,0.1)", marginBottom: "20px" }} />
 
@@ -231,6 +249,30 @@ function WebDevHero() {
       </div>
 
       <style>{`
+        .chatbot-offer {
+          position: relative; display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+          padding: 14px 16px; border-radius: 16px; background: #ffffff;
+          border: 1.5px dashed rgba(99,102,241,0.45); box-shadow: 0 10px 26px rgba(79,70,229,0.12);
+          animation: offer-glow 2.6s ease-in-out infinite;
+        }
+        @keyframes offer-glow { 0%,100% { box-shadow: 0 10px 26px rgba(79,70,229,0.12); } 50% { box-shadow: 0 10px 34px rgba(79,70,229,0.28); } }
+        .chatbot-offer-icon {
+          position: relative; flex-shrink: 0; width: 46px; height: 46px; border-radius: 14px;
+          display: flex; align-items: center; justify-content: center;
+          background: linear-gradient(135deg, #3b82f6, #6366f1 55%, #7c3aed); box-shadow: 0 8px 18px rgba(79,70,229,0.35);
+          animation: float 4s ease-in-out infinite;
+        }
+        .chatbot-offer-dots { position: absolute; top: 15px; left: 0; right: 0; display: flex; justify-content: center; gap: 3px; transform: translateY(-1px); }
+        .chatbot-offer-dots span { width: 3.5px; height: 3.5px; border-radius: 50%; background: #ffffff; animation: offer-typing 1.2s ease-in-out infinite; }
+        .chatbot-offer-dots span:nth-child(2) { animation-delay: 0.15s; }
+        .chatbot-offer-dots span:nth-child(3) { animation-delay: 0.3s; }
+        @keyframes offer-typing { 0%,60%,100% { opacity: 0.4; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-2px); } }
+        .chatbot-offer-tag {
+          flex-shrink: 0; font-size: 11px; font-weight: 800; letter-spacing: 1px; color: #ffffff;
+          background: linear-gradient(135deg, #22c55e, #16a34a); padding: 5px 10px; border-radius: 50px;
+          box-shadow: 0 4px 12px rgba(22,163,74,0.3);
+        }
+        @media (max-width: 420px) { .chatbot-offer-tag { display: none; } }
         @media (max-width: 900px) {
           .webdev-hero-grid { grid-template-columns: 1fr !important; }
         }
@@ -324,7 +366,7 @@ function Packages() {
       price: "$99",
       note: "one-time",
       desc: "Clean, professional website to get online fast.",
-      features: ["Up to 5 pages", "Contact form", "Stock photos", "Mobile responsive", "Basic on-page SEO", "Free hosting included"],
+      features: ["FREE AI Chatbot (usually $30)", "Up to 5 pages", "Contact form", "Stock photos", "Mobile responsive", "Basic on-page SEO", "Free hosting included"],
       popular: false,
     },
     {

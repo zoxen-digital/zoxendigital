@@ -19,7 +19,6 @@ export default function Navbar() {
     { label: "About Us", href: isHome ? "#about" : "/#about" },
     { label: "Services", href: isHome ? "#services" : "/#services", dropdown: true },
     { label: "Web Development", href: "/web-development" },
-    { label: "Our Work", href: isHome ? "#portfolio" : "/#portfolio" },
     { label: "Client Portal", href: isHome || pathname === "/web-development" ? "#portal" : "/#portal" },
     { label: "Contact", href: isHome ? "#contact" : "/#contact" },
   ];

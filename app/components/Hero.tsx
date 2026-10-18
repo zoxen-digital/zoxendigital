@@ -101,8 +101,8 @@ export default function Hero() {
               Get Started
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </a>
-            <a href="#portfolio" className="btn-secondary">
-              View Our Work
+            <a href="#portal" className="btn-secondary">
+              See How It Works
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </a>
           </div>

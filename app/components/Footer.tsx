@@ -5,7 +5,6 @@ export default function Footer() {
   const links: Record<string, { label: string; href: string }[]> = {
     Company: [
       { label: "About Us", href: "/#about" },
-      { label: "Portfolio", href: "/#portfolio" },
       { label: "Client Portal", href: "/#portal" },
       { label: "Process", href: "/#process" },
       { label: "Contact", href: "/#contact" },
