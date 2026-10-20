@@ -4,16 +4,15 @@ import Reveal from "./Reveal";
 export default function Footer() {
   const links: Record<string, { label: string; href: string }[]> = {
     Company: [
-      { label: "About Us", href: "/#about" },
       { label: "Client Portal", href: "/#portal" },
       { label: "Process", href: "/#process" },
       { label: "Contact", href: "/#contact" },
     ],
     Services: [
-      { label: "Web Design", href: "/#services" },
+      { label: "All Services", href: "/services" },
       { label: "Web Development", href: "/web-development" },
-      { label: "SEO Optimization", href: "/#services" },
-      { label: "AI & Automation", href: "/#automation" },
+      { label: "AI Agents", href: "/services#ai-agent" },
+      { label: "AI & Automation", href: "/services#ai-automation" },
     ],
     Legal: [
       { label: "Privacy Policy", href: "/privacy-policy" },

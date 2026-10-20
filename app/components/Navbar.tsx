@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import ProjectModal from "./ProjectModal";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [projectOpen, setProjectOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -14,16 +16,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: { label: string; href: string; dropdown?: boolean }[] = [
     { label: "Home", href: isHome ? "#home" : "/" },
-    { label: "About Us", href: isHome ? "#about" : "/#about" },
-    { label: "Services", href: isHome ? "#services" : "/#services", dropdown: true },
+    { label: "Services", href: "/services" },
     { label: "Web Development", href: "/web-development" },
     { label: "Client Portal", href: isHome || pathname === "/web-development" ? "#portal" : "/#portal" },
     { label: "Contact", href: isHome ? "#contact" : "/#contact" },
   ];
 
   return (
+    <>
     <nav
       style={{
         position: "fixed",
@@ -65,7 +67,7 @@ export default function Navbar() {
         {/* Desktop Links */}
         <div style={{ display: "flex", alignItems: "center", gap: "32px" }} className="hidden-mobile">
           {navLinks.map((link) => {
-            const isActive = link.label === "Home" ? isHome : link.label === "Web Development" && pathname === "/web-development";
+            const isActive = link.label === "Home" ? isHome : link.href === pathname;
             return (
               <a
                 key={link.label}
@@ -98,10 +100,10 @@ export default function Navbar() {
 
         {/* CTA */}
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <a href="#contact" className="btn-primary hidden-mobile" style={{ fontSize: "14px", padding: "10px 22px", gap: "8px" }}>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.67 13 19.79 19.79 0 011.61 4.4 2 2 0 013.6 2.22h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.18 6.18l.97-.97a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            Book Strategy
-          </a>
+          <button type="button" onClick={() => setProjectOpen(true)} className="btn-primary hidden-mobile" style={{ fontSize: "14px", padding: "10px 22px", gap: "8px" }}>
+            Start Your Project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </button>
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -160,15 +162,15 @@ export default function Navbar() {
               )}
             </a>
           ))}
-          <a
-            href="#contact"
+          <button
+            type="button"
             className="btn-primary"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => { setMenuOpen(false); setProjectOpen(true); }}
             style={{ fontSize: "14px", padding: "10px 22px", justifyContent: "center", gap: "8px" }}
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.67 13 19.79 19.79 0 011.61 4.4 2 2 0 013.6 2.22h3a2 2 0 012 1.72 12.8 12.8 0 00.7 2.81 2 2 0 01-.45 2.11L7.91 9.91a16 16 0 006.18 6.18l.97-.97a2 2 0 012.11-.45 12.8 12.8 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            Book Strategy
-          </a>
+            Start Your Project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </button>
         </div>
       )}
 
@@ -193,5 +195,7 @@ export default function Navbar() {
         }
       `}</style>
     </nav>
+    <ProjectModal open={projectOpen} onClose={() => setProjectOpen(false)} />
+    </>
   );
 }

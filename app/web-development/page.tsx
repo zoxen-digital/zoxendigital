@@ -1,9 +1,10 @@
 "use client";
 import Navbar from "../components/Navbar";
 import Process from "../components/Process";
-import Contact from "../components/Contact";
+import CtaBar from "../components/CtaBar";
 import Footer from "../components/Footer";
 import Reveal from "../components/Reveal";
+import PackageCard from "./PackageCard";
 // Our Work carousel hidden for now; uncomment to bring it back.
 // import SiteCarousel from "../components/SiteCarousel";
 import ClientPortal from "../components/ClientPortal";
@@ -22,14 +23,13 @@ export default function WebDevelopmentPage() {
       <PortalJourney />
       <PortalCompare />
       <Packages />
-      <Contact />
+      <CtaBar />
       <Footer />
     </main>
   );
 }
 
 function WebDevHero() {
-  const features = ["Up to 5 pages", "Contact form", "Stock photos", "Mobile responsive", "Basic on-page SEO", "Free hosting included"];
   const stats = [
     {
       num: "50+",
@@ -57,7 +57,7 @@ function WebDevHero() {
   return (
     <section
       style={{
-        padding: "150px 80px 90px",
+        padding: "120px 80px 70px",
         background: "transparent",
         position: "relative",
         overflow: "hidden",
@@ -82,15 +82,15 @@ function WebDevHero() {
               <span className="section-eyebrow">WEB DEVELOPMENT</span>
             </div>
 
-            <h1 style={{ fontSize: "clamp(32px, 4.5vw, 52px)", fontWeight: "800", color: "#0f172a", lineHeight: "1.2", marginBottom: "24px" }}>
+            <h1 style={{ fontSize: "clamp(38px, 4.8vw, 64px)", fontWeight: "800", color: "#0f172a", lineHeight: "1.04", letterSpacing: "-2.5px", marginBottom: "28px" }}>
               Your Website. Live in 24-48 Hours. <span className="gradient-text">No Surprises.</span>
             </h1>
 
-            <p style={{ color: "#4f46e5", fontSize: "16px", fontWeight: "600", lineHeight: "1.7", marginBottom: "16px" }}>
+            <p style={{ color: "#4f46e5", fontSize: "18px", fontWeight: "600", lineHeight: "1.7", marginBottom: "14px" }}>
               Free hosting included with every website package.
             </p>
 
-            <p style={{ color: "rgba(15,23,42,0.68)", fontSize: "16px", lineHeight: "1.8", marginBottom: "36px", maxWidth: "560px" }}>
+            <p style={{ color: "rgba(15,23,42,0.62)", fontSize: "19px", lineHeight: "1.7", marginBottom: "36px", maxWidth: "580px" }}>
               Pay once, and our team starts today. You&apos;ll get a confirmation within minutes, a kickoff
               message within hours, and a live website within 48 hours. Over 50 businesses have launched with us.
             </p>
@@ -149,130 +149,12 @@ function WebDevHero() {
           </div>
           </Reveal>
 
-          {/* Right - Standard Package highlight card */}
-          <Reveal delay={0.15} style={{
-            position: "relative",
-            background: "linear-gradient(180deg, rgba(99,102,241,0.1), rgba(255,255,255,0.8))",
-            border: "1px solid rgba(99,102,241,0.35)",
-            borderRadius: "22px",
-            padding: "32px",
-            boxShadow: "0 0 50px rgba(99,102,241,0.15)",
-          }}>
-            <span style={{
-              position: "absolute",
-              top: "-13px",
-              left: "32px",
-              background: "#6366f1",
-              color: "white",
-              fontSize: "11px",
-              fontWeight: "700",
-              letterSpacing: "0.5px",
-              padding: "5px 14px",
-              borderRadius: "50px",
-            }}>
-              SPECIAL OFFER
-            </span>
-
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px", flexWrap: "wrap", gap: "10px" }}>
-              <span style={{ color: "#4f46e5", fontSize: "13px", fontWeight: "700", letterSpacing: "1px" }}>STANDARD PACKAGE</span>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "rgba(15,23,42,0.07)", border: "1px solid rgba(15,23,42,0.13)", borderRadius: "50px", padding: "5px 12px" }}>
-                <div style={{ display: "flex", gap: "1px" }}>
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="10" height="10" viewBox="0 0 24 24" fill="#d97706"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>
-                  ))}
-                </div>
-                <span style={{ color: "rgba(15,23,42,0.71)", fontSize: "11px" }}><strong style={{ color: "#0f172a" }}>5.0</strong> rating on Google</span>
-              </div>
-            </div>
-
-            <div style={{ marginBottom: "8px" }}>
-              <span style={{ fontSize: "38px", fontWeight: "800", color: "#0f172a" }}>$99</span>
-              <span style={{ color: "rgba(15,23,42,0.59)", fontSize: "14px" }}> one-time</span>
-            </div>
-            <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "14px", marginBottom: "18px" }}>
-              Clean, professional website to get online fast.
-            </p>
-
-            {/* Free AI chatbot offer */}
-            <div className="chatbot-offer">
-              <div className="chatbot-offer-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="white" strokeWidth="2" strokeLinejoin="round" /></svg>
-                <span className="chatbot-offer-dots"><span /><span /><span /></span>
-              </div>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: "16px", fontWeight: 800, color: "#0f172a", lineHeight: 1.25 }}>
-                  + <span className="gradient-text">FREE</span> AI Chatbot
-                </div>
-                <div style={{ fontSize: "12.5px", color: "rgba(15,23,42,0.6)", marginTop: "3px" }}>
-                  Answers visitors 24/7 &amp; captures leads. Usually <s style={{ color: "#dc2626", fontWeight: 700 }}>$30</s>
-                </div>
-              </div>
-              <span className="chatbot-offer-tag">FREE</span>
-            </div>
-
-            <div style={{ borderTop: "1px solid rgba(15,23,42,0.1)", marginBottom: "20px" }} />
-
-            <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "24px" }}>
-              {features.map((f, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-                    <polyline points="20 6 9 17 4 12" stroke="#6366f1" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span style={{ color: "rgba(15,23,42,0.8)", fontSize: "14px" }}>{f}</span>
-                </div>
-              ))}
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="#4f46e5" strokeWidth="2" strokeLinejoin="round" />
-                </svg>
-                <span style={{ color: "#4f46e5", fontSize: "14px", fontWeight: "600" }}>30-Day Money-Back Guarantee</span>
-              </div>
-            </div>
-
-            <a href="#contact" className="btn-primary" style={{ width: "100%", justifyContent: "center", marginBottom: "12px" }}>
-              Get Started
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </a>
-            <a href="#packages" className="btn-secondary" style={{ width: "100%", justifyContent: "center", marginBottom: "20px" }}>
-              View all packages
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </a>
-
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(15,23,42,0.59)", fontSize: "12px" }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="rgba(15,23,42,0.59)" strokeWidth="2" strokeLinejoin="round" /></svg>
-                Secure Payment by Stripe
-              </div>
-            </div>
-          </Reveal>
+          {/* Right - Standard Package card */}
+          <PackageCard />
         </div>
       </div>
 
       <style>{`
-        .chatbot-offer {
-          position: relative; display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
-          padding: 14px 16px; border-radius: 16px; background: #ffffff;
-          border: 1.5px dashed rgba(99,102,241,0.45); box-shadow: 0 10px 26px rgba(79,70,229,0.12);
-          animation: offer-glow 2.6s ease-in-out infinite;
-        }
-        @keyframes offer-glow { 0%,100% { box-shadow: 0 10px 26px rgba(79,70,229,0.12); } 50% { box-shadow: 0 10px 34px rgba(79,70,229,0.28); } }
-        .chatbot-offer-icon {
-          position: relative; flex-shrink: 0; width: 46px; height: 46px; border-radius: 14px;
-          display: flex; align-items: center; justify-content: center;
-          background: linear-gradient(135deg, #3b82f6, #6366f1 55%, #7c3aed); box-shadow: 0 8px 18px rgba(79,70,229,0.35);
-          animation: float 4s ease-in-out infinite;
-        }
-        .chatbot-offer-dots { position: absolute; top: 15px; left: 0; right: 0; display: flex; justify-content: center; gap: 3px; transform: translateY(-1px); }
-        .chatbot-offer-dots span { width: 3.5px; height: 3.5px; border-radius: 50%; background: #ffffff; animation: offer-typing 1.2s ease-in-out infinite; }
-        .chatbot-offer-dots span:nth-child(2) { animation-delay: 0.15s; }
-        .chatbot-offer-dots span:nth-child(3) { animation-delay: 0.3s; }
-        @keyframes offer-typing { 0%,60%,100% { opacity: 0.4; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-2px); } }
-        .chatbot-offer-tag {
-          flex-shrink: 0; font-size: 11px; font-weight: 800; letter-spacing: 1px; color: #ffffff;
-          background: linear-gradient(135deg, #22c55e, #16a34a); padding: 5px 10px; border-radius: 50px;
-          box-shadow: 0 4px 12px rgba(22,163,74,0.3);
-        }
-        @media (max-width: 420px) { .chatbot-offer-tag { display: none; } }
         @media (max-width: 900px) {
           .webdev-hero-grid { grid-template-columns: 1fr !important; }
         }

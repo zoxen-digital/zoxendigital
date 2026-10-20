@@ -26,7 +26,18 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display), -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
 }
+
+/* One type style across the site, matching the home hero: tight, heavy headings and relaxed body text. */
+h1 { font-weight: 800; letter-spacing: -0.045em; line-height: 1.04; }
+h2 { font-weight: 800; letter-spacing: -0.04em; line-height: 1.08; }
+h3 { font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; }
+h4, h5, h6 { letter-spacing: -0.01em; }
+p { line-height: 1.7; }
+
+/* Navbar and buttons use the heading font for a consistent brand voice. */
+nav, .btn-primary, .btn-secondary { font-family: var(--font-display), -apple-system, BlinkMacSystemFont, sans-serif; }
 
 body::before {
   content: '';
