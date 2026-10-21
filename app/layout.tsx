@@ -18,6 +18,9 @@ const hankenGrotesk = Hanken_Grotesk({
 export const metadata: Metadata = {
   title: "Zoxen Digital - Websites That Elevate Brands",
   description: "We build fast, modern and conversion-focused websites that help businesses stand out and grow online.",
+  verification: {
+    google: "LBE4bBtqY_9TuEIH6HQp1G3iyfI2qA2BoQaILJWqusg",
+  },
 };
 
 export default function RootLayout({
