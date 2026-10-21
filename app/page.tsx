@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { DEFAULT_DESCRIPTION, pageMeta } from "@/lib/seo";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 // Who We Are section hidden for now; uncomment to bring it back.
@@ -18,6 +20,11 @@ import PortalCompare from "./components/PortalCompare";
 // import Contact from "./components/Contact";
 import CtaBar from "./components/CtaBar";
 import Footer from "./components/Footer";
+
+export const metadata: Metadata = {
+  title: { absolute: "Zoxen Digital | Websites, Ads, SEO & AI for Growing Businesses" },
+  ...pageMeta({ path: "/", title: "Zoxen Digital | Websites, Ads, SEO & AI for Growing Businesses", description: DEFAULT_DESCRIPTION }),
+};
 
 export default function Home() {
   return (

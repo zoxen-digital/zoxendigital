@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import LegalPage from "../components/LegalPage";
 import { PRIVACY } from "@/lib/legal";
+import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: `${PRIVACY.title} | Zoxen Digital`,
-  description: PRIVACY.summary,
+  title: PRIVACY.title,
+  ...pageMeta({ path: "/privacy-policy", title: PRIVACY.title, description: PRIVACY.summary }),
 };
 
 export default function Page() {

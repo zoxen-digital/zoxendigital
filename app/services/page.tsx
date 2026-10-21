@@ -2,15 +2,32 @@ import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ServicesContent from "./ServicesContent";
+import { SERVICES, SITE_URL, jsonLd, pageMeta } from "@/lib/seo";
+
+const description =
+  "Website development, AI agents, AI automation, software, mobile apps, performance optimisation, technical support and BPO. One accountable team from the first call to a live, growing business.";
 
 export const metadata: Metadata = {
-  title: "Services | Zoxen Digital",
-  description: "Websites, software, mobile apps, AI agents, automation and support. One accountable team from the first call to a live, growing business.",
+  title: "Services: Websites, AI Agents, Automation & Apps",
+  keywords: ["web development services", "AI agent development", "AI automation services", "mobile app development", "custom software development", "website maintenance", "BPO services", "performance optimization"],
+  ...pageMeta({ path: "/services", title: "Services", description }),
+};
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Zoxen Digital Services",
+  itemListElement: SERVICES.map((name, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: { "@type": "Service", name, provider: { "@id": `${SITE_URL}/#organization` }, areaServed: "Worldwide" },
+  })),
 };
 
 export default function ServicesPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(servicesSchema)} />
       <Navbar />
       <ServicesContent />
       <Footer />
