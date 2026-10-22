@@ -4,9 +4,26 @@ export const SITE_NAME = "Zoxen Digital";
 export const SITE_EMAIL = "support@zoxendigital.com";
 
 export const DEFAULT_DESCRIPTION =
-  "Websites from $99, Meta & Google Ads, SEO and AI chatbots that bring small businesses more leads and sales. Fast delivery, one accountable team.";
+  "Websites from $99, Meta & Google Ads, SEO and AI chatbots for small businesses in the USA and Canada. More leads and sales, one accountable team.";
+
+// Primary markets: United States and Canada.
+export const AREA_SERVED = [
+  { "@type": "Country", name: "United States" },
+  { "@type": "Country", name: "Canada" },
+];
 
 export const KEYWORDS = [
+  "web design agency USA",
+  "website design company USA",
+  "small business website design USA",
+  "web design agency Canada",
+  "website design Canada",
+  "small business website Canada",
+  "affordable web design USA",
+  "Meta ads agency USA",
+  "Google Ads agency Canada",
+  "SEO services USA",
+  "SEO services Canada",
   "web design agency",
   "website development",
   "affordable website design",
@@ -56,8 +73,8 @@ export function pageMeta({ path, title, description }: { path: string; title: st
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   return {
     description,
-    alternates: { canonical: path },
-    openGraph: { type: "website" as const, locale: "en_US", siteName: SITE_NAME, url: path, title: fullTitle, description, images: [OG_IMAGE] },
+    alternates: { canonical: path, languages: { "en-US": path, "en-CA": path, "x-default": path } },
+    openGraph: { type: "website" as const, locale: "en_US", alternateLocale: ["en_CA"], siteName: SITE_NAME, url: path, title: fullTitle, description, images: [OG_IMAGE] },
     twitter: { card: "summary_large_image" as const, title: fullTitle, description, images: [OG_IMAGE.url] },
   };
 }

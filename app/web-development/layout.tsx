@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { SITE_URL, jsonLd, pageMeta } from "@/lib/seo";
+import { AREA_SERVED, SITE_URL, jsonLd, pageMeta } from "@/lib/seo";
 
 const description =
-  "Get a professional business website live in 24 to 48 hours from $99, with free hosting, mobile-responsive design, on-page SEO and a free AI chatbot. Premium, e-commerce and custom packages available.";
+  "Get a professional website for your US or Canadian business live in 24-48 hours from $99, with free hosting, on-page SEO and a free AI chatbot.";
 
 export const metadata: Metadata = {
   title: "Website Development from $99 | Live in 24-48 Hours",
-  keywords: ["$99 website", "cheap website design", "website in 48 hours", "small business website", "ecommerce website development", "website with free hosting", "website with AI chatbot", "landing page design"],
+  keywords: ["$99 website USA", "website design for small business USA", "website design Canada", "$99 website", "cheap website design", "website in 48 hours", "small business website", "ecommerce website development", "website with free hosting", "website with AI chatbot", "landing page design"],
   ...pageMeta({ path: "/web-development", title: "Website Development from $99 | Live in 24-48 Hours", description }),
 };
 
@@ -16,7 +16,7 @@ const offerSchema = {
   name: "Website Development",
   serviceType: "Website design and development",
   provider: { "@id": `${SITE_URL}/#organization` },
-  areaServed: "Worldwide",
+  areaServed: AREA_SERVED,
   url: `${SITE_URL}/web-development`,
   description,
   offers: [

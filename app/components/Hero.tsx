@@ -170,7 +170,7 @@ export default function Hero() {
 
           <Reveal delay={0.2}>
             <p className="hero-sub">
-              We design and build websites, run ads and SEO, and add AI chatbots and automation for businesses that need to sell more and grow faster.
+              We design and build websites, run ads and SEO, and add AI chatbots and automation for small businesses across the USA and Canada that need to sell more and grow faster.
             </p>
           </Reveal>
 

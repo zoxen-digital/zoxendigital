@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Sora, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import MetaPixel from "./components/MetaPixel";
-import { DEFAULT_DESCRIPTION, KEYWORDS, SERVICES, SITE_EMAIL, SITE_NAME, SITE_URL, jsonLd } from "@/lib/seo";
+import { AREA_SERVED, DEFAULT_DESCRIPTION, KEYWORDS, SERVICES, SITE_EMAIL, SITE_NAME, SITE_URL, jsonLd } from "@/lib/seo";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
+    alternateLocale: ["en_CA"],
     siteName: SITE_NAME,
     title: "Zoxen Digital | Websites, Ads, SEO & AI for Businesses",
     description: DEFAULT_DESCRIPTION,
@@ -72,7 +73,7 @@ const organizationSchema = {
       email: SITE_EMAIL,
       description: DEFAULT_DESCRIPTION,
       priceRange: "$$",
-      areaServed: "Worldwide",
+      areaServed: AREA_SERVED,
       knowsAbout: ["Web Design", "Website Development", "SEO", "Meta Ads", "Google Ads", "AI Chatbots", "AI Automation", "Mobile App Development"],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
