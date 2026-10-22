@@ -131,7 +131,7 @@ export default function ConnectedStack() {
           <div className="cs-core-wrap">
             <div ref={coreRef} className="cs-core">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/main-logo.png" alt="Zoxen Digital" style={{ width: "62%", height: "auto", display: "block" }} />
+              <img src="/main-logo.png" alt="Zoxen Digital" width={368} height={208} style={{ width: "62%", height: "auto", display: "block" }} />
               <span className="cs-core-name">ZOXEN</span>
             </div>
             <div className="cs-core-label">ZOXEN CORE · CLIENT PORTAL</div>

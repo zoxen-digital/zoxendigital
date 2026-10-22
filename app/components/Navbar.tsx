@@ -56,7 +56,7 @@ export default function Navbar() {
         {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: "8px", height: "40px" }}>
           <div style={{ height: "40px", width: "40px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-            <img src="/main-logo-dark.png" alt="Zoxen Digital" style={{ display: "block", maxHeight: "34px", maxWidth: "40px", objectFit: "contain" }} />
+            <img src="/main-logo-dark.png" alt="Zoxen Digital" width={40} height={23} style={{ display: "block", maxHeight: "34px", maxWidth: "40px", objectFit: "contain" }} />
           </div>
           <span style={{ fontSize: "19px", fontWeight: "800", lineHeight: "40px", whiteSpace: "nowrap" }}>
             <span style={{ color: "#0f172a" }}>Zoxen</span>&nbsp;

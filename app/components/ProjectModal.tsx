@@ -21,6 +21,22 @@ export default function ProjectModal({ open, onClose }: { open: boolean; onClose
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
   const inputRef = useRef<HTMLInputElement & HTMLTextAreaElement>(null);
+  // Not rendered while closed, so its heading and form stay out of the page HTML search engines read.
+  const [mounted, setMounted] = useState(false);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    if (open) {
+      let inner = 0;
+      const outer = requestAnimationFrame(() => {
+        setMounted(true);
+        inner = requestAnimationFrame(() => setShown(true));
+      });
+      return () => { cancelAnimationFrame(outer); cancelAnimationFrame(inner); };
+    }
+    const hide = requestAnimationFrame(() => setShown(false));
+    const unmount = setTimeout(() => setMounted(false), 260);
+    return () => { cancelAnimationFrame(hide); clearTimeout(unmount); };
+  }, [open]);
 
   // Lock page scroll, close on Escape.
   useEffect(() => {
@@ -87,8 +103,10 @@ export default function ProjectModal({ open, onClose }: { open: boolean; onClose
 
   const skip = () => { setError(""); setForm((f) => ({ ...f, phone: "" })); setStep((s) => s + 1); };
 
+  if (!mounted) return null;
+
   return (
-    <div className={`pm-overlay ${open ? "open" : ""}`} onMouseDown={(e) => e.target === e.currentTarget && close()} aria-hidden={!open}>
+    <div className={`pm-overlay ${shown ? "open" : ""}`} onMouseDown={(e) => e.target === e.currentTarget && close()} aria-hidden={!open}>
       <div className="pm-modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
         <button type="button" className="pm-close" onClick={close}>CLOSE</button>
         <div className="pm-eyebrow">START YOUR PROJECT</div>

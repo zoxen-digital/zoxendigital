@@ -158,7 +158,7 @@ export default function Hero() {
         {/* Left */}
         <div style={{ position: "relative", zIndex: 2 }}>
           <Reveal delay={0}>
-            <div className="hero-badge"><span className="hero-badge-ring" />WEB · ADS · SEO · AI</div>
+            <div className="hero-badge"><span className="hero-badge-ring" />WEBSITE DESIGN &amp; DEVELOPMENT · ADS · SEO · AI</div>
           </Reveal>
 
           <Reveal delay={0.1}>
@@ -378,6 +378,7 @@ export default function Hero() {
           .hero-title { letter-spacing: -2px; }
         }
         @media (max-width: 520px) {
+          .hero-badge { font-size: 10.5px; letter-spacing: 1.2px; padding: 8px 12px 8px 8px; gap: 8px; }
           .hv-scale { height: 375px; }
           .hv-stage { transform: translateX(-50%) scale(0.52); }
           .hero-cmd { font-size: 15px; gap: 14px; }

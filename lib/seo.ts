@@ -1,10 +1,10 @@
 // Shared SEO settings. Override the domain with NEXT_PUBLIC_SITE_URL if it ever changes.
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://zoxendigital.com").replace(/\/+$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.zoxendigital.com").replace(/\/+$/, "");
 export const SITE_NAME = "Zoxen Digital";
 export const SITE_EMAIL = "support@zoxendigital.com";
 
 export const DEFAULT_DESCRIPTION =
-  "Zoxen Digital builds fast, conversion-focused websites from $99, runs Meta Ads, Google Ads and SEO, and adds AI chatbots and automation that help small and medium businesses get more leads and sales.";
+  "Websites from $99, Meta & Google Ads, SEO and AI chatbots that bring small businesses more leads and sales. Fast delivery, one accountable team.";
 
 export const KEYWORDS = [
   "web design agency",

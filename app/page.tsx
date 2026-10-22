@@ -22,8 +22,8 @@ import CtaBar from "./components/CtaBar";
 import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
-  title: { absolute: "Zoxen Digital | Websites, Ads, SEO & AI for Growing Businesses" },
-  ...pageMeta({ path: "/", title: "Zoxen Digital | Websites, Ads, SEO & AI for Growing Businesses", description: DEFAULT_DESCRIPTION }),
+  title: { absolute: "Zoxen Digital | Websites, Ads, SEO & AI for Businesses" },
+  ...pageMeta({ path: "/", title: "Zoxen Digital | Websites, Ads, SEO & AI for Businesses", description: DEFAULT_DESCRIPTION }),
 };
 
 export default function Home() {

@@ -35,7 +35,7 @@ export default function Footer() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/main-logo-dark.png" alt="Zoxen Digital" style={{ display: "block", height: "36px", width: "auto", objectFit: "contain" }} />
+              <img src="/main-logo-dark.png" alt="Zoxen Digital" width={64} height={36} style={{ display: "block", height: "36px", width: "auto", objectFit: "contain" }} />
               <div>
                 <div style={{ fontSize: "15px", fontWeight: "800", color: "#0f172a", letterSpacing: "2px" }}>ZOXEN</div>
                 <div style={{ fontSize: "8px", color: "#6366f1", letterSpacing: "4px" }}>DIGITAL</div>

@@ -19,7 +19,7 @@ const hankenGrotesk = Hanken_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Zoxen Digital | Websites, Ads, SEO & AI for Growing Businesses",
+    default: "Zoxen Digital | Websites, Ads, SEO & AI for Businesses",
     template: "%s | Zoxen Digital",
   },
   description: DEFAULT_DESCRIPTION,
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: SITE_NAME,
-    title: "Zoxen Digital | Websites, Ads, SEO & AI for Growing Businesses",
+    title: "Zoxen Digital | Websites, Ads, SEO & AI for Businesses",
     description: DEFAULT_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zoxen Digital | Websites, Ads, SEO & AI for Growing Businesses",
+    title: "Zoxen Digital | Websites, Ads, SEO & AI for Businesses",
     description: DEFAULT_DESCRIPTION,
   },
   formatDetection: { telephone: false, email: false, address: false },
