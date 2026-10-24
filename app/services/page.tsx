@@ -5,12 +5,12 @@ import ServicesContent from "./ServicesContent";
 import { AREA_SERVED, SERVICES, SITE_URL, jsonLd, pageMeta } from "@/lib/seo";
 
 const description =
-  "Website development, AI agents, AI automation, software, mobile apps, performance optimisation, technical support and BPO. One accountable team from the first call to a live, growing business.";
+  "Website development, AI agents, automation, software, mobile apps and support for US and Canadian businesses. One accountable team from first call to launch.";
 
 export const metadata: Metadata = {
-  title: "Services: Websites, AI Agents, Automation & Apps",
+  title: "Services: Websites, AI Agents & Apps",
   keywords: ["web development services USA", "digital agency Canada", "web development services", "AI agent development", "AI automation services", "mobile app development", "custom software development", "website maintenance", "BPO services", "performance optimization"],
-  ...pageMeta({ path: "/services", title: "Services", description }),
+  ...pageMeta({ path: "/services", title: "Services: Websites, AI Agents & Apps", description }),
 };
 
 const servicesSchema = {

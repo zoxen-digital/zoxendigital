@@ -212,3 +212,7 @@ body::before {
   opacity: 0.4;
   z-index: 0;
 }
+
+/* Performance: browsers skip layout/paint for sections until they are near the viewport. */
+main > section:not(#home):not(.hero-section),
+main > footer { content-visibility: auto; contain-intrinsic-size: auto 900px; }

@@ -172,7 +172,6 @@ export default function ConnectedStack() {
           background: radial-gradient(circle at 50% 30%, #1e1b4b, #0f172a 70%);
           border: 3px solid #ffffff;
           box-shadow: 0 0 0 10px rgba(99,102,241,0.08), 0 0 70px rgba(99,102,241,0.45), 0 30px 60px rgba(15,23,42,0.3);
-          animation: core-breathe 4s ease-in-out infinite;
         }
         .cs-core::after { content: ""; position: absolute; inset: -14px; border-radius: 42px; border: 1px solid rgba(99,102,241,0.25); animation: core-ring 3s ease-out infinite; }
         @keyframes core-breathe { 0%,100% { box-shadow: 0 0 0 10px rgba(99,102,241,0.08), 0 0 60px rgba(99,102,241,0.35), 0 30px 60px rgba(15,23,42,0.3); } 50% { box-shadow: 0 0 0 14px rgba(99,102,241,0.12), 0 0 90px rgba(124,58,237,0.55), 0 30px 60px rgba(15,23,42,0.3); } }

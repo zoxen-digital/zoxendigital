@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Reveal from "./Reveal";
 import ProjectModal from "./ProjectModal";
 
 /* ---------- small animated pieces ---------- */
@@ -157,24 +156,24 @@ export default function Hero() {
       <div className="hero-grid">
         {/* Left */}
         <div style={{ position: "relative", zIndex: 2 }}>
-          <Reveal delay={0}>
+          <div className="hero-in" style={{ animationDelay: "0s" }}>
             <div className="hero-badge"><span className="hero-badge-ring" />WEBSITE DESIGN &amp; DEVELOPMENT · ADS · SEO · AI</div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.1}>
+          <div className="hero-in" style={{ animationDelay: "0.1s" }}>
             <h1 className="hero-title">
               Your growth. Our code.<br />
               <span className="hero-highlight">A little AI.</span>
             </h1>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.2}>
+          <div className="hero-in" style={{ animationDelay: "0.2s" }}>
             <p className="hero-sub">
               We design and build websites, run ads and SEO, and add AI chatbots and automation for small businesses across the USA and Canada that need to sell more and grow faster.
             </p>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.3}>
+          <div className="hero-in" style={{ animationDelay: "0.3s" }}>
             <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginBottom: "36px" }}>
               <button type="button" className="hero-cmd" onClick={() => setModalOpen(true)}>
                 <span><span style={{ color: "#a5b4fc" }}>$</span> start-your-project</span>
@@ -187,9 +186,9 @@ export default function Hero() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal delay={0.4}>
+          <div className="hero-in" style={{ animationDelay: "0.4s" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
               <div className="hero-avatars">
                 <span style={{ background: "#0f172a", color: "#fff", fontSize: "10px" }}>5.0</span>
@@ -199,7 +198,7 @@ export default function Hero() {
               </div>
               <span style={{ fontSize: "15px", color: "rgba(15,23,42,0.6)" }}>Trusted by <b style={{ color: "#0f172a" }}>50+ growing businesses</b></span>
             </div>
-          </Reveal>
+          </div>
         </div>
 
         {/* Right: floating product cards */}
@@ -252,6 +251,8 @@ export default function Hero() {
       <ProjectModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
       <style>{`
+        .hero-in { animation: hero-fade 0.6s ease both; }
+        @keyframes hero-fade { from { opacity: 0.001; transform: translateY(10px); } to { opacity: 1; transform: none; } }
         .hero-section { background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%); }
         .hero-glow { position: absolute; width: 700px; height: 700px; right: 5%; top: 5%; border-radius: 50%; background: radial-gradient(circle, rgba(129,140,248,0.22), transparent 65%); filter: blur(10px); pointer-events: none; }
         .hero-grid { position: relative; width: 100%; max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
