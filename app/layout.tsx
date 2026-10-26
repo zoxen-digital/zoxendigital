@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Sora, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import MetaPixel from "./components/MetaPixel";
+import { Analytics } from "@vercel/analytics/next";
 import { AREA_SERVED, DEFAULT_DESCRIPTION, KEYWORDS, SERVICES, SITE_EMAIL, SITE_NAME, SITE_URL, jsonLd } from "@/lib/seo";
 
 const sora = Sora({
@@ -104,6 +105,7 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationSchema)} />
         {children}
         <MetaPixel />
+        <Analytics />
       </body>
     </html>
   );
