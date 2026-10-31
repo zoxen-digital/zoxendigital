@@ -98,7 +98,7 @@ export default function PortalJourney() {
                 <div className="pj-node">{s.icon}</div>
                 <span className="pj-tag">Step {i + 1}</span>
                 <h3 style={{ fontSize: "15px", fontWeight: 800, color: "#0f172a", margin: "8px 0 6px", lineHeight: 1.3 }}>{s.title}</h3>
-                <p style={{ fontSize: "13px", color: "rgba(15,23,42,0.62)", lineHeight: "1.55" }}>{s.desc}</p>
+                <p style={{ fontSize: "13px", color: "#475569", lineHeight: "1.55" }}>{s.desc}</p>
               </div>
             );
           })}
@@ -110,7 +110,7 @@ export default function PortalJourney() {
         .pj-line { position: absolute; left: calc(100% / 12); right: calc(100% / 12); top: 26px; height: 3px; background: rgba(99,102,241,0.12); border-radius: 3px; overflow: hidden; }
         .pj-line-fill { position: absolute; inset: 0; transform-origin: left; background: linear-gradient(90deg, #6366f1, #7c3aed 60%, #16a34a); transition: transform 0.15s linear; }
 
-        .pj-step { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; opacity: 0.5; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+        .pj-step { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; opacity: 1; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1); }
         .pj-step.active { opacity: 1; transform: none; }
         .pj-node {
           position: relative; z-index: 1; width: 52px; height: 52px; border-radius: 16px; margin-bottom: 14px;
@@ -123,7 +123,7 @@ export default function PortalJourney() {
           box-shadow: 0 0 0 6px rgba(99,102,241,0.15), 0 10px 24px rgba(79,70,229,0.35); transform: scale(1.06);
         }
         .pj-step:last-child.active .pj-node { background: linear-gradient(135deg, #22c55e, #16a34a); box-shadow: 0 0 0 6px rgba(34,197,94,0.15), 0 10px 24px rgba(22,163,74,0.35); }
-        .pj-tag { font-size: 10.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #4f46e5; background: rgba(99,102,241,0.1); padding: 3px 9px; border-radius: 50px; }
+        .pj-tag { font-size: 10.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #3730a3; background: rgba(99,102,241,0.1); padding: 3px 9px; border-radius: 50px; }
 
         @media (max-width: 1000px) {
           .pj-track { grid-template-columns: repeat(3, 1fr); row-gap: 36px; }

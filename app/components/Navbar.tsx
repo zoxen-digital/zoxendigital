@@ -107,6 +107,8 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
             style={{
               background: "rgba(15,23,42,0.05)",
               border: "1px solid rgba(15,23,42,0.13)",

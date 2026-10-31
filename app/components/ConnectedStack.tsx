@@ -161,7 +161,7 @@ export default function ConnectedStack() {
           color: rgba(15,23,42,0.7); background: #f8fafc; border: 1px solid rgba(15,23,42,0.08); transition: all 0.35s;
         }
         .cs-card.active .cs-icon { color: #ffffff; border-color: transparent; background: linear-gradient(135deg, #6366f1, #4f46e5); box-shadow: 0 8px 18px rgba(79,70,229,0.35); }
-        .cs-tag { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; color: rgba(15,23,42,0.45); margin-bottom: 3px; }
+        .cs-tag { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; color: #64748b; margin-bottom: 3px; }
         .cs-title { display: block; font-size: 16px; font-weight: 700; color: #0f172a; letter-spacing: -0.2px; }
         .cs-arrow { flex-shrink: 0; color: rgba(15,23,42,0.25); transition: all 0.35s; }
         .cs-card.active .cs-arrow { color: #4f46e5; transform: translateX(3px); }
@@ -177,7 +177,7 @@ export default function ConnectedStack() {
         @keyframes core-breathe { 0%,100% { box-shadow: 0 0 0 10px rgba(99,102,241,0.08), 0 0 60px rgba(99,102,241,0.35), 0 30px 60px rgba(15,23,42,0.3); } 50% { box-shadow: 0 0 0 14px rgba(99,102,241,0.12), 0 0 90px rgba(124,58,237,0.55), 0 30px 60px rgba(15,23,42,0.3); } }
         @keyframes core-ring { 0% { transform: scale(0.96); opacity: 1; } 100% { transform: scale(1.12); opacity: 0; } }
         .cs-core-name { font-size: 22px; font-weight: 800; letter-spacing: 6px; color: #ffffff; }
-        .cs-core-label { margin-top: 26px; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; color: rgba(15,23,42,0.45); }
+        .cs-core-label { margin-top: 26px; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; color: #64748b; }
 
         @media (max-width: 1100px) {
           .cs-wrap { grid-template-columns: 1fr 1fr; }

@@ -79,7 +79,7 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(links).map(([section, items]) => (
             <div key={section}>
-              <h4 style={{ color: "#0f172a", fontSize: "13px", fontWeight: "700", marginBottom: "20px", letterSpacing: "1px" }}>{section.toUpperCase()}</h4>
+              <h3 style={{ color: "#0f172a", fontSize: "13px", fontWeight: "700", marginBottom: "20px", letterSpacing: "1px" }}>{section.toUpperCase()}</h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                 {items.map((item) => (
                   <a
@@ -107,10 +107,10 @@ export default function Footer() {
           flexWrap: "wrap",
           gap: "16px",
         }}>
-          <p style={{ color: "rgba(15,23,42,0.3)", fontSize: "12px" }}>
+          <p style={{ color: "#64748b", fontSize: "12px" }}>
             © {new Date().getFullYear()} Zoxen Digital. Serving businesses across the United States and Canada.
           </p>
-          <p style={{ color: "rgba(15,23,42,0.3)", fontSize: "12px" }}>
+          <p style={{ color: "#64748b", fontSize: "12px" }}>
             Crafted with precision for growth-focused businesses.
           </p>
         </div>

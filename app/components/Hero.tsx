@@ -136,11 +136,11 @@ function PhoneCard() {
       </div>
       <div className="hv-sheet">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div><div className="hv-label" style={{ fontSize: "8px" }}>ARRIVING IN</div><b style={{ fontSize: "20px" }}>{mins}</b><span style={{ fontSize: "10px", color: "rgba(15,23,42,0.5)" }}> min</span></div>
+          <div><div className="hv-label" style={{ fontSize: "8px" }}>ARRIVING IN</div><b style={{ fontSize: "20px" }}>{mins}</b><span style={{ fontSize: "10px", color: "#475569" }}> min</span></div>
           <span className="hv-live-pill"><span />Live</span>
         </div>
         <div className="hv-progress"><span /><span /><span className="go" /></div>
-        <div className="hv-driver"><span className="hv-avatar">M</span><span style={{ flex: 1 }}><b style={{ fontSize: "10px" }}>Marco R.</b><br /><span style={{ fontSize: "8px", color: "rgba(15,23,42,0.5)" }}>★ 4.9</span></span><span className="hv-call" /></div>
+        <div className="hv-driver"><span className="hv-avatar">M</span><span style={{ flex: 1 }}><b style={{ fontSize: "10px" }}>Marco R.</b><br /><span style={{ fontSize: "8px", color: "#475569" }}>★ 4.9</span></span><span className="hv-call" /></div>
       </div>
     </div>
   );
@@ -218,7 +218,7 @@ export default function Hero() {
                   <circle cx="23" cy="23" r="19" className="fg" />
                 </svg>
                 <span className="hv-ring-num">98</span>
-                <span><b style={{ fontSize: "16px", fontStyle: "italic" }}>Lighthouse</b><br /><span style={{ fontSize: "12px", color: "rgba(15,23,42,0.5)" }}>performance</span></span>
+                <span><b style={{ fontSize: "16px", fontStyle: "italic" }}>Lighthouse</b><br /><span style={{ fontSize: "12px", color: "#475569" }}>performance</span></span>
               </div>
             </div></div>
 
@@ -232,7 +232,7 @@ export default function Hero() {
             <div className="hv-card c-deploy"><div className="hv-float f4">
               <div className="hv-pill small">
                 <span className="hv-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
-                <span><b style={{ fontSize: "14px" }}>Website live</b><br /><span style={{ fontSize: "11px", color: "rgba(15,23,42,0.5)" }}>deployed · 1.2s</span></span>
+                <span><b style={{ fontSize: "14px" }}>Website live</b><br /><span style={{ fontSize: "11px", color: "#475569" }}>deployed · 1.2s</span></span>
               </div>
             </div></div>
 
@@ -298,12 +298,12 @@ export default function Hero() {
         .hv-bar i { width: 9px; height: 9px; border-radius: 50%; background: #e2e8f0; }
         .hv-bar i:first-child { background: #818cf8; }
         .hv-bar.dark i { background: #33334d; } .hv-bar.dark i:first-child { background: #818cf8; }
-        .hv-url { margin-left: 10px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: rgba(15,23,42,0.5); background: #f1f5f9; padding: 4px 10px; border-radius: 6px; }
+        .hv-url { margin-left: 10px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #475569; background: #f1f5f9; padding: 4px 10px; border-radius: 6px; }
         .hv-url.dark { color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.06); }
 
         .hv-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
         .hv-stats b { display: block; font-size: 24px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; margin: 4px 0 6px; }
-        .hv-label { display: block; font-size: 10.5px; letter-spacing: 1.5px; color: rgba(15,23,42,0.5); }
+        .hv-label { display: block; font-size: 10.5px; letter-spacing: 1.5px; color: #475569; }
         .hv-up { display: inline-block; font-size: 11px; font-weight: 700; color: #4338ca; background: #e0e7ff; padding: 3px 8px; border-radius: 50px; }
         .hv-chart { position: relative; display: flex; align-items: flex-end; gap: 7px; height: 92px; margin-top: 16px; padding-top: 12px; border-top: 1px dashed rgba(15,23,42,0.1); }
         .hv-chart span { flex: 1; border-radius: 4px 4px 2px 2px; background: #eef0f4; transform: scaleY(0); transform-origin: bottom; animation: hv-grow 0.9s cubic-bezier(0.16,1,0.3,1) forwards; }
@@ -328,7 +328,7 @@ export default function Hero() {
         .hv-code-body { padding: 16px 18px 20px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13.5px; line-height: 1.95; color: #e2e8f0; min-height: 200px; }
         .hv-code-line { display: flex; gap: 16px; white-space: pre; }
         .hv-ln { width: 12px; text-align: right; color: rgba(255,255,255,0.28); }
-        .hv-cm { color: rgba(255,255,255,0.45); }
+        .hv-cm { color: rgba(255,255,255,0.62); }
         .hv-kw { color: #a5b4fc; }
         .hv-str { color: #c4b5fd; }
         .hv-caret { display: inline-block; width: 8px; height: 15px; margin-left: 2px; vertical-align: -2px; background: #a5b4fc; animation: hv-blink 1s steps(1) infinite; }
@@ -339,7 +339,7 @@ export default function Hero() {
         .hv-user-msg { margin-left: auto; width: fit-content; max-width: 80%; padding: 11px 16px; border-radius: 14px; background: #0f172a; color: #ffffff; font-size: 14px; margin-bottom: 14px; animation: hv-pop 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.6s both; }
         .hv-ai-badge { flex-shrink: 0; width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #4338ca; background: #e0e7ff; }
         .hv-ai-text { font-size: 14px; line-height: 1.6; color: rgba(15,23,42,0.75); }
-        .hv-ask { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding: 10px 10px 10px 16px; border-radius: 50px; border: 1px solid rgba(15,23,42,0.1); font-size: 13px; color: rgba(15,23,42,0.4); }
+        .hv-ask { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding: 10px 10px 10px 16px; border-radius: 50px; border: 1px solid rgba(15,23,42,0.1); font-size: 13px; color: #64748b; }
         .hv-send { width: 26px; height: 26px; border-radius: 50%; background: #0f172a; }
 
         .hv-phone { position: relative; width: 180px; height: 360px; padding: 10px; border-radius: 34px; background: #0f172a; box-shadow: 0 30px 60px rgba(15,23,42,0.35); }
