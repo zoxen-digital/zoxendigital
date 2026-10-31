@@ -8,7 +8,6 @@ import CtaBar from "../../components/CtaBar";
 import { POSTS, getPost, type Block } from "@/lib/blog";
 import { SITE_URL, jsonLd, pageMeta } from "@/lib/seo";
 import ReadingProgress from "./ReadingProgress";
-import PreferredSource from "../PreferredSource";
 
 export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
@@ -162,8 +161,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </details>
               ))}
             </section>
-
-            <PreferredSource />
 
             <div className="bp-share">
               Found this useful? Share it:

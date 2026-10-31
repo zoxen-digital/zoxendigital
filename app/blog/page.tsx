@@ -4,7 +4,6 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CtaBar from "../components/CtaBar";
-import PreferredSource from "./PreferredSource";
 import { POSTS } from "@/lib/blog";
 import { SITE_URL, jsonLd, pageMeta } from "@/lib/seo";
 
@@ -44,7 +43,6 @@ export default function BlogIndex() {
             Grow your business online, <span className="gradient-text">one guide at a time.</span>
           </h1>
           <p style={{ fontSize: "19px", color: "#475569", maxWidth: "680px" }}>{description}</p>
-          <div style={{ maxWidth: "760px" }}><PreferredSource /></div>
         </div>
       </section>
 
