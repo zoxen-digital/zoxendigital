@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -26,16 +27,13 @@ export default function ProjectModal({ open, onClose }: { open: boolean; onClose
   const [shown, setShown] = useState(false);
   useEffect(() => {
     if (open) {
-      let inner = 0;
-      const outer = requestAnimationFrame(() => {
-        setMounted(true);
-        inner = requestAnimationFrame(() => setShown(true));
-      });
-      return () => { cancelAnimationFrame(outer); cancelAnimationFrame(inner); };
+      const mount = setTimeout(() => setMounted(true), 0);
+      const show = setTimeout(() => setShown(true), 30);
+      return () => { clearTimeout(mount); clearTimeout(show); };
     }
-    const hide = requestAnimationFrame(() => setShown(false));
+    const hide = setTimeout(() => setShown(false), 0);
     const unmount = setTimeout(() => setMounted(false), 260);
-    return () => { cancelAnimationFrame(hide); clearTimeout(unmount); };
+    return () => { clearTimeout(hide); clearTimeout(unmount); };
   }, [open]);
 
   // Lock page scroll, close on Escape.
@@ -105,7 +103,8 @@ export default function ProjectModal({ open, onClose }: { open: boolean; onClose
 
   if (!mounted) return null;
 
-  return (
+  // Portal to <body>: no parent section (transform, content-visibility, overflow) can clip the popup.
+  return createPortal(
     <div className={`pm-overlay ${shown ? "open" : ""}`} onMouseDown={(e) => e.target === e.currentTarget && close()} aria-hidden={!open}>
       <div className="pm-modal" role="dialog" aria-modal="true" aria-labelledby="pm-title">
         <button type="button" className="pm-close" onClick={close}>CLOSE</button>
@@ -173,7 +172,7 @@ export default function ProjectModal({ open, onClose }: { open: boolean; onClose
         .pm-close { position: absolute; top: 30px; right: 32px; background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 700; letter-spacing: 2px; }
         .pm-close:hover { color: #ffffff; }
         .pm-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 3px; color: rgba(255,255,255,0.65); margin-bottom: 12px; }
-        .pm-title { font-size: clamp(22px, 3.4vw, 30px); font-weight: 800; letter-spacing: -1px; line-height: 1.2; margin-bottom: 28px; padding-right: 60px; }
+        .pm-title { color: #ffffff; font-size: clamp(22px, 3.4vw, 30px); font-weight: 800; letter-spacing: -1px; line-height: 1.2; margin-bottom: 28px; padding-right: 60px; }
         .pm-progress { display: flex; align-items: center; gap: 20px; margin-bottom: 28px; }
         .pm-count { font-size: 15px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.75); white-space: nowrap; }
         .pm-track { flex: 1; height: 1px; background: rgba(255,255,255,0.12); }
@@ -198,7 +197,7 @@ export default function ProjectModal({ open, onClose }: { open: boolean; onClose
         .pm-legal a { color: #a5b4fc; text-decoration: underline; }
         .pm-done { text-align: center; padding: 10px 0 4px; animation: pm-in 0.4s ease; }
         .pm-done-icon { width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #6366f1, #7c3aed); box-shadow: 0 0 0 10px rgba(99,102,241,0.15); }
-        .pm-done h3 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+        .pm-done h3 { color: #ffffff; font-size: 24px; font-weight: 800; margin-bottom: 8px; }
         .pm-done p { color: rgba(255,255,255,0.7); margin-bottom: 26px; }
         @media (max-width: 560px) {
           .pm-modal { padding: 26px 20px; border-radius: 22px; }
@@ -208,5 +207,5 @@ export default function ProjectModal({ open, onClose }: { open: boolean; onClose
         }
       `}</style>
     </div>
-  );
+  , document.body);
 }
