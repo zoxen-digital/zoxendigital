@@ -1,4 +1,5 @@
 "use client";
+import Script from "next/script";
 import Reveal from "./Reveal";
 
 export default function Footer() {
@@ -6,6 +7,7 @@ export default function Footer() {
     Company: [
       { label: "Client Portal", href: "/#portal" },
       { label: "Process", href: "/#process" },
+      { label: "Blog", href: "/blog" },
       { label: "Contact", href: "/#contact" },
     ],
     Services: [
@@ -110,9 +112,12 @@ export default function Footer() {
           <p style={{ color: "#64748b", fontSize: "12px" }}>
             © {new Date().getFullYear()} Zoxen Digital. Serving businesses across the United States and Canada.
           </p>
-          <p style={{ color: "#64748b", fontSize: "12px" }}>
-            Crafted with precision for growth-focused businesses.
-          </p>
+          {/* Google "preferred sources" button on every page; the script loads after the page */}
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+            <span style={{ color: "#64748b", fontSize: "12px" }}>Follow us on Google</span>
+            <div google-add-preferred-source-btn="" data-theme="light" data-lang="en" />
+          </div>
+          <Script src="https://news.google.com/swg/js/v1/publisher.js" strategy="lazyOnload" />
         </div>
       </div>
 
