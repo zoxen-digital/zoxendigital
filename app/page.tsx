@@ -8,6 +8,7 @@ import ConnectedStack from "./components/ConnectedStack";
 // Old Services section replaced by Products; uncomment to bring it back.
 // import Services from "./components/Services";
 import Products from "./components/Products";
+import { WhyZoxen } from "./components/SoftwareSections";
 // Our Work section hidden for now; uncomment to bring it back.
 // import Portfolio from "./components/Portfolio";
 import HomeProcess from "./components/HomeProcess";
@@ -35,6 +36,7 @@ export default function Home() {
       <ConnectedStack />
       {/* <Services /> */}
       <Products />
+      <WhyZoxen />
       {/* <Portfolio /> */}
       <HomeProcess />
       <ClientPortal />

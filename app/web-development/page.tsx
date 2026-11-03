@@ -87,7 +87,9 @@ function WebDevHero() {
             </h1>
 
             <p style={{ color: "#4f46e5", fontSize: "18px", fontWeight: "600", lineHeight: "1.7", marginBottom: "14px" }}>
-              Free hosting included with every website package.
+              Free hosting included with every website package. Serving businesses in the{" "}
+              <a href="/web-development-usa" style={{ color: "#3730a3", textDecoration: "underline", textUnderlineOffset: "3px" }}>USA</a> and{" "}
+              <a href="/web-development-canada" style={{ color: "#3730a3", textDecoration: "underline", textUnderlineOffset: "3px" }}>Canada</a>.
             </p>
 
             <p style={{ color: "rgba(15,23,42,0.62)", fontSize: "19px", lineHeight: "1.7", marginBottom: "36px", maxWidth: "580px" }}>

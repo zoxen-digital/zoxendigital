@@ -16,8 +16,8 @@ const left: Service[] = [
 const right: Service[] = [
   { tag: "AI AUTOMATION", title: "AI Automation", href: "/services#ai-automation", icon: <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z" {...I} /></svg> },
   { tag: "DEV", title: "Software Development", href: "/services#software-development", icon: <svg width="20" height="20" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6" {...I} /><polyline points="8 6 2 12 8 18" {...I} /></svg> },
-  { tag: "PERF", title: "Performance Optimization", href: "/services#performance-optimization", icon: <svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 14l4-4M3.34 19a10 10 0 1117.32 0" {...I} /></svg> },
-  { tag: "BPO", title: "BPO Services", href: "/services#bpo-services", icon: <svg width="20" height="20" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" {...I} /><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" {...I} /></svg> },
+  { tag: "CRM", title: "Custom CRM Apps", href: "/services#custom-crm-apps", icon: <svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2" {...I} /><path d="M8 20h8M12 16v4" {...I} /><circle cx="8.5" cy="10" r="2.2" {...I} /><path d="M13 12V9M16 12V7" {...I} /></svg> },
+  { tag: "API", title: "API & Data Integrations", href: "/services#api-data-integrations", icon: <svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="7" rx="1.5" {...I} /><rect x="13" y="14" width="8" height="7" rx="1.5" {...I} /><path d="M11 6.5h4a2 2 0 012 2V14M13 17.5H9a2 2 0 01-2-2V10" {...I} /></svg> },
 ];
 
 const all = [...left, ...right];

@@ -12,6 +12,8 @@ export default function Footer() {
     Services: [
       { label: "All Services", href: "/services" },
       { label: "Web Development", href: "/web-development" },
+      { label: "Web Development USA", href: "/web-development-usa" },
+      { label: "Web Development Canada", href: "/web-development-canada" },
       { label: "AI Agents", href: "/services#ai-agent" },
       { label: "AI & Automation", href: "/services#ai-automation" },
     ],

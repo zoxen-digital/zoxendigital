@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import ProjectModal from "../components/ProjectModal";
+import { OtherServices, SoftwareServices, WhyZoxen } from "../components/SoftwareSections";
 
 const services = [
   {
@@ -95,6 +96,10 @@ export default function ServicesContent() {
           </button>
         </div>
       </section>
+
+      <SoftwareServices />
+      <WhyZoxen />
+      <OtherServices />
 
       <section style={{ padding: "40px 60px 100px" }}>
         <div className="sv-cta">
