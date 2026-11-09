@@ -1,5 +1,5 @@
 // Shared SEO settings. Override the domain with NEXT_PUBLIC_SITE_URL if it ever changes.
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.zoxendigital.com").replace(/\/+$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://zoxendigital.com").replace(/\/+$/, "");
 export const SITE_NAME = "Zoxen Digital";
 export const SITE_EMAIL = "support@zoxendigital.com";
 
