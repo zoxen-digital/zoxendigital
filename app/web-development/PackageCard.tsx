@@ -23,7 +23,7 @@ function ChatPreview() {
       <div className="pk-chat-msg bot">Hi! Looking for a new website?</div>
       <div className={`pk-chat-msg user reveal ${phase >= 1 ? "show" : ""}`}>Yes, how much?</div>
       {phase === 2 && <div className="pk-chat-typing"><span /><span /><span /></div>}
-      <div className={`pk-chat-msg bot reveal ${phase >= 3 ? "show" : ""}`}>From $99. Can I book you a free call?</div>
+      <div className={`pk-chat-msg bot reveal ${phase >= 3 ? "show" : ""}`}>Yes! Can I book you a free call?</div>
     </div>
   );
 }
@@ -47,8 +47,7 @@ export default function PackageCard() {
 
         <div className="pk-eyebrow"><span />STANDARD PACKAGE</div>
         <div style={{ display: "flex", alignItems: "baseline", gap: "10px", marginBottom: "8px" }}>
-          <span className="pk-price">$99</span>
-          <span style={{ fontSize: "15px", color: "rgba(15,23,42,0.55)", fontWeight: 600 }}>one-time</span>
+          <span className="pk-price">Live in 48 hours</span>
         </div>
         <p className="pk-desc">A clean, professional website to get your business online fast.</p>
 
@@ -57,7 +56,6 @@ export default function PackageCard() {
           <div style={{ flex: 1, minWidth: 0 }}>
             <div className="pk-bonus-top">
               <span className="pk-bonus-tag">+ FREE</span>
-              <span style={{ fontSize: "12.5px", color: "rgba(15,23,42,0.5)" }}>usually <s style={{ color: "#dc2626", fontWeight: 700 }}>$30</s></span>
             </div>
             <div style={{ fontSize: "17px", fontWeight: 800, color: "#0f172a", letterSpacing: "-0.4px", margin: "5px 0 3px" }}>AI Chatbot included</div>
             <div style={{ fontSize: "13.5px", color: "rgba(15,23,42,0.6)", lineHeight: 1.5 }}>Answers visitors 24/7 and captures leads while you sleep.</div>
@@ -89,7 +87,7 @@ export default function PackageCard() {
 
         {/* Actions */}
         <button type="button" className="pk-primary" onClick={() => setOpen(true)}>
-          Get Started for $99
+          Get Started
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </button>
         <a href="#packages" className="pk-ghost">
@@ -131,7 +129,7 @@ export default function PackageCard() {
 
         .pk-eyebrow { position: relative; display: flex; align-items: center; gap: 12px; font-size: 12.5px; font-weight: 700; letter-spacing: 3px; color: rgba(15,23,42,0.55); margin-bottom: 6px; }
         .pk-eyebrow span { width: 28px; height: 1.5px; background: rgba(15,23,42,0.35); }
-        .pk-price { font-size: 52px; font-weight: 800; letter-spacing: -3px; line-height: 1; color: #0f172a; }
+        .pk-price { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; color: #0f172a; }
         .pk-desc { font-size: 14.5px; color: rgba(15,23,42,0.62); line-height: 1.5; margin-bottom: 16px; }
 
         .pk-bonus {
@@ -175,7 +173,7 @@ export default function PackageCard() {
 
         @media (max-width: 520px) {
           .pk-card { padding: 24px 18px; border-radius: 24px; }
-          .pk-price { font-size: 56px; }
+          .pk-price { font-size: 34px; }
           .pk-bonus { flex-direction: column; align-items: stretch; }
           .pk-chat { width: 100%; }
           .pk-features { grid-template-columns: 1fr; }

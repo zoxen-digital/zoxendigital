@@ -9,18 +9,18 @@ import { SITE_URL, jsonLd } from "@/lib/seo";
 // Fixed page text in English and French (Canada).
 const UI = {
   en: {
-    serving: "SERVING", start: "Start your project", see99: "See the $99 website →",
+    serving: "SERVING", start: "Start your project", see99: "See website packages →",
     trust: ["Live in 24-48 hours", "Free hosting", "Free AI chatbot", "Client portal"],
-    packagesFor: (c: string) => `Website packages for ${c} businesses`, packagesSub: "All prices in USD, paid once. No monthly contracts for the website itself.",
+    packagesFor: (c: string) => `Website packages for ${c} businesses`, packagesSub: "Pick the package that fits your business and we will send you a clear, fixed quote.",
     compare: "Compare all package details →", popular: "MOST POPULAR",
     regionsSub: "We work remotely with businesses nationwide, including:", industriesTitle: "Industries we build for", industriesSub: "Websites and software for:",
     faq: "Frequently asked questions", alsoServing: "Also serving", webDevIn: "Web development in",
     softwareIn: (c: string) => `Custom Software Development in ${c}`,
   },
   fr: {
-    serving: "AU SERVICE DU", start: "Démarrer votre projet", see99: "Voir le site à 99 $ →",
+    serving: "AU SERVICE DU", start: "Démarrer votre projet", see99: "Voir nos forfaits →",
     trust: ["En ligne en 24-48 heures", "Hébergement gratuit", "Chatbot IA gratuit", "Portail client"],
-    packagesFor: () => "Forfaits de sites web pour les entreprises canadiennes", packagesSub: "Tous les prix en dollars américains, payés une seule fois. Aucun abonnement mensuel pour le site.",
+    packagesFor: () => "Forfaits de sites web pour les entreprises canadiennes", packagesSub: "Choisissez le forfait qui vous convient et nous vous enverrons une soumission claire à prix fixe.",
     compare: "Comparer tous les forfaits →", popular: "LE PLUS POPULAIRE",
     regionsSub: "Nous travaillons à distance avec des entreprises partout au pays, notamment à :", industriesTitle: "Secteurs que nous servons", industriesSub: "Sites web et logiciels pour :",
     faq: "Questions fréquentes", alsoServing: "Vous êtes aussi aux", webDevIn: "Développement web aux",
@@ -29,17 +29,17 @@ const UI = {
 };
 
 const packagesFr = [
-  { name: "Standard", note: "paiement unique", points: ["Jusqu'à 5 pages", "Hébergement gratuit", "Chatbot IA gratuit", "SEO de base"] },
-  { name: "Premium", note: "paiement unique", points: ["Jusqu'à 12 pages", "Portail d'administration", "Réservations et paiements", "Configuration SEO"] },
-  { name: "Commerce en ligne", note: "paiement unique", points: ["Jusqu'à 15 pages", "50+ produits", "Passerelle de paiement", "Gestion des commandes"] },
-  { name: "Sur mesure et logiciels", price: "Soumission", note: "prix fixe", points: ["Design sur mesure", "CRM et portails", "Intégrations", "Soutien continu"] },
+  { name: "Standard", tag: "Pour démarrer en ligne rapidement", points: ["Jusqu'à 5 pages", "Hébergement gratuit", "Chatbot IA gratuit", "SEO de base"] },
+  { name: "Premium", tag: "Pour les entreprises en croissance", points: ["Jusqu'à 12 pages", "Portail d'administration", "Réservations et paiements", "Configuration SEO"] },
+  { name: "Commerce en ligne", tag: "Pour vendre en ligne", points: ["Jusqu'à 15 pages", "50+ produits", "Passerelle de paiement", "Gestion des commandes"] },
+  { name: "Sur mesure et logiciels", tag: "Conçu pour votre entreprise", points: ["Design sur mesure", "CRM et portails", "Intégrations", "Soutien continu"] },
 ];
 
 const packages = [
-  { name: "Standard", price: "$99", note: "one-time", points: ["Up to 5 pages", "Free hosting", "Free AI chatbot", "Basic on-page SEO"] },
-  { name: "Premium", price: "$199", note: "one-time", points: ["Up to 12 pages", "Admin portal", "Bookings & payments", "SEO setup"], popular: true },
-  { name: "E-commerce", price: "$499", note: "one-time", points: ["Up to 15 pages", "50+ products", "Payment gateway", "Order management"] },
-  { name: "Custom & Software", price: "Quote", note: "fixed price", points: ["Custom design", "CRMs & portals", "Integrations", "Ongoing support"] },
+  { name: "Standard", tag: "Get online fast", points: ["Up to 5 pages", "Free hosting", "Free AI chatbot", "Basic on-page SEO"] },
+  { name: "Premium", tag: "For growing businesses", points: ["Up to 12 pages", "Admin portal", "Bookings & payments", "SEO setup"], popular: true },
+  { name: "E-commerce", tag: "Sell online", points: ["Up to 15 pages", "50+ products", "Payment gateway", "Order management"] },
+  { name: "Custom & Software", tag: "Built around your business", points: ["Custom design", "CRMs & portals", "Integrations", "Ongoing support"] },
 ];
 
 export default function CountryPage({ loc }: { loc: Location }) {
@@ -61,11 +61,6 @@ export default function CountryPage({ loc }: { loc: Location }) {
         url,
         description: loc.description,
         inLanguage: fr ? "fr-CA" : "en",
-        offers: [
-          { "@type": "Offer", name: "Standard Website", price: "99", priceCurrency: "USD" },
-          { "@type": "Offer", name: "Premium Website", price: "199", priceCurrency: "USD" },
-          { "@type": "Offer", name: "E-commerce Website", price: "499", priceCurrency: "USD" },
-        ],
       },
       {
         "@type": "BreadcrumbList",
@@ -140,7 +135,7 @@ export default function CountryPage({ loc }: { loc: Location }) {
               <div key={p.name} className={`cp-pkg ${p.popular ? "popular" : ""}`}>
                 {p.popular && <span className="cp-pop">{t.popular}</span>}
                 <div className="cp-pkg-name">{p.name}</div>
-                <div className="cp-price">{p.price}<span>{p.note}</span></div>
+                <div className="cp-tagline">{p.tag}</div>
                 <ul>{p.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>
               </div>
             ))}
@@ -242,6 +237,7 @@ export default function CountryPage({ loc }: { loc: Location }) {
         .cp-pkg.popular { border-color: rgba(99,102,241,0.45); box-shadow: 0 20px 44px rgba(79,70,229,0.15); }
         .cp-pop { position: absolute; top: -12px; left: 22px; font-size: 11px; font-weight: 800; letter-spacing: 1px; color: #fff; padding: 5px 12px; border-radius: 50px; background: linear-gradient(135deg, #6366f1, #4f46e5); }
         .cp-pkg-name { font-size: 14px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3730a3; margin-bottom: 8px; }
+        .cp-tagline { font-family: var(--font-display), sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; color: #0f172a; margin-bottom: 16px; }
         .cp-price { font-family: var(--font-display), sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -1.5px; color: #0f172a; margin-bottom: 16px; }
         .cp-price span { font-family: var(--font-body), sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0; color: #64748b; margin-left: 6px; }
         .cp-pkg ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }

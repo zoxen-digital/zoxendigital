@@ -4,7 +4,7 @@ export const SITE_NAME = "Zoxen Digital";
 export const SITE_EMAIL = "support@zoxendigital.com";
 
 export const DEFAULT_DESCRIPTION =
-  "Websites from $99, Meta & Google Ads, SEO and AI chatbots for small businesses in the USA and Canada. More leads and sales, one accountable team.";
+  "Fast websites, Meta & Google Ads, SEO and AI chatbots for small businesses in the USA and Canada. More leads and sales, one accountable team.";
 
 // Primary markets: United States and Canada.
 export const AREA_SERVED = [
@@ -27,7 +27,6 @@ export const KEYWORDS = [
   "web design agency",
   "website development",
   "affordable website design",
-  "$99 website",
   "small business website",
   "business website design",
   "ecommerce website development",

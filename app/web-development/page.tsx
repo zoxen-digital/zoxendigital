@@ -99,7 +99,7 @@ function WebDevHero() {
 
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginBottom: "28px" }}>
               <a href="#packages" className="btn-primary">
-                Get Started - $99
+                Get Started
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
               <a href="#contact" className="btn-secondary">
@@ -247,32 +247,25 @@ function Packages() {
   const plans = [
     {
       name: "Standard",
-      price: "$99",
-      note: "one-time",
       desc: "Clean, professional website to get online fast.",
-      features: ["FREE AI Chatbot (usually $30)", "Up to 5 pages", "Contact form", "Stock photos", "Mobile responsive", "Basic on-page SEO", "Free hosting included"],
+      features: ["FREE AI Chatbot", "Up to 5 pages", "Contact form", "Stock photos", "Mobile responsive", "Basic on-page SEO", "Free hosting included"],
       popular: false,
     },
     {
       name: "Premium",
-      price: "$199",
-      note: "one-time",
       desc: "More pages and essential integrations for growing businesses.",
       features: ["Up to 12 pages", "Contact form", "Admin portal", "Booking / appointment form", "Payment integration setup", "Mobile responsive + SEO setup", "Free hosting included"],
       popular: true,
     },
     {
       name: "Advanced",
-      price: "$499",
-      note: "one-time",
       desc: "Custom eCommerce website with products, payments and business features.",
       features: ["Up to 15 pages", "eCommerce ready", "Upload 50+ products", "Payment gateway integration", "Order management setup", "Admin dashboard", "Free hosting included"],
       popular: false,
     },
     {
       name: "Custom",
-      price: "Contact Us",
-      note: "",
+      custom: true,
       desc: "Advanced custom website with premium design and full business systems.",
       features: ["Up to 20 pages", "Advanced custom design", "eCommerce with 100+ products", "Full admin dashboard", "Customer portal", "Advanced integrations & automation", "Free hosting included"],
       popular: false,
@@ -284,12 +277,12 @@ function Packages() {
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
         <Reveal>
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
-          <p className="section-eyebrow" style={{ marginBottom: "14px" }}>PRICING</p>
+          <p className="section-eyebrow" style={{ marginBottom: "14px" }}>PACKAGES</p>
           <h2 style={{ fontSize: "clamp(30px, 4vw, 46px)", fontWeight: "800", color: "#0f172a", marginBottom: "16px" }}>
-            Choose The Perfect Plan
+            Choose The Right Package
           </h2>
           <p style={{ color: "rgba(15,23,42,0.65)", fontSize: "16px", maxWidth: "500px", margin: "0 auto" }}>
-            Transparent pricing. Pick a package and complete onboarding, we handle the rest.
+            Pick the package that fits your business, tell us about your project and we will send you a clear quote.
           </p>
         </div>
         </Reveal>
@@ -330,8 +323,6 @@ function Packages() {
 
               <h3 style={{ fontSize: "18px", fontWeight: "700", color: "#0f172a", marginBottom: "8px" }}>{plan.name}</h3>
               <div style={{ marginBottom: "12px" }}>
-                <span style={{ fontSize: "32px", fontWeight: "800", color: "#0f172a" }}>{plan.price}</span>
-                {plan.note && <span style={{ color: "rgba(15,23,42,0.59)", fontSize: "13px" }}> {plan.note}</span>}
               </div>
               <p style={{ color: "rgba(15,23,42,0.62)", fontSize: "13px", lineHeight: "1.6", marginBottom: "24px" }}>{plan.desc}</p>
 
@@ -351,7 +342,7 @@ function Packages() {
                 className={plan.popular ? "btn-primary" : "btn-secondary"}
                 style={{ width: "100%", justifyContent: "center" }}
               >
-                {plan.price === "Contact Us" ? "Contact Us" : "Get Started"}
+                {plan.custom ? "Contact Us" : "Get Started"}
               </a>
             </Reveal>
           ))}

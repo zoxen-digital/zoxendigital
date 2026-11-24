@@ -2,9 +2,9 @@
 import { useState, type CSSProperties, type ReactNode } from "react";
 
 const PACKAGES = [
-  { id: "Standard", price: "$99", desc: "Up to 5 pages, contact form, mobile responsive." },
-  { id: "Premium", price: "$199", desc: "Up to 12 pages, admin portal, booking form.", popular: true },
-  { id: "Advanced", price: "$499", desc: "Up to 15 pages, eCommerce, automation." },
+  { id: "Standard", desc: "Up to 5 pages, contact form, mobile responsive." },
+  { id: "Premium", desc: "Up to 12 pages, admin portal, booking form.", popular: true },
+  { id: "Advanced", desc: "Up to 15 pages, eCommerce, automation." },
 ];
 
 const ADD_ONS = [
@@ -345,7 +345,6 @@ export default function OnboardingPage() {
                           }}>MOST POPULAR</span>
                         )}
                         <div style={{ color: "#0f172a", fontSize: "14px", fontWeight: "700", marginBottom: "4px" }}>{pkg.id}</div>
-                        <div style={{ color: "#4f46e5", fontSize: "19px", fontWeight: "800", marginBottom: "6px" }}>{pkg.price}</div>
                         <div style={{ color: "rgba(15,23,42,0.62)", fontSize: "11.5px", lineHeight: "1.5" }}>{pkg.desc}</div>
                       </button>
                     );

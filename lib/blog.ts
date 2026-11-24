@@ -100,7 +100,7 @@ export const POSTS: Post[] = [
       { type: "h2", id: "cost", text: "How much does an AI chatbot cost for a small business?" },
       { type: "p", text: "Prices vary a lot depending on how it is built. Ready-made chatbot tools usually charge a monthly subscription, and custom-built bots can cost thousands of dollars up front. On top of that, someone has to set it up properly and train it on your business, which is where many owners get stuck." },
       { type: "p", text: "For most small businesses, the best value is a chatbot that comes set up with your website, already trained on your services, so you don't have to figure out the technical side yourself." },
-      { type: "callout", title: "Get an AI chatbot free with your website", text: "At Zoxen Digital, every Standard website package includes a free AI chatbot, normally a $30 add-on. We set it up and train it on your services, prices and common questions, so it starts answering customers from day one.", cta: { label: "See the $99 website package", href: "/web-development" } },
+      { type: "callout", title: "Get an AI chatbot free with your website", text: "At Zoxen Digital, every Standard website package includes a free AI chatbot. We set it up and train it on your services, prices and common questions, so it starts answering customers from day one.", cta: { label: "See our website packages", href: "/web-development" } },
 
       { type: "h2", id: "good-chatbot", text: "What makes a good small business chatbot" },
       { type: "p", text: "Not every chatbot is helpful. A bad one annoys people more than having no chatbot at all. Before you add one, make sure it does these things well:" },

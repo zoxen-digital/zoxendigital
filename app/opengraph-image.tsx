@@ -29,7 +29,7 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", gap: 14 }}>
-          {["Websites from $99", "Meta & Google Ads", "SEO", "AI Chatbots"].map((t) => (
+          {["Websites in 48 Hours", "Meta & Google Ads", "SEO", "AI Chatbots"].map((t) => (
             <div key={t} style={{ fontSize: 26, fontWeight: 600, color: "#4338ca", background: "#ffffff", border: "2px solid #c7d2fe", borderRadius: 999, padding: "10px 24px" }}>{t}</div>
           ))}
         </div>

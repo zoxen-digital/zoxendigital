@@ -45,7 +45,7 @@ const whyPoints: { title: string; text: string; icon: ReactNode }[] = [
   },
   {
     title: "Fast delivery, clear pricing",
-    text: "Websites live in 24 to 48 hours from $99, and fixed quotes for software projects before any work starts.",
+    text: "Websites live in 24 to 48 hours, and a clear fixed quote for every project before any work starts.",
     icon: <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="23" r="14" {...S} /><path d="M22 15v8l5 3M18 5h8" {...S} /></svg>,
   },
   {
@@ -74,7 +74,7 @@ const softwareFr = [
 const whyFr = [
   { title: "Collaboration directe avec les développeurs", text: "Aucun intermédiaire. Vous parlez directement aux développeurs qui créent votre site ou votre logiciel, pour des réponses claires et rapides." },
   { title: "Suivi en direct dans votre portail client", text: "Suivez chaque étape, discutez avec l'équipe, partagez vos fichiers et approuvez le travail à partir d'un seul accès privé." },
-  { title: "Livraison rapide, prix clairs", text: "Sites web en ligne en 24 à 48 heures dès 99 $ US, et soumissions à prix fixe pour les projets logiciels avant le début des travaux." },
+  { title: "Livraison rapide, prix clairs", text: "Sites web en ligne en 24 à 48 heures, et une soumission claire à prix fixe pour chaque projet avant le début des travaux." },
   { title: "Soutien après la mise en ligne", text: "Mises à jour, maintenance et billets de soutien pris en charge par la même équipe qui a créé votre projet." },
 ];
 
